@@ -6,7 +6,7 @@
 - 目的: MOSFET 選定と設計に関するメモ、データ、実験結果を整理する。
 
 ## プレビュー
-- [Home page preview](https://htmlpreview.github.io/?https://raw.githubusercontent.com/k-masahiro116/MOSFET_for_Satellite/codex/work/docs/research/home.html)
+- [Base page preview](https://htmlpreview.github.io/?https://raw.githubusercontent.com/k-masahiro116/MOSFET_for_Satellite/codex/work/docs/research/base.html)
 
 ## はじめに
 1. リポジトリをクローンします。
