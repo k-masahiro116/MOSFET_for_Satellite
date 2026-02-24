@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Base | MOSFET for Satellite</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="layout" id="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h1 class="sidebar-title">Navigation</h1>
+      </div>
+      <nav class="sidebar-nav" aria-label="ページナビゲーション">
+        <a class="nav-link active" href="./home.html" data-src="./home.html">Home</a>
+        <a class="nav-link" href="./index.html" data-src="./index.html">Index</a>
+        <a class="nav-link" href="./plan.html" data-src="./plan.html">Plan</a>
+      </nav>
+      <div class="sidebar-actions">
+        <button type="button" id="togglePin">固定を解除</button>
+        <button type="button" id="toggleCollapse">折りたたむ</button>
+      </div>
+    </aside>
+
+    <main class="content frame-content">
+      <iframe
+        id="contentFrame"
+        title="Content Display"
+        src="./home.html"
+      ></iframe>
+    </main>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
