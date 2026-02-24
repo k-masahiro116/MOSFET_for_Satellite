@@ -13,9 +13,30 @@
         <h1 class="sidebar-title">Navigation</h1>
       </div>
       <nav class="sidebar-nav" aria-label="ページナビゲーション">
-        <a class="nav-link active" href="./home.html" data-src="./home.html">Home</a>
-        <a class="nav-link" href="./index.html" data-src="./index.html">Index</a>
-        <a class="nav-link" href="./plan.html" data-src="./plan.html">Plan</a>
+        <div class="nav-group">
+          <p class="nav-group-title">Overview</p>
+          <a
+            class="nav-link active"
+            href="./pages/overview/home.html"
+            data-src="./pages/overview/home.html"
+            data-short="Home"
+          >Home</a>
+          <a
+            class="nav-link"
+            href="./pages/overview/index.html"
+            data-src="./pages/overview/index.html"
+            data-short="Index"
+          >Index</a>
+        </div>
+        <div class="nav-group">
+          <p class="nav-group-title">Research</p>
+          <a
+            class="nav-link"
+            href="./pages/research/plan.html"
+            data-src="./pages/research/plan.html"
+            data-short="Plan"
+          >Plan</a>
+        </div>
       </nav>
       <div class="sidebar-actions">
         <button type="button" id="togglePin">固定を解除</button>
@@ -27,7 +48,7 @@
       <iframe
         id="contentFrame"
         title="Content Display"
-        src="./home.html"
+        src="./pages/overview/home.html"
       ></iframe>
     </main>
   </div>

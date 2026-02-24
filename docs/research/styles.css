@@ -59,9 +59,24 @@ body {
   gap: 8px;
 }
 
+.nav-group {
+  display: grid;
+  gap: 6px;
+}
+
+.nav-group-title {
+  margin: 0;
+  padding: 4px 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: rgba(247, 251, 255, 0.8);
+  text-transform: uppercase;
+}
+
 .nav-link {
   display: block;
-  padding: 10px;
+  padding: 9px 10px 9px 18px;
   border-radius: 8px;
   color: var(--text-light);
   text-decoration: none;
@@ -112,25 +127,15 @@ body {
 }
 
 .layout.sidebar-collapsed .sidebar .sidebar-title,
+.layout.sidebar-collapsed .sidebar .nav-group-title,
 .layout.sidebar-collapsed .sidebar .nav-link,
 .layout.sidebar-collapsed .sidebar .sidebar-actions button {
   font-size: 0;
 }
 
 .layout.sidebar-collapsed .sidebar .nav-link::before {
+  content: attr(data-short);
   font-size: 0.82rem;
-}
-
-.layout.sidebar-collapsed .sidebar .nav-link[href="./index.html"]::before {
-  content: "Index";
-}
-
-.layout.sidebar-collapsed .sidebar .nav-link[href="./home.html"]::before {
-  content: "Home";
-}
-
-.layout.sidebar-collapsed .sidebar .nav-link[href="./plan.html"]::before {
-  content: "Plan";
 }
 
 .layout.sidebar-collapsed .sidebar .sidebar-actions button::before {
@@ -164,6 +169,7 @@ body {
   }
 
   .layout.sidebar-collapsed .sidebar .sidebar-title,
+  .layout.sidebar-collapsed .sidebar .nav-group-title,
   .layout.sidebar-collapsed .sidebar .nav-link,
   .layout.sidebar-collapsed .sidebar .sidebar-actions button {
     font-size: inherit;
