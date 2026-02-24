@@ -1,0 +1,160 @@
+:root {
+  --sidebar-width: 240px;
+  --sidebar-collapsed-width: 72px;
+  --sidebar-bg: #12344d;
+  --content-bg: #f5f7fa;
+  --text-main: #0f1f2e;
+  --text-light: #f7fbff;
+  --accent: #2d7ea8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--text-main);
+  background: linear-gradient(120deg, #e9f1f7, #f8fafc);
+}
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.layout.sidebar-pinned .sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+}
+
+.layout.sidebar-pinned .content {
+  margin-left: var(--sidebar-width);
+}
+
+.sidebar {
+  width: var(--sidebar-width);
+  flex-shrink: 0;
+  background-color: var(--sidebar-bg);
+  color: var(--text-light);
+  padding: 20px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: width 0.2s ease;
+}
+
+.layout.sidebar-collapsed .sidebar {
+  width: var(--sidebar-collapsed-width);
+}
+
+.sidebar-title {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.sidebar-nav {
+  display: grid;
+  gap: 8px;
+}
+
+.nav-link {
+  display: block;
+  padding: 10px;
+  border-radius: 8px;
+  color: var(--text-light);
+  text-decoration: none;
+  background: transparent;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: rgba(247, 251, 255, 0.2);
+}
+
+.sidebar-actions {
+  margin-top: auto;
+  display: grid;
+  gap: 8px;
+}
+
+.sidebar-actions button {
+  border: 1px solid rgba(247, 251, 255, 0.5);
+  border-radius: 8px;
+  padding: 8px 10px;
+  background: transparent;
+  color: var(--text-light);
+  cursor: pointer;
+}
+
+.content {
+  flex: 1;
+  padding: 28px;
+  background: var(--content-bg);
+  transition: margin-left 0.2s ease;
+}
+
+.content h2 {
+  margin-top: 0;
+}
+
+.layout.sidebar-collapsed .sidebar .sidebar-title,
+.layout.sidebar-collapsed .sidebar .nav-link,
+.layout.sidebar-collapsed .sidebar .sidebar-actions button {
+  font-size: 0;
+}
+
+.layout.sidebar-collapsed .sidebar .nav-link::before {
+  font-size: 0.82rem;
+}
+
+.layout.sidebar-collapsed .sidebar .nav-link[href="./index.html"]::before {
+  content: "Index";
+}
+
+.layout.sidebar-collapsed .sidebar .nav-link[href="./home.html"]::before {
+  content: "Home";
+}
+
+.layout.sidebar-collapsed .sidebar .sidebar-actions button::before {
+  font-size: 0.82rem;
+}
+
+.layout.sidebar-collapsed .sidebar #togglePin::before {
+  content: "固定";
+}
+
+.layout.sidebar-collapsed .sidebar #toggleCollapse::before {
+  content: "展開";
+}
+
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .layout.sidebar-pinned .sidebar {
+    position: static;
+  }
+
+  .layout.sidebar-pinned .content {
+    margin-left: 0;
+  }
+
+  .sidebar,
+  .layout.sidebar-collapsed .sidebar {
+    width: 100%;
+  }
+
+  .layout.sidebar-collapsed .sidebar .sidebar-title,
+  .layout.sidebar-collapsed .sidebar .nav-link,
+  .layout.sidebar-collapsed .sidebar .sidebar-actions button {
+    font-size: inherit;
+  }
+
+  .layout.sidebar-collapsed .sidebar .nav-link::before,
+  .layout.sidebar-collapsed .sidebar .sidebar-actions button::before {
+    content: "";
+  }
+}
