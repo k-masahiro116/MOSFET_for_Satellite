@@ -5,14 +5,117 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home | MOSFET for Satellite</title>
   <link rel="stylesheet" href="../../styles.css">
+  <style>
+    .home-hero {
+      margin-bottom: 18px;
+    }
+
+    .home-hero p {
+      max-width: 860px;
+    }
+
+    .folder-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+    }
+
+    .folder-card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid #d7e2ee;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(10, 38, 58, 0.08);
+      padding: 16px;
+    }
+
+    .folder-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .folder-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #e2f0fb, #f2f9ff);
+      border: 1px solid #cde0f2;
+      color: #1b5473;
+      font-weight: 700;
+      font-size: 0.8rem;
+    }
+
+    .folder-title {
+      margin: 0;
+      color: #0f3a56;
+      font-size: 1.05rem;
+    }
+
+    .folder-path {
+      margin: 0 0 8px;
+      color: #4d6a7f;
+      font-size: 0.85rem;
+      font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+    }
+
+    .folder-body {
+      margin: 0;
+      color: #294b62;
+      line-height: 1.7;
+      font-size: 0.93rem;
+    }
+  </style>
 </head>
 <body class="content-page">
   <main class="page-body">
-    <h2>Home Page</h2>
-    <p>
-      こちらはベース画面の初期表示ページです。
-      サイドバーから別HTMLへ即座に切り替えできます。
-    </p>
+    <section class="home-hero">
+      <h2>Project Home</h2>
+      <p>
+        このページは `docs/research/pages` 配下の構成を素早く把握するためのガイドです。
+        役割ごとに分かれたフォルダをカードで確認し、サイドバーから対応ページへ移動できます。
+      </p>
+    </section>
+
+    <section class="folder-grid" aria-label="フォルダ説明カード">
+      <article class="folder-card">
+        <div class="folder-head">
+          <div class="folder-icon">OV</div>
+          <h3 class="folder-title">Overview</h3>
+        </div>
+        <p class="folder-path">docs/research/pages/overview</p>
+        <p class="folder-body">
+          プロジェクトの入口ページ群です。画面構成の説明、全体方針、基本的な導線など
+          「最初に見る情報」を集約します。
+        </p>
+      </article>
+
+      <article class="folder-card">
+        <div class="folder-head">
+          <div class="folder-icon">RS</div>
+          <h3 class="folder-title">Research</h3>
+        </div>
+        <p class="folder-path">docs/research/pages/research</p>
+        <p class="folder-body">
+          市場調査や技術調査の内容を蓄積するフォルダです。放射線環境下MOSFETの調査結果や、
+          用語集などのリファレンスをここに整理します。
+        </p>
+      </article>
+
+      <article class="folder-card">
+        <div class="folder-head">
+          <div class="folder-icon">RP</div>
+          <h3 class="folder-title">Reporting</h3>
+        </div>
+        <p class="folder-path">docs/research/pages/reporting</p>
+        <p class="folder-body">
+          報告書作成に必要なテンプレートと手順を管理するフォルダです。
+          Markdownベース、分析手法、フォーマット詳細を用途別に保持します。
+        </p>
+      </article>
+    </section>
   </main>
 </body>
 </html>

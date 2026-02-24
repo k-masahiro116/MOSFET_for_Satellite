@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>用語集 | MOSFET for Satellite</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <style>
+    .glossary-card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid #d7e2ee;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(10, 38, 58, 0.08);
+      padding: 18px 20px;
+      margin-bottom: 14px;
+    }
+
+    .glossary-card h3 {
+      margin: 0 0 8px;
+      color: #0f3a56;
+    }
+
+    .term-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.94rem;
+      background: rgba(255, 255, 255, 0.96);
+    }
+
+    .term-table th,
+    .term-table td {
+      border: 1px solid #d5e1ed;
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .term-table th {
+      background: #edf5fb;
+      color: #143f5b;
+      width: 24%;
+    }
+  </style>
+</head>
+<body class="content-page">
+  <main class="page-body">
+    <h2>用語集（やさしい説明）</h2>
+    <p>市場調査・放射線評価・報告書作成で使っている用語を、初学者でも読めるように整理しています。</p>
+
+    <section class="glossary-card">
+      <h3>1. デバイス・放射線関連</h3>
+      <table class="term-table">
+        <tbody>
+          <tr><th>MOSFET</th><td>電気のON/OFFを高速に切り替える半導体部品。電源回路でスイッチ役として使われる。</td></tr>
+          <tr><th>Rad-hard</th><td>強い放射線環境でも壊れにくいように設計・試験された部品。</td></tr>
+          <tr><th>Rad-tolerant</th><td>一定レベルの放射線には耐えるが、Rad-hardほど厳しい保証はしない部品。</td></tr>
+          <tr><th>TID</th><td>Total Ionizing Dose。時間をかけて蓄積する放射線ダメージの総量。</td></tr>
+          <tr><th>SEE</th><td>Single Event Effects。1回の粒子衝突で起きる瞬間的な誤動作や破壊。</td></tr>
+          <tr><th>SEB</th><td>Single Event Burnout。粒子衝突をきっかけにMOSFETが焼損する深刻な故障。</td></tr>
+          <tr><th>SEGR</th><td>Single Event Gate Rupture。ゲート絶縁膜が破壊される故障モード。</td></tr>
+          <tr><th>LET</th><td>粒子が物質中でどれだけ強くエネルギーを落とすかの指標。SEE評価で重要。</td></tr>
+          <tr><th>ディレーティング</th><td>定格いっぱいで使わず、余裕を持たせて運用する設計手法。</td></tr>
+          <tr><th>RHA</th><td>Radiation Hardness Assurance。放射線耐性を試験・管理して保証する活動。</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="glossary-card">
+      <h3>2. 宇宙市場・ミッション関連</h3>
+      <table class="term-table">
+        <tbody>
+          <tr><th>LEO</th><td>Low Earth Orbit。地球低軌道。比較的近い軌道で商業ミッションが多い。</td></tr>
+          <tr><th>MEO</th><td>Medium Earth Orbit。中軌道。LEOとGEOの中間で、測位衛星などに使われる。</td></tr>
+          <tr><th>GEO</th><td>Geostationary Earth Orbit。静止軌道。長寿命かつ高信頼要求が高い。</td></tr>
+          <tr><th>HEO</th><td>Highly Elliptical Orbit。高楕円軌道。地域観測や高緯度通信で使われることがある。</td></tr>
+          <tr><th>SSO</th><td>Sun-Synchronous Orbit。太陽同期軌道。毎回ほぼ同じ太陽条件で地表観測しやすい。</td></tr>
+          <tr><th>GTO</th><td>Geostationary Transfer Orbit。静止遷移軌道。GEOへ向かう途中の軌道。</td></tr>
+          <tr><th>Gateway</th><td>月周回に建設予定の拠点。高出力の電源系が必要。</td></tr>
+          <tr><th>CLPS</th><td>Commercial Lunar Payload Services。NASAの月面商業輸送プログラム。</td></tr>
+          <tr><th>Deep Space</th><td>地球周辺軌道より遠方（例: 月以遠）の探査領域。放射線・温度条件が厳しい。</td></tr>
+          <tr><th>Constellation</th><td>多数衛星を連携運用する構成。通信や測位サービスで使われる。</td></tr>
+          <tr><th>Hosted Payload</th><td>他社衛星に機器を相乗り搭載する方式。短期間で宇宙実証しやすい。</td></tr>
+          <tr><th>Rideshare</th><td>1回の打上げに複数顧客の衛星を相乗りさせる打上げ方式。</td></tr>
+          <tr><th>Space Tug / OTV</th><td>Orbit Transfer Vehicle。衛星を別軌道へ運ぶ宇宙輸送機。</td></tr>
+          <tr><th>In-Orbit Service</th><td>軌道上での点検・延命・補給・除去などのサービス。</td></tr>
+          <tr><th>Debris Mitigation</th><td>宇宙ごみを増やさないための設計・運用ルールや対策。</td></tr>
+          <tr><th>Mission Assurance</th><td>ミッション成功のために品質・信頼性・安全性を確保する活動。</td></tr>
+          <tr><th>NewSpace</th><td>民間主導でスピードとコスト効率を重視する宇宙ビジネスの潮流。</td></tr>
+          <tr><th>Space Economy</th><td>宇宙関連の製造・打上げ・運用・サービスを含む経済圏全体。</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="glossary-card">
+      <h3>3. 市場分析・報告書関連</h3>
+      <table class="term-table">
+        <tbody>
+          <tr><th>TAM / SAM / SOM</th><td>市場規模を「全体」「狙う範囲」「実際に取れる範囲」に分ける考え方。</td></tr>
+          <tr><th>3C分析</th><td>Customer（顧客）・Competitor（競合）・Company（自社）で整理する手法。</td></tr>
+          <tr><th>STP分析</th><td>Segmentation・Targeting・Positioning。誰に何をどう売るかを決める手法。</td></tr>
+          <tr><th>SWOT</th><td>強み・弱み・機会・脅威を整理して戦略を考える手法。</td></tr>
+          <tr><th>PEST</th><td>政治・経済・社会・技術の外部環境を確認する手法。</td></tr>
+          <tr><th>Five Forces</th><td>業界の儲けやすさを5つの競争圧力で分析する手法。</td></tr>
+          <tr><th>ベンチマーク分析</th><td>他社や他方式と比較して差を可視化する分析。</td></tr>
+          <tr><th>感度分析</th><td>前提条件を動かして、結論がどれだけ変わるかを見る分析。</td></tr>
+          <tr><th>FMEA</th><td>故障モードごとに影響・発生可能性を評価し、対策優先度を決める手法。</td></tr>
+          <tr><th>トレーサビリティ</th><td>結論と根拠データを対応付け、後から追跡できる状態。</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

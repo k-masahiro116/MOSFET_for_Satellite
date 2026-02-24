@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>放射線環境下MOSFETの市場調査 | MOSFET for Satellite</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <style>
+    .section-card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid #d7e2ee;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(10, 38, 58, 0.08);
+      padding: 18px 20px;
+      margin-bottom: 14px;
+    }
+
+    .section-card h3 {
+      margin: 0 0 8px;
+      color: #0f3a56;
+    }
+
+    .section-card p {
+      margin: 0 0 8px;
+    }
+
+    .section-list {
+      margin: 8px 0 0;
+      padding-left: 20px;
+      color: #234b68;
+    }
+
+    .facts-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 0.94rem;
+      background: rgba(255, 255, 255, 0.96);
+    }
+
+    .facts-table th,
+    .facts-table td {
+      border: 1px solid #d5e1ed;
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .facts-table th {
+      background: #edf5fb;
+      color: #143f5b;
+    }
+
+    .source-list {
+      margin: 8px 0 0;
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body class="content-page">
+  <main class="page-body">
+    <h2>市場調査: 放射線環境下でのMOSFET研究</h2>
+    <p>作成日: 2026-02-24。衛星・宇宙用途の電源系における放射線対応MOSFETの市場性と技術要件を整理した初期調査。</p>
+
+    <section class="section-card">
+      <h3>1. エグゼクティブサマリー</h3>
+      <ul class="section-list">
+        <li>宇宙経済は 2024 年に 6,130 億ドル規模に到達し、商用宇宙需要の拡大が継続。</li>
+        <li>放射線対応MOSFET市場は「高信頼（Rad-hard）」と「短期LEO向け（Rad-tolerant）」の2極化が進行。</li>
+        <li>技術課題は TID だけでなく SEE（SEB/SEGR）耐性が主要論点。</li>
+        <li>調達面では ECSS-Q-ST-60-15C Rev.1（2025）や MIL-PRF-19500 系の適合・試験証跡が競争力を左右。</li>
+      </ul>
+    </section>
+
+    <section class="section-card">
+      <h3>2. 市場環境（需要側）</h3>
+      <table class="facts-table">
+        <thead>
+          <tr>
+            <th>観点</th>
+            <th>確認できた事実</th>
+            <th>示唆</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>宇宙経済規模</td>
+            <td>Space Foundation は 2024 年の世界宇宙経済を 6,130 億ドルと公表。</td>
+            <td>宇宙電源コンポーネント需要の母集団は拡大基調。</td>
+          </tr>
+          <tr>
+            <td>商業比率</td>
+            <td>同レポートで商業セクター比率は高水準（約 78%）を維持。</td>
+            <td>コスト/納期重視の NewSpace 向け提案余地が大きい。</td>
+          </tr>
+          <tr>
+            <td>打上げペース</td>
+            <td>2025 上期は 149 回打上げ（同レポートのハイライト）。</td>
+            <td>衛星搭載用パワーデバイスの回転は速く、量産供給力が重要。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section-card">
+      <h3>3. 技術要件（放射線観点）</h3>
+      <ul class="section-list">
+        <li><strong>TID:</strong> 閾値電圧シフト、リーク増加、駆動余裕低下を引き起こす。</li>
+        <li><strong>SEE:</strong> MOSFETでは SEB（単一事象バーンアウト）と SEGR（ゲート破壊）が重要な破壊モード。</li>
+        <li><strong>設計含意:</strong> デバイス選定だけでなく、ディレーティング・保護回路・シールドの組合せ最適化が必要。</li>
+      </ul>
+      <p>歴史的研究でも、宇宙環境での重イオン起因 SEB/SEGR がパワーMOSFET信頼性の中心課題である点は一貫。</p>
+    </section>
+
+    <section class="section-card">
+      <h3>4. 供給側動向（競合・製品）</h3>
+      <table class="facts-table">
+        <thead>
+          <tr>
+            <th>企業/カテゴリ</th>
+            <th>公開情報（要点）</th>
+            <th>市場的な意味</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Microchip（Rad-hard）</td>
+            <td>2025-04-17 発表で、MIL-PRF-19500/746準拠のRad-hard MOSFETファミリ完了、JANSF 300 krad対応品を公表。</td>
+            <td>高信頼セグメントでの品揃え・認証訴求が強化。</td>
+          </tr>
+          <tr>
+            <td>Infineon/IR HiRel（Rad-hard）</td>
+            <td>SEE hardened、MIL-PRF-19500・ESCC系に基づくRHA情報を公開。P-channel/dual品を含む宇宙向け展開。</td>
+            <td>高信頼用途での選択肢が拡大、設計自由度向上。</td>
+          </tr>
+          <tr>
+            <td>Infineon（Rad-tolerant/LEO）</td>
+            <td>2025-03-05 にLEO 2〜5年ミッション向け放射線耐性MOSFET拡充を公表。</td>
+            <td>短期LEO向けにコスト最適化型の市場が拡大。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section-card">
+      <h3>5. 規格・認証動向</h3>
+      <ul class="section-list">
+        <li>ECSS-Q-ST-60-15C Rev.1（2025-03-20）で RHA プログラム要求が更新。</li>
+        <li>対象効果は TID / TNID / SEE を明示し、プロジェクト別テーラリングを前提。</li>
+        <li>MIL-PRF-19500 系準拠は米国防衛・宇宙調達の主要な実務基準として機能。</li>
+      </ul>
+    </section>
+
+    <section class="section-card">
+      <h3>6. 研究開発・事業検討への示唆</h3>
+      <ul class="section-list">
+        <li><strong>セグメント分離:</strong> GEO/深宇宙向け（高RHA）とLEO短期向け（コスト重視）を分けて要件設計する。</li>
+        <li><strong>評価優先順位:</strong> TID定格だけでなく、SEE限界（LET条件、バイアス条件）を比較表に必須化する。</li>
+        <li><strong>差別化軸:</strong> 放射線証跡に加え、供給継続性、パッケージ、リードタイムを調達評価へ統合する。</li>
+        <li><strong>短期アクション:</strong> 候補MOSFETの「ミッションプロファイル別」評価テンプレートを作成し、研究計画へ接続する。</li>
+      </ul>
+    </section>
+
+    <section class="section-card">
+      <h3>7. 問題事例（放射線とMOSFETの関係）</h3>
+      <p>公開情報で特定できる事例は、地上加速器試験や電源コンバータ評価の報告が中心で、ミッション名つきの詳細不具合公開は限定的。</p>
+      <table class="facts-table">
+        <thead>
+          <tr>
+            <th>事例</th>
+            <th>確認内容</th>
+            <th>設計上の含意</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>重イオン照射でのMOSFET恒久損傷</td>
+            <td>NASA NTRS（20020018904）で、特定条件下の照射によりコンバータ内MOSFETの一部が恒久損傷した報告。</td>
+            <td>素子単体評価だけでなく、コンバータ実装状態でのSEE試験が必須。</td>
+          </tr>
+          <tr>
+            <td>低線量域でのDC-DC異常停止</td>
+            <td>NASA/JPL系報告（20060029796）で、想定より低い線量で電源系が停止した事例を解析。</td>
+            <td>「Rad-hard表記」だけでは不十分。実装回路レベルでのマージン検証が必要。</td>
+          </tr>
+          <tr>
+            <td>SiC MOSFETのSEBしきい値問題</td>
+            <td>NASA関連研究（2018、NTRS 20180002440 / Aerospace 2018）で、定格耐圧の約50%以下でもSEBが発生し得ると報告。</td>
+            <td>高耐圧定格をそのまま運用せず、宇宙放射線下で大きくディレーティングする必要。</td>
+          </tr>
+          <tr>
+            <td>SEGR（ゲート破壊）モード</td>
+            <td>SEGRは宇宙用途パワーMOSFET特有の破壊モードとして古典文献から一貫して報告。</td>
+            <td>ゲート酸化膜ストレスとバイアス条件を含む試験計画を前提化。</td>
+          </tr>
+          <tr>
+            <td>大気中中性子によるSEB（地上高信頼用途）</td>
+            <td>商用SiC MOSFETで大気中性子起因SEBの故障解析報告（加速器試験）が公開。</td>
+            <td>宇宙用途だけでなく地上高信頼システムでも放射線起因破壊を考慮すべき。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section-card">
+      <h3>8. 宇宙空間全体でのMOSFET需要（衛星以外を含む）</h3>
+      <p>以下は公開情報に基づく事実と、そこから導ける需要含意（推定）を分けて整理したもの。</p>
+      <table class="facts-table">
+        <thead>
+          <tr>
+            <th>領域（衛星以外を含む）</th>
+            <th>確認できる事実</th>
+            <th>MOSFET需要への含意（推定）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>打上げ機・再突入機</td>
+            <td>FAAはFY2024に商業宇宙輸送148件を記録、FY2028には倍増見通しを提示。</td>
+            <td>機体内電源・アクチュエータ・分離機構・テレメトリ電源向けパワーMOSFET需要が増加。</td>
+          </tr>
+          <tr>
+            <td>有人輸送・ISS補給</td>
+            <td>NASAのCRS-2では計32ミッション発注（ISS補給継続）。</td>
+            <td>有人/貨物船の電源分配、バッテリー制御、熱制御向け高信頼MOSFET需要が継続。</td>
+          </tr>
+          <tr>
+            <td>月周回拠点（Gateway）</td>
+            <td>Gateway PPEは60kW級電力を扱う設計で、電力・推進・通信を統合。</td>
+            <td>高電力PDU、電動推進駆動、冗長電源系で放射線耐性MOSFET需要が大きい。</td>
+          </tr>
+          <tr>
+            <td>月面ランダー・ローバー（CLPS）</td>
+            <td>NASA CLPSは月面向け11件のデリバリー契約を実施済み（公表時点）。</td>
+            <td>着陸機・ローバーの電源変換、モータ駆動、ヒータ制御にMOSFET適用領域が拡大。</td>
+          </tr>
+          <tr>
+            <td>惑星探査ローバー</td>
+            <td>PerseveranceはMMRTGで約110W供給、活動時は最大900W需要。</td>
+            <td>長期探査機では高信頼電源スイッチング素子（MOSFET）の寿命・放射線耐性要求が高い。</td>
+          </tr>
+          <tr>
+            <td>商業宇宙サービス（研究・観光・輸送）</td>
+            <td>FAAは商業運用1,000件到達を公表し、ISS研究輸送や宇宙観光の拡大を明記。</td>
+            <td>多様な宇宙機カテゴリで、ミッション電源の標準部材としてMOSFET需要が裾野拡大。</td>
+          </tr>
+        </tbody>
+      </table>
+      <ul class="section-list">
+        <li><strong>需要構造:</strong> 「高RHA・少量高単価」と「短期ミッション向け中RHA・中量」の二層化が進行。</li>
+        <li><strong>設計上の重点:</strong> TIDよりSEE制約が先にボトルネック化するケースが多く、運用電圧ディレーティングが重要。</li>
+        <li><strong>事業上の重点:</strong> 素子性能だけでなく、RHA証跡・供給継続性・パッケージ選択の統合提案が有効。</li>
+      </ul>
+    </section>
+
+    <section class="section-card">
+      <h3>9. 参考情報（一次情報中心）</h3>
+      <ul class="source-list">
+        <li><a href="https://www.spacefoundation.org/2025/07/22/the-space-report-2025-q2/" target="_blank" rel="noopener noreferrer">Space Foundation: The Space Report 2025 Q2</a></li>
+        <li><a href="https://www.faa.gov/newsroom/new-record-faa-licensed-commercial-space-operations-aerospace-rulemaking-committee" target="_blank" rel="noopener noreferrer">FAA: New Record for FAA-Licensed Commercial Space Operations (FY2024=148)</a></li>
+        <li><a href="https://www.faa.gov/newsroom/us-transportation-secretary-duffy-faa-celebrate-milestone-1000th-commercial-space" target="_blank" rel="noopener noreferrer">FAA: 1,000th Commercial Space Operation Milestone (2025)</a></li>
+        <li><a href="https://www.nasa.gov/humans-in-space/nasa-orders-additional-cargo-flights-to-space-station/" target="_blank" rel="noopener noreferrer">NASA: Additional Cargo Flights to ISS (CRS-2 mission ordering)</a></li>
+        <li><a href="https://www.nasa.gov/centers-and-facilities/glenn/nasa-starts-up-gateways-power-system-for-first-time/" target="_blank" rel="noopener noreferrer">NASA: Gateway Power and Propulsion Element Power-Up (60kW)</a></li>
+        <li><a href="https://science.nasa.gov/lunar-science/programs/clps/" target="_blank" rel="noopener noreferrer">NASA: Commercial Lunar Payload Services (CLPS)</a></li>
+        <li><a href="https://science.nasa.gov/resource/441839/" target="_blank" rel="noopener noreferrer">NASA Science: Perseverance MMRTG (110W class)</a></li>
+        <li><a href="https://www.jpl.nasa.gov/news/press_kits/mars_2020/launch/mission/spacecraft/power/" target="_blank" rel="noopener noreferrer">JPL Mars 2020 Press Kit: Power demand up to 900W</a></li>
+        <li><a href="https://ecss.nl/standard/ecss-q-st-60-15c-rev-1-radiation-hardness-assurance-20-march-2025/" target="_blank" rel="noopener noreferrer">ECSS-Q-ST-60-15C Rev.1 (2025)</a></li>
+        <li><a href="https://www.microchip.com/en-us/about/news-releases/products/microchip-completes-radiation-hardened-power-mosfet-family" target="_blank" rel="noopener noreferrer">Microchip News Release (2025-04-17)</a></li>
+        <li><a href="https://www.infineon.com/cms/en/about-infineon/press/market-news/2025/INFPSS202503-071.html" target="_blank" rel="noopener noreferrer">Infineon Market News (2025-03-05)</a></li>
+        <li><a href="https://www.infineon.com/products/high-reliability/space/power/rad-hard-mosfets/dual-power-mosfets" target="_blank" rel="noopener noreferrer">Infineon IR HiRel Rad Hard MOSFET Information</a></li>
+        <li><a href="https://www.osti.gov/biblio/242433" target="_blank" rel="noopener noreferrer">IEEE TNS (1996) SEGR/SEB in Vertical Power MOSFETs (OSTI)</a></li>
+        <li><a href="https://www.osti.gov/biblio/6599023" target="_blank" rel="noopener noreferrer">IEEE TED (1993) Single-Event Burnout Simulation (OSTI)</a></li>
+        <li><a href="https://ntrs.nasa.gov/citations/20020018904" target="_blank" rel="noopener noreferrer">NASA NTRS: Radiation Effects on DC-DC Converters (2001)</a></li>
+        <li><a href="https://ntrs.nasa.gov/citations/20060029796" target="_blank" rel="noopener noreferrer">NASA NTRS: Low Dose Failures of Hardened DC-DC Power Converters (2002)</a></li>
+        <li><a href="https://ntrs.nasa.gov/citations/20180002440" target="_blank" rel="noopener noreferrer">NASA NTRS: Reliability Concerns for Flying SiC Power MOSFETs in Space (2018)</a></li>
+        <li><a href="https://www.mdpi.com/2226-4310/5/3/67" target="_blank" rel="noopener noreferrer">Aerospace 2018: Failure Estimates for SiC Power MOSFETs in Space Electronics</a></li>
+        <li><a href="https://www.sciencedirect.com/science/article/pii/0026271496002181" target="_blank" rel="noopener noreferrer">Microelectronics Reliability 1996: SEGR A unique failure mode for power MOSFETs in spacecraft</a></li>
+        <li><a href="https://www.sciencedirect.com/science/article/abs/pii/S0168583X2300157X" target="_blank" rel="noopener noreferrer">NIMB 2023: Terrestrial neutron induced failure rate measurement of SiC MOSFETs</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
