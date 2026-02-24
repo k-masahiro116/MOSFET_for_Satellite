@@ -34,67 +34,145 @@
       margin: 8px 0;
       white-space: pre-wrap;
     }
+
+    .design-list {
+      margin: 8px 0;
+      padding-left: 20px;
+      color: #264b66;
+    }
+
+    .refs {
+      margin: 8px 0 0;
+      padding-left: 20px;
+    }
   </style>
 </head>
 <body class="content-page">
   <main class="page-body">
     <h2>報告書の基本構成を具体的に書く方法</h2>
-    <p>各章で何を書くかを「目的」「記載ポイント」「書き方テンプレート」で整理します。</p>
+    <p>各章を「設計方針」「必須アウトプット」「品質チェック」の観点で定義し、実務で再利用できる構成にします。</p>
 
     <section class="sheet">
       <h3>1. 背景</h3>
       <p><strong>目的:</strong> なぜこの調査・検討が必要かを説明する。</p>
-      <p><strong>記載ポイント:</strong> 市場や技術の変化、現状課題、放置時のリスク。</p>
+      <p><strong>設計方針:</strong> 「外部環境→現状課題→放置リスク」の順で、読む側が緊急度を判断できる流れにする。</p>
+      <ul class="design-list">
+        <li>必須アウトプット: 市場/技術トレンドの客観データ、現状の制約、影響範囲。</li>
+        <li>品質チェック: 根拠の出典日が明記されているか、課題が抽象語だけで終わっていないか。</li>
+      </ul>
       <div class="template">例: 「衛星向け電源系では高効率化要求が強まっており、従来素子では損失が課題となっている。」</div>
     </section>
 
     <section class="sheet">
       <h3>2. 目的</h3>
       <p><strong>目的:</strong> 報告書で何を判断するかを明示する。</p>
-      <p><strong>記載ポイント:</strong> 判断対象、評価基準、達成条件。</p>
+      <p><strong>設計方針:</strong> 目的は「意思決定文」にする。調査の実施目的ではなく、最終的に決めることを明記する。</p>
+      <ul class="design-list">
+        <li>必須アウトプット: 判断対象、評価基準、達成条件、適用期間。</li>
+        <li>品質チェック: 「何を決めるか」が1文で明確か、評価基準が定量化されているか。</li>
+      </ul>
       <div class="template">例: 「本調査の目的は、2026年度設計に向けて候補MOSFETの優先順位を決定することである。」</div>
     </section>
 
     <section class="sheet">
       <h3>3. 条件（前提）</h3>
       <p><strong>目的:</strong> 比較や結論に影響する前提を固定する。</p>
-      <p><strong>記載ポイント:</strong> 電圧/電流範囲、温度条件、想定寿命、評価環境。</p>
+      <p><strong>設計方針:</strong> 条件は「変えない前提」と「変動させる試験条件」に分けて記述する。</p>
+      <ul class="design-list">
+        <li>必須アウトプット: 電圧/電流範囲、温度、寿命、環境条件、除外条件。</li>
+        <li>品質チェック: 単位と許容範囲が統一されているか、前提抜けで比較不能になっていないか。</li>
+      </ul>
       <div class="template">例: 「評価条件は Bus 28V、ピーク電流 8A、周囲温度 -20〜60°C、連続運転 1,000h とする。」</div>
     </section>
 
     <section class="sheet">
       <h3>4. 実施内容（方法）</h3>
       <p><strong>目的:</strong> 再現できる手順として実施内容を示す。</p>
-      <p><strong>記載ポイント:</strong> データ源、測定手順、比較手法、除外条件。</p>
+      <p><strong>設計方針:</strong> 「誰が再実施しても同じ結果が得られる粒度」で、手順と使用データを明示する。</p>
+      <ul class="design-list">
+        <li>必須アウトプット: 手順フロー、測定点、使用ツール、データ取得条件、比較ロジック。</li>
+        <li>品質チェック: 再現不能な暗黙手順がないか、除外データの理由が明示されているか。</li>
+      </ul>
       <div class="template">例: 「候補3品番を同一治具で測定し、損失・温度上昇・スイッチング波形を比較した。」</div>
     </section>
 
     <section class="sheet">
       <h3>5. 結果</h3>
       <p><strong>目的:</strong> 観測事実を主観なしで整理する。</p>
-      <p><strong>記載ポイント:</strong> 数値、図表、最大/平均、ばらつき、異常有無。</p>
+      <p><strong>設計方針:</strong> 結果章では解釈を書かず、比較可能な数値と図表の整合性を優先する。</p>
+      <ul class="design-list">
+        <li>必須アウトプット: 原データサマリ、代表値（平均/最大/最小）、ばらつき、異常イベント。</li>
+        <li>品質チェック: 図表番号と本文参照が一致しているか、単位と桁が混在していないか。</li>
+      </ul>
       <div class="template">例: 「品番Aは平均損失 1.8W、最大接合温度 92°C で、他候補より温度余裕が 6°C 高かった。」</div>
     </section>
 
     <section class="sheet">
       <h3>6. 考察</h3>
       <p><strong>目的:</strong> 結果の意味と要因を説明する。</p>
-      <p><strong>記載ポイント:</strong> 結果差の原因仮説、前提との整合、リスク評価。</p>
+      <p><strong>設計方針:</strong> 「事実→解釈→根拠→不確実性」の順で書き、断定と仮説を区別する。</p>
+      <ul class="design-list">
+        <li>必須アウトプット: 原因仮説、対立仮説、検証の不足点、設計判断への影響。</li>
+        <li>品質チェック: 事実と推定が混在していないか、反証可能性が示されているか。</li>
+      </ul>
       <div class="template">例: 「品番Aの優位性は低Rds(on)に加え、ゲート電荷が小さくスイッチング損失が抑制されたためと推定される。」</div>
     </section>
 
     <section class="sheet">
       <h3>7. 結論</h3>
       <p><strong>目的:</strong> 意思決定内容を明確にする。</p>
-      <p><strong>記載ポイント:</strong> 採用候補、採用根拠、採用条件。</p>
+      <p><strong>設計方針:</strong> 結論は「採用判断 + 条件 + 保留事項」の3点セットで記述し、次アクションへ接続する。</p>
+      <ul class="design-list">
+        <li>必須アウトプット: 採用/不採用判断、判断根拠の要約、条件付き事項、意思決定日。</li>
+        <li>品質チェック: 結果章と矛盾していないか、判断の責任範囲が明示されているか。</li>
+      </ul>
       <div class="template">例: 「現時点では品番Aを第一候補とし、放射線試験結果が基準を満たすことを採用条件とする。」</div>
     </section>
 
     <section class="sheet">
       <h3>8. 課題・次アクション</h3>
       <p><strong>目的:</strong> 未解決事項と次の実行計画を接続する。</p>
-      <p><strong>記載ポイント:</strong> 追加試験、担当、期限、レビュー日。</p>
+      <p><strong>設計方針:</strong> 課題は必ず「担当者・期限・完了条件」を持つチケット形式で定義する。</p>
+      <ul class="design-list">
+        <li>必須アウトプット: 課題一覧、優先度、担当、期限、完了判定、レビュー日程。</li>
+        <li>品質チェック: 実行主体が曖昧でないか、期限なき課題が残っていないか。</li>
+      </ul>
       <div class="template">例: 「3月第2週までに重イオン試験計画を確定し、3月末レビューで採用可否を最終判断する。」</div>
+    </section>
+
+    <section class="sheet">
+      <h3>9. スライドに差し込む具体例（そのまま使用可）</h3>
+      <p><strong>用途:</strong> 報告書本文の要点をスライド1枚に圧縮する際の例。</p>
+      <div class="template">スライド例A: 市場調査サマリー
+タイトル: 「衛星電源向けMOSFET市場調査（前段階）」
+要点:
+- 世界半導体市場は2024年に6,276億ドル（前年比+19.1%）
+- 宇宙経済は2024年に6,130億ドル、衛星産業収益は2,930億ドル
+- 結論: 高効率・高信頼MOSFETの評価優先度を上げる
+次アクション:
+- 候補3品番の比較評価計画を3月第2週までに確定</div>
+
+      <div class="template">スライド例B: 技術評価サマリー
+タイトル: 「候補MOSFETの初期比較結果」
+要点:
+- 品番A: 平均損失1.8W、最大接合温度92°C
+- 品番B: 平均損失2.3W、温度余裕がA比で-6°C
+- 品番C: コスト優位だが高温条件で効率低下
+結論:
+- 現時点の第一候補は品番A
+残課題:
+- 放射線試験結果を確認後に最終採否判断</div>
+    </section>
+
+    <section class="sheet">
+      <h3>10. 参考にできる報告書フォーマット</h3>
+      <p>以下は報告書構成・体裁設計の参考に使える公開テンプレートです。</p>
+      <ul class="refs">
+        <li><a href="https://www.ieee.org/conferences/publishing/templates.html" target="_blank" rel="noopener noreferrer">IEEE Templates (Technical Paper Format)</a></li>
+        <li><a href="https://www.overleaf.com/latex/templates/tagged/report" target="_blank" rel="noopener noreferrer">Overleaf Report Templates</a></li>
+        <li><a href="https://owl.purdue.edu/owl/subject_specific_writing/professional_technical_writing/index.html" target="_blank" rel="noopener noreferrer">Purdue OWL: Professional / Technical Writing</a></li>
+        <li><a href="https://create.microsoft.com/en-us/templates/reports" target="_blank" rel="noopener noreferrer">Microsoft Report Templates</a></li>
+      </ul>
     </section>
   </main>
 </body>

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>分析手法まとめ | MOSFET for Satellite</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <style>
+    .method-card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid #d7e2ee;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(10, 38, 58, 0.08);
+      padding: 18px 20px;
+      margin-bottom: 14px;
+    }
+
+    .method-card h3 {
+      margin: 0 0 8px;
+      color: #0f3a56;
+    }
+
+    .method-card p {
+      margin: 0 0 8px;
+    }
+
+    .method-list {
+      margin: 8px 0 0;
+      padding-left: 20px;
+      color: #234b68;
+    }
+
+    .use-case {
+      background: #f3f8fc;
+      border: 1px solid #d5e3f0;
+      border-radius: 10px;
+      padding: 10px 12px;
+      color: #22455e;
+      font-size: 0.94rem;
+      margin-top: 8px;
+      white-space: pre-wrap;
+    }
+
+    .method-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 0.94rem;
+      background: rgba(255, 255, 255, 0.96);
+    }
+
+    .method-table th,
+    .method-table td {
+      border: 1px solid #d5e1ed;
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .method-table th {
+      background: #edf5fb;
+      color: #143f5b;
+    }
+
+    .refs {
+      margin: 8px 0 0;
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body class="content-page">
+  <main class="page-body">
+    <h2>分析手法まとめ</h2>
+    <p>このページは、報告書作成時に使う分析手法を拡張整理した実務用リファレンスです。市場調査で有効な手法を優先表示し、下部に場面別対応表を掲載しています。</p>
+
+    <section class="method-card">
+      <h3>優先: 市場調査で有効な分析手法（先に使うべき順）</h3>
+      <p><strong>使い方:</strong> まず下記の優先手法を適用し、その後に統計系手法で定量補強する構成が実務で最も再現性が高い。</p>
+      <table class="method-table">
+        <thead>
+          <tr>
+            <th>優先度</th>
+            <th>分析手法</th>
+            <th>有効な場面</th>
+            <th>主なアウトプット</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>TAM/SAM/SOM</td>
+            <td>市場規模を段階的に絞り込み、参入余地を把握したい</td>
+            <td>市場規模の3層定義、対象セグメント別売上ポテンシャル</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>3C分析</td>
+            <td>顧客要求・競合状況・自社強みを同時に整理したい</td>
+            <td>顧客課題、競合ポジション、自社優位性仮説</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>STP分析</td>
+            <td>狙う市場とターゲットを明確化したい</td>
+            <td>セグメント定義、優先ターゲット、訴求軸</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Five Forces</td>
+            <td>収益性と参入障壁を構造的に評価したい</td>
+            <td>業界構造の圧力評価、参入/撤退リスク</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>PEST</td>
+            <td>規制・政策・技術変化が需要に与える影響を見たい</td>
+            <td>外部環境変化と影響シナリオ</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>SWOT</td>
+            <td>内部/外部要因を戦略案に接続したい</td>
+            <td>重点戦略、回避すべきリスク、差別化ポイント</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>ベンチマーク分析</td>
+            <td>競合比較の説得力を高めたい</td>
+            <td>比較表、ギャップ分析、優先改善項目</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>シナリオ分析</td>
+            <td>将来不確実性を含めて意思決定したい</td>
+            <td>楽観/基準/悲観の3シナリオ別戦略</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="use-case">推奨フロー:
+1) TAM/SAM/SOMで市場規模を定義
+2) 3C + STPで狙う顧客と勝ち筋を整理
+3) Five Forces + PESTで外部圧力を評価
+4) SWOT + ベンチマークで戦略を確定
+5) シナリオ分析で最終意思決定の頑健性を確認</div>
+    </section>
+
+    <section class="method-card">
+      <h3>0. TAM / SAM / SOM（市場規模分解）</h3>
+      <p><strong>目的:</strong> 市場機会を「全体→狙う市場→獲得可能市場」で定量化する。</p>
+      <ul class="method-list">
+        <li>使いどころ: 研究テーマの投資妥当性を初期判断するとき。</li>
+        <li>注意点: トップダウン値だけでなく、ボトムアップ推計で検証する。</li>
+      </ul>
+      <div class="use-case">例: 衛星電源向け半導体市場のTAMから、宇宙用途かつ対象電力帯に限定したSAMを算出し、調達可能チャネルを踏まえてSOMを推定する。</div>
+    </section>
+
+    <section class="method-card">
+      <h3>0.1 STP分析（Segmentation / Targeting / Positioning）</h3>
+      <p><strong>目的:</strong> どの顧客層に、どの価値で勝つかを明確にする。</p>
+      <ul class="method-list">
+        <li>使いどころ: 市場は広いが、参入リソースが限られているとき。</li>
+        <li>注意点: セグメントは規模だけでなく、課題の深さと支払意思で評価する。</li>
+      </ul>
+      <div class="use-case">例: 「小型衛星バス向け高信頼電源」を第一ターゲットに設定し、競合より高い温度耐性をポジショニング軸にする。</div>
+    </section>
+
+    <section class="method-card">
+      <h3>0.2 Five Forces（業界構造分析）</h3>
+      <p><strong>目的:</strong> 市場の儲けやすさと構造的リスクを見極める。</p>
+      <ul class="method-list">
+        <li>使いどころ: 参入/撤退判断や価格戦略を検討するとき。</li>
+        <li>注意点: 競争企業だけでなく、代替技術と買い手交渉力を必ず評価する。</li>
+      </ul>
+      <div class="use-case">例: 認証ハードルと長期調達要件により新規参入障壁が高い一方、特定顧客への依存で買い手交渉力が高いことを確認する。</div>
+    </section>
+
+    <section class="method-card">
+      <h3>1. 記述統計（Descriptive Statistics）</h3>
+      <p><strong>目的:</strong> データの全体像を把握する。</p>
+      <ul class="method-list">
+        <li>算出項目: 平均、中央値、最大/最小、標準偏差、四分位範囲。</li>
+        <li>使いどころ: 候補比較の初期スクリーニング。</li>
+        <li>注意点: 外れ値の影響を確認し、中央値も併記する。</li>
+      </ul>
+      <div class="use-case">例: 候補MOSFET3品番の損失値を比較し、平均と95パーセンタイルで優先候補を絞る。</div>
+    </section>
+
+    <section class="method-card">
+      <h3>2. 比較評価マトリクス（Weighted Matrix）</h3>
+      <p><strong>目的:</strong> 複数評価軸を統合して順位付けする。</p>
+      <ul class="method-list">
+        <li>評価軸例: 効率、熱特性、信頼性、コスト、調達性。</li>
+        <li>使いどころ: 最終候補の選定、採用理由の説明。</li>
+        <li>注意点: 重み設定の根拠を別表で管理する。</li>
+      </ul>
+      <div class="use-case">例: 「効率40%、信頼性30%、コスト20%、調達性10%」で総合スコアを算出する。</div>
+    </section>
+
+    <section class="method-card">
+      <h3>3. 感度分析（Sensitivity Analysis）</h3>
+      <p><strong>目的:</strong> 前提条件の変化が結論に与える影響を確認する。</p>
+      <ul class="method-list">
+        <li>変動パラメータ: 温度、負荷率、スイッチング周波数、価格。</li>
+        <li>使いどころ: 条件付き結論の妥当性検証。</li>
+        <li>注意点: 単一変数だけでなく主要2変数の組み合わせも確認する。</li>
+      </ul>
+      <div class="use-case">例: 周囲温度を -20°C から 60°C に変化させたときの温度余裕低下量を比較する。</div>
+    </section>
+
+    <section class="method-card">
+      <h3>4. リスク分析（Risk Register + Severity/Priority）</h3>
+      <p><strong>目的:</strong> 不確実性を可視化して対策優先度を決める。</p>
+      <ul class="method-list">
+        <li>評価軸: 影響度、発生確率、検出容易性。</li>
+        <li>使いどころ: 未確定要素が多い初期段階の意思決定。</li>
+        <li>注意点: 「回避策」「代替案」「トリガ条件」を必ず定義する。</li>
+      </ul>
+      <div class="use-case">例: 放射線耐性データ未取得を高優先リスクとして登録し、試験計画を先行させる。</div>
+    </section>
+
+    <section class="method-card">
+      <h3>5. 市場・競合分析（3C / SWOT / PEST）</h3>
+      <p><strong>目的:</strong> 外部環境と競争ポジションを構造化する。</p>
+      <ul class="method-list">
+        <li>3C: Customer / Competitor / Company の整合確認。</li>
+        <li>SWOT: 内部要因と外部要因を分離して戦略を導く。</li>
+        <li>PEST: 政策・経済・社会・技術の外部変化を整理。</li>
+      </ul>
+      <div class="use-case">例: 輸出規制の変化（PEST）と競合の調達網（3C）を統合し、調達リスクを評価する。</div>
+    </section>
+
+    <section class="method-card">
+      <h3>6. トレーサビリティ管理（Evidence Mapping）</h3>
+      <p><strong>目的:</strong> 結論と根拠の対応関係を明確にする。</p>
+      <ul class="method-list">
+        <li>管理項目: 結論ID、根拠データID、出典URL、取得日、前提条件。</li>
+        <li>使いどころ: レビュー、監査、将来の改訂。</li>
+        <li>注意点: 出典更新時に結論への影響評価を必ず実施する。</li>
+      </ul>
+      <div class="use-case">例: 「結論C-01」は「データD-03」「図F-02」に紐付け、再現可能性を担保する。</div>
+    </section>
+
+    <section class="method-card">
+      <h3>7. 仮説検定（Hypothesis Testing）</h3>
+      <p><strong>目的:</strong> 差が偶然か有意かを統計的に判定する。</p>
+      <ul class="method-list">
+        <li>主な手法: t検定、カイ二乗検定、比例差の検定。</li>
+        <li>使いどころ: 候補間性能差の「有意差」確認。</li>
+        <li>注意点: p値だけでなく効果量とサンプル数も併記する。</li>
+      </ul>
+      <div class="use-case">例: 品番A/Bの効率差が統計的に有意かを95%信頼水準で確認する。</div>
+    </section>
+
+    <section class="method-card">
+      <h3>8. 回帰分析・相関分析（Regression / Correlation）</h3>
+      <p><strong>目的:</strong> 変数間の関係を定量化し、予測や寄与度評価に使う。</p>
+      <ul class="method-list">
+        <li>主な手法: 単回帰、重回帰、相関係数。</li>
+        <li>使いどころ: 温度・負荷・周波数が損失へ与える影響分析。</li>
+        <li>注意点: 相関と因果を混同しない。外れ値と多重共線性を確認する。</li>
+      </ul>
+      <div class="use-case">例: スイッチング周波数と発熱の関係を回帰式化し設計値に反映する。</div>
+    </section>
+
+    <section class="method-card">
+      <h3>9. 分散分析（ANOVA）</h3>
+      <p><strong>目的:</strong> 3群以上の平均差を同時に比較する。</p>
+      <ul class="method-list">
+        <li>主な手法: 一元配置/二元配置ANOVA。</li>
+        <li>使いどころ: 複数品番や複数条件の比較。</li>
+        <li>注意点: 正規性・等分散性など前提条件を確認する。</li>
+      </ul>
+      <div class="use-case">例: 3品番×3温度条件で損失平均に差があるかを評価する。</div>
+    </section>
+
+    <section class="method-card">
+      <h3>10. 実験計画法（DOE）</h3>
+      <p><strong>目的:</strong> 最小実験回数で要因効果と交互作用を把握する。</p>
+      <ul class="method-list">
+        <li>主な手法: 直交配列、2水準要因実験、応答曲面法。</li>
+        <li>使いどころ: 評価条件が多く総当たり困難な場合。</li>
+        <li>注意点: 因子・水準定義とランダム化順序を明確化する。</li>
+      </ul>
+      <div class="use-case">例: ゲート抵抗・周波数・温度の3因子が効率へ与える寄与率を算出する。</div>
+    </section>
+
+    <section class="method-card">
+      <h3>11. 工程能力/管理図（SPC）</h3>
+      <p><strong>目的:</strong> 変動を監視し、異常兆候を早期検知する。</p>
+      <ul class="method-list">
+        <li>主な手法: X-bar-R管理図、P管理図、Cp/Cpk。</li>
+        <li>使いどころ: 継続測定の安定監視、品質保証。</li>
+        <li>注意点: 管理限界と規格限界を混同しない。</li>
+      </ul>
+      <div class="use-case">例: ロットごとのRds(on)変動を管理図で監視し異常ロットを検知する。</div>
+    </section>
+
+    <section class="method-card">
+      <h3>12. パレート分析（Pareto Analysis）</h3>
+      <p><strong>目的:</strong> 主要因を絞り、改善優先度を決める。</p>
+      <ul class="method-list">
+        <li>主な手法: パレート図（件数・損失額ベース）。</li>
+        <li>使いどころ: 不具合要因やコスト要因の優先順位付け。</li>
+        <li>注意点: 母集団と期間を固定し、比較可能にする。</li>
+      </ul>
+      <div class="use-case">例: 熱起因不具合のうち上位20%原因が全体影響の80%を占めるか確認する。</div>
+    </section>
+
+    <section class="method-card">
+      <h3>13. 特性要因図（Fishbone / Ishikawa）</h3>
+      <p><strong>目的:</strong> 問題原因を構造化して漏れなく洗い出す。</p>
+      <ul class="method-list">
+        <li>分類軸例: 人・設備・方法・材料・環境・測定。</li>
+        <li>使いどころ: 原因仮説の整理、レビュー準備。</li>
+        <li>注意点: 原因候補は事実データで検証可能な形にする。</li>
+      </ul>
+      <div class="use-case">例: 高温時効率低下の原因を回路・部材・環境要因で分解する。</div>
+    </section>
+
+    <section class="method-card">
+      <h3>14. 5 Whys</h3>
+      <p><strong>目的:</strong> 表層事象から根本原因へ掘り下げる。</p>
+      <ul class="method-list">
+        <li>主な手法: 「なぜ」を反復し因果連鎖を明確化。</li>
+        <li>使いどころ: 単発不具合の初動分析。</li>
+        <li>注意点: 推測だけで終えず、各段階で証拠を確認する。</li>
+      </ul>
+      <div class="use-case">例: 試験再現性が低い理由を測定手順・治具状態・校正履歴まで掘り下げる。</div>
+    </section>
+
+    <section class="method-card">
+      <h3>15. FMEA（故障モード影響解析）</h3>
+      <p><strong>目的:</strong> 故障モードごとのリスクを定量評価し対策優先度を決める。</p>
+      <ul class="method-list">
+        <li>評価軸: Severity / Occurrence / Detection。</li>
+        <li>使いどころ: 設計段階での予防的リスク低減。</li>
+        <li>注意点: 評価基準表を先に定義し、主観差を抑える。</li>
+      </ul>
+      <div class="use-case">例: ゲート絶縁破壊を高Severity項目として設計マージン増加を優先する。</div>
+    </section>
+
+    <section class="method-card">
+      <h3>16. モンテカルロシミュレーション</h3>
+      <p><strong>目的:</strong> 入力ばらつきが性能分布へ与える影響を確率的に評価する。</p>
+      <ul class="method-list">
+        <li>主な手法: 入力分布設定→反復試行→出力分布評価。</li>
+        <li>使いどころ: 許容差設計、ワーストケース確率評価。</li>
+        <li>注意点: 入力分布の妥当性とサンプル数を明示する。</li>
+      </ul>
+      <div class="use-case">例: 部品ばらつきと温度分布を反映し、効率95%保証条件を確認する。</div>
+    </section>
+
+    <section class="method-card">
+      <h3>17. ベンチマーク分析（Benchmarking）</h3>
+      <p><strong>目的:</strong> 他社・他案とのギャップを定量化する。</p>
+      <ul class="method-list">
+        <li>比較軸: 性能、コスト、供給性、実績、保守性。</li>
+        <li>使いどころ: 採用妥当性の外部説明。</li>
+        <li>注意点: 比較条件を揃え、同等条件で評価する。</li>
+      </ul>
+      <div class="use-case">例: 宇宙用途採用実績の有無を含めて候補品を相対評価する。</div>
+    </section>
+
+    <section class="method-card">
+      <h3>18. シナリオ分析（Scenario Analysis）</h3>
+      <p><strong>目的:</strong> 外部環境変化に対する戦略頑健性を確認する。</p>
+      <ul class="method-list">
+        <li>主な手法: 楽観/基準/悲観シナリオ比較。</li>
+        <li>使いどころ: 規制変更や供給制約リスクの事前評価。</li>
+        <li>注意点: シナリオ間で前提を明文化し、混在させない。</li>
+      </ul>
+      <div class="use-case">例: 輸出規制強化シナリオ時の代替調達可否を評価する。</div>
+    </section>
+
+    <section class="method-card">
+      <h3>19. 場面別に有効な分析手法（クイック選定表）</h3>
+      <table class="method-table">
+        <thead>
+          <tr>
+            <th>場面</th>
+            <th>有効な手法</th>
+            <th>狙い</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>候補を絞りたい（初期）</td>
+            <td>記述統計 / パレート / 比較評価マトリクス</td>
+            <td>短時間で有望候補を抽出する</td>
+          </tr>
+          <tr>
+            <td>差が本当に有意か確認したい</td>
+            <td>仮説検定 / ANOVA</td>
+            <td>偶然差を排除して判断精度を上げる</td>
+          </tr>
+          <tr>
+            <td>要因の影響度を知りたい</td>
+            <td>回帰分析 / DOE / 感度分析</td>
+            <td>支配要因を特定し設計最適化する</td>
+          </tr>
+          <tr>
+            <td>品質ばらつきを管理したい</td>
+            <td>SPC（管理図） / 工程能力指数</td>
+            <td>異常兆候の早期検知と安定運用</td>
+          </tr>
+          <tr>
+            <td>不具合原因を特定したい</td>
+            <td>Fishbone / 5 Whys / FMEA</td>
+            <td>根本原因の特定と再発防止</td>
+          </tr>
+          <tr>
+            <td>不確実性を含めて評価したい</td>
+            <td>モンテカルロ / シナリオ分析 / リスク分析</td>
+            <td>将来変動を踏まえた頑健な意思決定</td>
+          </tr>
+          <tr>
+            <td>市場・競合を整理したい</td>
+            <td>3C / SWOT / PEST / ベンチマーク</td>
+            <td>戦略方針と差別化要因の明確化</td>
+          </tr>
+          <tr>
+            <td>監査やレビュー対応を強化したい</td>
+            <td>トレーサビリティ管理（Evidence Mapping）</td>
+            <td>結論の根拠説明と改訂容易性の確保</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="method-card">
+      <h3>20. 参考情報（収集元）</h3>
+      <ul class="refs">
+        <li><a href="https://www.itl.nist.gov/div898/handbook/" target="_blank" rel="noopener noreferrer">NIST/SEMATECH e-Handbook of Statistical Methods</a></li>
+        <li><a href="https://asq.org/quality-resources/fmea" target="_blank" rel="noopener noreferrer">ASQ: FMEA</a></li>
+        <li><a href="https://asq.org/quality-resources/fishbone" target="_blank" rel="noopener noreferrer">ASQ: Fishbone (Ishikawa) Diagram</a></li>
+        <li><a href="https://asq.org/quality-resources/pareto" target="_blank" rel="noopener noreferrer">ASQ: Pareto Chart</a></li>
+        <li><a href="https://asq.org/quality-resources/five-whys" target="_blank" rel="noopener noreferrer">ASQ: 5 Whys</a></li>
+        <li><a href="https://www.iso.org/iso-31000-risk-management.html" target="_blank" rel="noopener noreferrer">ISO 31000: Risk Management</a></li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
