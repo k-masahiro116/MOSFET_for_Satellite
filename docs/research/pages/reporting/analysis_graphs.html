@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>分析手順グラフ | MOSFET for Satellite</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <style>
+    .graph-card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid #d7e2ee;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(10, 38, 58, 0.08);
+      padding: 18px 20px;
+      margin-bottom: 14px;
+    }
+
+    .graph-card h3 {
+      margin: 0 0 8px;
+      color: #0f3a56;
+    }
+
+    .graph-card p {
+      margin: 0 0 12px;
+      color: #2f556f;
+    }
+
+    .tree-root {
+      border: 1px solid #c7dceb;
+      border-radius: 12px;
+      padding: 12px;
+      background: #f8fcff;
+    }
+
+    .tree-node {
+      background: #ffffff;
+      border: 1px solid #d7e2ee;
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 0.92rem;
+      color: #21485f;
+      box-shadow: 0 3px 10px rgba(10, 38, 58, 0.05);
+      text-align: center;
+    }
+
+    .tree-lv1 {
+      display: grid;
+      gap: 12px;
+      margin-top: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .tree-lv2 {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .arrow {
+      text-align: center;
+      color: #3f6881;
+      font-weight: 700;
+      margin: 6px 0;
+    }
+
+    .flow-grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .flow-step {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      align-items: center;
+      gap: 10px;
+      background: #ffffff;
+      border: 1px solid #d7e2ee;
+      border-radius: 10px;
+      padding: 10px 12px;
+      color: #224a61;
+    }
+
+    .flow-no {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      background: linear-gradient(135deg, #e2f0fb, #f2f9ff);
+      border: 1px solid #cde0f2;
+      color: #1b5473;
+      font-size: 0.85rem;
+    }
+
+    .flow-arrow {
+      text-align: center;
+      color: #416983;
+      font-weight: 700;
+      margin: -2px 0;
+    }
+
+    .phase-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 0.94rem;
+      background: rgba(255, 255, 255, 0.96);
+    }
+
+    .phase-table th,
+    .phase-table td {
+      border: 1px solid #d5e1ed;
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .phase-table th {
+      background: #edf5fb;
+      color: #143f5b;
+    }
+
+    .todo-list {
+      margin: 6px 0 0;
+      padding-left: 20px;
+      color: #234b68;
+    }
+  </style>
+</head>
+<body class="content-page">
+  <main class="page-body">
+    <h2>分析手順グラフ</h2>
+    <p>市場調査と技術評価の手順を、ロジックツリーとフロー図で整理したページです。</p>
+
+    <section class="graph-card">
+      <h3>1. ロジックツリー（市場調査 → 技術評価 → 判断）</h3>
+      <p>「何を分析して最終判断するか」を分解した構造です。</p>
+      <div class="tree-root">
+        <div class="tree-node">最終判断: 対象MOSFETを採用するか</div>
+        <div class="arrow">↓</div>
+        <div class="tree-lv1">
+          <div>
+            <div class="tree-node">A. 市場性は十分か</div>
+            <div class="tree-lv2">
+              <div class="tree-node">A1. TAM/SAM/SOMで需要規模確認</div>
+              <div class="tree-node">A2. 3C/STPで狙う顧客を特定</div>
+              <div class="tree-node">A3. Five Forces/PESTで外部圧力評価</div>
+            </div>
+          </div>
+          <div>
+            <div class="tree-node">B. 技術成立性はあるか</div>
+            <div class="tree-lv2">
+              <div class="tree-node">B1. TID/SEE耐性（SEB/SEGR）確認</div>
+              <div class="tree-node">B2. 効率・温度・波形を評価</div>
+              <div class="tree-node">B3. 感度分析で条件依存性を確認</div>
+            </div>
+          </div>
+          <div>
+            <div class="tree-node">C. 調達成立性はあるか</div>
+            <div class="tree-lv2">
+              <div class="tree-node">C1. 規格/認証適合（ECSS/MIL）</div>
+              <div class="tree-node">C2. 供給継続性・リードタイム確認</div>
+              <div class="tree-node">C3. 代替候補とリスク対策を準備</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="graph-card">
+      <h3>2. 実行フロー（分析手順）</h3>
+      <p>実務で迷わないように、着手順と完了条件を意識したフローにしています。</p>
+      <div class="flow-grid">
+        <div class="flow-step"><div class="flow-no">1</div><div>調査目的とGo/No-Go基準を定義（何を決めるか1文で固定）</div></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-step"><div class="flow-no">2</div><div>市場情報収集（TAM/SAM/SOM・3C・STPで対象市場を絞る）</div></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-step"><div class="flow-no">3</div><div>外部環境評価（Five Forces・PEST・シナリオ分析）</div></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-step"><div class="flow-no">4</div><div>候補デバイス一次比較（仕様・放射線定格・供給性）</div></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-step"><div class="flow-no">5</div><div>実装評価（効率・温度・波形・異常時挙動）</div></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-step"><div class="flow-no">6</div><div>統合分析（評価マトリクス・感度分析・リスク分析）</div></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-step"><div class="flow-no">7</div><div>報告書化（根拠トレーサビリティ + スライド要約）</div></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-step"><div class="flow-no">8</div><div>レビューで最終判断（採用/保留/除外）</div></div>
+      </div>
+    </section>
+
+    <section class="graph-card">
+      <h3>3. まず着手する順番（実行版）</h3>
+      <p>1周目はこの順序で進めると、手戻りを最小化できます。</p>
+      <table class="phase-table">
+        <thead>
+          <tr>
+            <th>順番</th>
+            <th>実施内容</th>
+            <th>完了条件（Done）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Step 1</td>
+            <td>目的・判定基準を確定</td>
+            <td>採用/保留/除外の判断基準が数値化されている</td>
+          </tr>
+          <tr>
+            <td>Step 2</td>
+            <td>市場調査（TAM/SAM/SOM + 3C + STP）</td>
+            <td>対象市場・顧客・競合の要約表が完成</td>
+          </tr>
+          <tr>
+            <td>Step 3</td>
+            <td>候補デバイス一次比較</td>
+            <td>候補と除外理由が明記され、上位3候補に絞れている</td>
+          </tr>
+          <tr>
+            <td>Step 4</td>
+            <td>実装評価（ベンチ）</td>
+            <td>効率・温度・波形比較が同一形式で揃っている</td>
+          </tr>
+          <tr>
+            <td>Step 5</td>
+            <td>統合分析 + 報告書化</td>
+            <td>評価マトリクスとリスク表を含むレビュー資料が完成</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="graph-card">
+      <h3>4. 意思決定ゲート（止める/進める判断点）</h3>
+      <ul class="todo-list">
+        <li>Gate A（市場性）: 市場規模や顧客適合が基準未満なら、評価範囲を縮小する。</li>
+        <li>Gate B（技術成立性）: TID/SEE要件未達の候補は、この時点で除外する。</li>
+        <li>Gate C（調達成立性）: 供給継続性や証跡不足の候補は保留にする。</li>
+        <li>Gate D（最終）: 市場性・技術成立性・調達成立性の3軸が揃った案のみ採用提案する。</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

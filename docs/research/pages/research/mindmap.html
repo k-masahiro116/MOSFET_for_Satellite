@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research Mindmap | MOSFET for Satellite</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <style>
+    .mindmap-page {
+      min-height: 100vh;
+      padding: 18px;
+      display: grid;
+      place-items: center;
+    }
+
+    .mindmap-shell {
+      width: min(1500px, 100%);
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid #d7e2ee;
+      border-radius: 16px;
+      box-shadow: 0 14px 34px rgba(10, 38, 58, 0.12);
+      padding: 14px;
+      backdrop-filter: blur(4px);
+      overflow: auto;
+    }
+
+    .mindmap-title {
+      margin: 0 0 10px;
+      font-size: 1rem;
+      color: #244b63;
+      letter-spacing: 0.01em;
+    }
+
+    .mermaid {
+      min-width: 1100px;
+    }
+
+    .mindmap-toolbar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .zoom-btn {
+      border: 1px solid #c3d8e8;
+      background: #ffffff;
+      color: #204960;
+      border-radius: 8px;
+      padding: 6px 10px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .zoom-level {
+      color: #3e6279;
+      font-size: 0.88rem;
+      min-width: 54px;
+      text-align: center;
+    }
+
+    .mindmap-viewport {
+      overflow: auto;
+      border: 1px solid #d7e2ee;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.75);
+      cursor: grab;
+    }
+
+    .mindmap-viewport:active {
+      cursor: grabbing;
+    }
+
+    .mindmap-canvas {
+      transform-origin: top left;
+      transition: transform 0.15s ease;
+      width: fit-content;
+      padding: 10px;
+    }
+  </style>
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: "base",
+      themeVariables: {
+        fontFamily: "Avenir Next, Hiragino Kaku Gothic ProN, Yu Gothic, sans-serif",
+        fontSize: "14px",
+        primaryColor: "#eef6fd",
+        primaryTextColor: "#173f5b",
+        primaryBorderColor: "#bcd5ea",
+        lineColor: "#6f95ad",
+        tertiaryColor: "#f7fbff",
+        background: "#f6fbff"
+      },
+      flowchart: {
+        curve: "basis",
+        nodeSpacing: 40,
+        rankSpacing: 42,
+        padding: 12
+      }
+    });
+  </script>
+</head>
+<body class="content-page">
+  <main class="mindmap-page">
+    <div class="mindmap-shell">
+      <p class="mindmap-title">放射線環境下MOSFET 技術課題マインドマップ</p>
+      <div class="mindmap-toolbar">
+        <button class="zoom-btn" id="zoomOut" type="button">-</button>
+        <span class="zoom-level" id="zoomLevel">100%</span>
+        <button class="zoom-btn" id="zoomIn" type="button">+</button>
+        <button class="zoom-btn" id="zoomReset" type="button">Reset</button>
+      </div>
+      <div class="mindmap-viewport" id="mindmapViewport">
+        <div class="mindmap-canvas" id="mindmapCanvas">
+          <div class="mermaid">
+flowchart LR
+  Root["放射線環境下MOSFET 技術課題"]
+
+  Root --> Issue["主要技術課題"]
+  Root --> Case["発生事例"]
+  Root --> Impact["影響"]
+  Root --> Counter["対策"]
+  Root --> Verify["検証・運用"]
+
+  Issue --> Q1["TIDで閾値電圧がずれる"]
+  Issue --> Q2["SEEでSEB/SEGRが発生"]
+  Issue --> Q3["高温・高電圧で損失増加"]
+  Issue --> Q4["供給継続性・認証証跡不足"]
+
+  Case --> C1["重イオン照射でMOSFET恒久損傷"]
+  Case --> C2["低線量域で電源異常停止"]
+  Case --> C3["SiC MOSFETでSEBしきい値課題"]
+  Case --> C4["大気中中性子起因SEB（地上高信頼系）"]
+
+  Impact --> I1["ミッション停止・機能喪失"]
+  Impact --> I2["電源系の冗長設計コスト増"]
+  Impact --> I3["候補部品の除外増加"]
+  Impact --> I4["開発期間の延伸"]
+
+  Counter --> M1["運用電圧ディレーティング"]
+  Counter --> M2["SEB/SEGR前提の保護回路設計"]
+  Counter --> M3["TID/SEEを実装状態で評価"]
+  Counter --> M4["Rad-hard / Rad-tolerantの使い分け"]
+  Counter --> M5["代替候補と供給二重化"]
+
+  Verify --> V1["Gate A: TID/SEE基準を満たすか"]
+  Verify --> V2["Gate B: 実装評価で異常がないか"]
+  Verify --> V3["Gate C: 供給・認証条件が成立するか"]
+  Verify --> V4["Go/No-Go判定を文書化"]
+  Decision["最終判断（採用 / 保留 / 除外）"]
+
+  C1 --> I1
+  C2 --> I1
+  C3 --> I3
+  C4 --> I2
+  C4 --> I4
+  Q2 --> M2
+  Q1 --> M3
+  Q3 --> M1
+  Q3 --> M2
+  Q4 --> M5
+  I2 --> M4
+  I3 --> M5
+  I4 --> M3
+  M3 --> V2
+  M5 --> V3
+  M1 --> V1
+  M2 --> V2
+  M4 --> V1
+  V1 --> V4
+  V2 --> V4
+  V3 --> V4
+  V4 --> Decision
+
+  classDef root fill:#dcefff,stroke:#7fb0d3,color:#153a55,stroke-width:2px,font-weight:bold;
+  classDef main fill:#edf7ff,stroke:#a9c9e2,color:#1f4a67,stroke-width:1.5px;
+  classDef leaf fill:#ffffff,stroke:#c7dceb,color:#234f6b,stroke-width:1px;
+  classDef risk fill:#fff4f4,stroke:#e7b3b3,color:#7c2b2b,stroke-width:1.3px;
+  classDef action fill:#f1fff6,stroke:#b8e1c7,color:#1f5a36,stroke-width:1.3px;
+  classDef decision fill:#fff8df,stroke:#e0c36a,color:#6b5619,stroke-width:2px,font-weight:bold;
+
+  class Root root;
+  class Issue,Case,Impact,Counter,Verify main;
+  class Q1,Q2,Q3,Q4,C1,C2,C3,C4,I1,I2,I3,I4 risk;
+  class M1,M2,M3,M4,M5,V1,V2,V3,V4 action;
+  class Decision decision;
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script>
+    const viewport = document.getElementById("mindmapViewport");
+    const canvas = document.getElementById("mindmapCanvas");
+    const zoomInBtn = document.getElementById("zoomIn");
+    const zoomOutBtn = document.getElementById("zoomOut");
+    const zoomResetBtn = document.getElementById("zoomReset");
+    const zoomLevel = document.getElementById("zoomLevel");
+
+    let scale = 1;
+    const MIN_SCALE = 0.6;
+    const MAX_SCALE = 2.2;
+    const STEP = 0.1;
+
+    function updateZoom() {
+      canvas.style.transform = `scale(${scale})`;
+      zoomLevel.textContent = `${Math.round(scale * 100)}%`;
+    }
+
+    zoomInBtn.addEventListener("click", () => {
+      scale = Math.min(MAX_SCALE, scale + STEP);
+      updateZoom();
+    });
+
+    zoomOutBtn.addEventListener("click", () => {
+      scale = Math.max(MIN_SCALE, scale - STEP);
+      updateZoom();
+    });
+
+    zoomResetBtn.addEventListener("click", () => {
+      scale = 1;
+      updateZoom();
+      viewport.scrollTo({ left: 0, top: 0, behavior: "smooth" });
+    });
+
+    let isDragging = false;
+    let startX = 0;
+    let startY = 0;
+    let scrollLeft = 0;
+    let scrollTop = 0;
+
+    viewport.addEventListener("mousedown", (event) => {
+      isDragging = true;
+      startX = event.pageX - viewport.offsetLeft;
+      startY = event.pageY - viewport.offsetTop;
+      scrollLeft = viewport.scrollLeft;
+      scrollTop = viewport.scrollTop;
+    });
+
+    window.addEventListener("mouseup", () => {
+      isDragging = false;
+    });
+
+    viewport.addEventListener("mousemove", (event) => {
+      if (!isDragging) {
+        return;
+      }
+      event.preventDefault();
+      const x = event.pageX - viewport.offsetLeft;
+      const y = event.pageY - viewport.offsetTop;
+      const walkX = (x - startX) * 1.1;
+      const walkY = (y - startY) * 1.1;
+      viewport.scrollLeft = scrollLeft - walkX;
+      viewport.scrollTop = scrollTop - walkY;
+    });
+
+    updateZoom();
+  </script>
+</body>
+</html>
