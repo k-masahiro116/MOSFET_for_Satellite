@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>報告書基本構成の具体表現 | MOSFET for Satellite</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <style>
+    .sheet {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid #d7e2ee;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(10, 38, 58, 0.08);
+      padding: 18px 20px;
+      margin-bottom: 14px;
+    }
+
+    .sheet h3 {
+      margin: 0 0 8px;
+      color: #0f3a56;
+    }
+
+    .sheet p {
+      margin: 0 0 8px;
+    }
+
+    .template {
+      background: #f3f8fc;
+      border: 1px solid #d5e3f0;
+      border-radius: 10px;
+      padding: 10px 12px;
+      color: #22455e;
+      font-size: 0.94rem;
+      margin: 8px 0;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body class="content-page">
+  <main class="page-body">
+    <h2>報告書の基本構成を具体的に書く方法</h2>
+    <p>各章で何を書くかを「目的」「記載ポイント」「書き方テンプレート」で整理します。</p>
+
+    <section class="sheet">
+      <h3>1. 背景</h3>
+      <p><strong>目的:</strong> なぜこの調査・検討が必要かを説明する。</p>
+      <p><strong>記載ポイント:</strong> 市場や技術の変化、現状課題、放置時のリスク。</p>
+      <div class="template">例: 「衛星向け電源系では高効率化要求が強まっており、従来素子では損失が課題となっている。」</div>
+    </section>
+
+    <section class="sheet">
+      <h3>2. 目的</h3>
+      <p><strong>目的:</strong> 報告書で何を判断するかを明示する。</p>
+      <p><strong>記載ポイント:</strong> 判断対象、評価基準、達成条件。</p>
+      <div class="template">例: 「本調査の目的は、2026年度設計に向けて候補MOSFETの優先順位を決定することである。」</div>
+    </section>
+
+    <section class="sheet">
+      <h3>3. 条件（前提）</h3>
+      <p><strong>目的:</strong> 比較や結論に影響する前提を固定する。</p>
+      <p><strong>記載ポイント:</strong> 電圧/電流範囲、温度条件、想定寿命、評価環境。</p>
+      <div class="template">例: 「評価条件は Bus 28V、ピーク電流 8A、周囲温度 -20〜60°C、連続運転 1,000h とする。」</div>
+    </section>
+
+    <section class="sheet">
+      <h3>4. 実施内容（方法）</h3>
+      <p><strong>目的:</strong> 再現できる手順として実施内容を示す。</p>
+      <p><strong>記載ポイント:</strong> データ源、測定手順、比較手法、除外条件。</p>
+      <div class="template">例: 「候補3品番を同一治具で測定し、損失・温度上昇・スイッチング波形を比較した。」</div>
+    </section>
+
+    <section class="sheet">
+      <h3>5. 結果</h3>
+      <p><strong>目的:</strong> 観測事実を主観なしで整理する。</p>
+      <p><strong>記載ポイント:</strong> 数値、図表、最大/平均、ばらつき、異常有無。</p>
+      <div class="template">例: 「品番Aは平均損失 1.8W、最大接合温度 92°C で、他候補より温度余裕が 6°C 高かった。」</div>
+    </section>
+
+    <section class="sheet">
+      <h3>6. 考察</h3>
+      <p><strong>目的:</strong> 結果の意味と要因を説明する。</p>
+      <p><strong>記載ポイント:</strong> 結果差の原因仮説、前提との整合、リスク評価。</p>
+      <div class="template">例: 「品番Aの優位性は低Rds(on)に加え、ゲート電荷が小さくスイッチング損失が抑制されたためと推定される。」</div>
+    </section>
+
+    <section class="sheet">
+      <h3>7. 結論</h3>
+      <p><strong>目的:</strong> 意思決定内容を明確にする。</p>
+      <p><strong>記載ポイント:</strong> 採用候補、採用根拠、採用条件。</p>
+      <div class="template">例: 「現時点では品番Aを第一候補とし、放射線試験結果が基準を満たすことを採用条件とする。」</div>
+    </section>
+
+    <section class="sheet">
+      <h3>8. 課題・次アクション</h3>
+      <p><strong>目的:</strong> 未解決事項と次の実行計画を接続する。</p>
+      <p><strong>記載ポイント:</strong> 追加試験、担当、期限、レビュー日。</p>
+      <div class="template">例: 「3月第2週までに重イオン試験計画を確定し、3月末レビューで採用可否を最終判断する。」</div>
+    </section>
+  </main>
+</body>
+</html>

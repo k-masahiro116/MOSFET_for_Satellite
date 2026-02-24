@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>報告書作成ガイド | MOSFET for Satellite</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <style>
+    .guide-section {
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid #d7e2ee;
+      border-radius: 14px;
+      padding: 18px 20px;
+      margin-bottom: 14px;
+      box-shadow: 0 8px 24px rgba(10, 38, 58, 0.08);
+      backdrop-filter: blur(2px);
+    }
+
+    .guide-section h3 {
+      margin: 0 0 8px;
+      font-size: 1.08rem;
+      color: #0f3a56;
+    }
+
+    .guide-section p {
+      margin: 0 0 8px;
+    }
+
+    .guide-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 0.95rem;
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .guide-table th,
+    .guide-table td {
+      border: 1px solid #d7e0ea;
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .guide-table th {
+      background: linear-gradient(130deg, #e7f2f8, #edf5fb);
+      color: #12344d;
+    }
+
+    .source-list {
+      margin: 0;
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body class="content-page">
+  <main class="page-body">
+    <h2>報告書作成方法の参考資料</h2>
+    <p>このページは、今後の報告書作成で参照する資料をまとめるためのハブです。</p>
+
+    <section class="guide-section">
+      <h3>1. 報告書の参考資料</h3>
+      <p>目的: 結論までの流れを明確にし、レビューしやすい文書構成にする。</p>
+      <ol>
+        <li>基本構成: 背景 → 目的 → 条件 → 実施内容 → 結果 → 考察 → 結論 → 課題。</li>
+        <li>図表運用: 図番号・表番号・単位・測定条件を必ず付記する。</li>
+        <li>トレーサビリティ: 参照データの保存場所と取得日を明記する。</li>
+        <li>レビュー観点: 事実と解釈を分離し、再現手順を本文に残す。</li>
+      </ol>
+    </section>
+
+    <section class="guide-section">
+      <h3>2. 分析手法の参考資料</h3>
+      <p>目的: 評価結果を比較可能な形式で整理し、設計判断につなげる。</p>
+      <ol>
+        <li>前処理: 欠測値、外れ値、計測条件差を確認して比較基準を統一する。</li>
+        <li>可視化: 波形比較、温度上昇、損失分解を同一軸で表示する。</li>
+        <li>定量評価: 平均値だけでなくばらつきと最大値を併記する。</li>
+        <li>意思決定: しきい値条件と採用・不採用の理由を表形式で整理する。</li>
+      </ol>
+    </section>
+
+    <section class="guide-section">
+      <h3>3. 追記ルール</h3>
+      <ol>
+        <li>資料を追加する際は「用途」「前提条件」「適用範囲」を最低限記載する。</li>
+        <li>リンク切れ防止のため、参照先変更時はこのページを同時に更新する。</li>
+      </ol>
+    </section>
+
+    <section class="guide-section">
+      <h3>4. 研究前段階における市場調査報告書の作成手順</h3>
+      <ol>
+        <li>調査目的を1文で定義し、意思決定対象（参入可否・優先テーマ等）を明確化する。</li>
+        <li>調査範囲（市場、地域、期間、顧客層、用途）と非対象範囲を決める。</li>
+        <li>必要指標（市場規模、成長率、主要企業、価格帯、規制、技術動向）を設定する。</li>
+        <li>情報源を選定し、出典・取得日・前提条件・単位を記録してデータ収集する。</li>
+        <li>市場性、競合、顧客課題、参入障壁を比較し、事実と解釈を分離して整理する。</li>
+        <li>報告書を「背景→目的→範囲/方法→結果→分析→結論→次アクション」で構成する。</li>
+        <li>最終レビューで数値整合、論理飛躍、根拠不足を確認し、版数と更新日を付与する。</li>
+      </ol>
+    </section>
+
+    <section class="guide-section">
+      <h3>5. 各章のブレイクダウン（実務用）</h3>
+      <table class="guide-table">
+        <thead>
+          <tr>
+            <th>章</th>
+            <th>目的</th>
+            <th>最低限入れる情報</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>背景</td>
+            <td>市場環境と外部要因を示す</td>
+            <td>マクロ景気、産業全体の成長、政策・規制の変化</td>
+          </tr>
+          <tr>
+            <td>目的</td>
+            <td>調査で何を意思決定するかを固定する</td>
+            <td>意思決定項目、判断基準、採否のしきい値</td>
+          </tr>
+          <tr>
+            <td>範囲/方法</td>
+            <td>調査の再現性を担保する</td>
+            <td>対象市場、期間、地域、情報源、除外条件、定義</td>
+          </tr>
+          <tr>
+            <td>結果</td>
+            <td>観測した事実を整理する</td>
+            <td>市場規模、成長率、競合構成、価格帯、供給能力</td>
+          </tr>
+          <tr>
+            <td>分析</td>
+            <td>事実から示唆を導く</td>
+            <td>機会/リスク、競争優位、参入障壁、技術成熟度、感度分析</td>
+          </tr>
+          <tr>
+            <td>結論</td>
+            <td>判断内容を明確にする</td>
+            <td>推奨方針、根拠要約、前提条件、未確定事項</td>
+          </tr>
+          <tr>
+            <td>次アクション</td>
+            <td>実行計画へ接続する</td>
+            <td>担当、期限、追加調査項目、レビュー予定日</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-section">
+      <h3>6. インターネット調査で収集した基礎データ（2026-02-24時点）</h3>
+      <table class="guide-table">
+        <thead>
+          <tr>
+            <th>観点</th>
+            <th>確認した事実</th>
+            <th>報告書への使い方</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>マクロ環境</td>
+            <td>World Bank は世界成長率を 2025 年 2.3%、2026 年 2.5% と見通し。</td>
+            <td>背景章で需要見通しの前提値として使用。</td>
+          </tr>
+          <tr>
+            <td>半導体市場全体</td>
+            <td>SIA は 2024 年の世界半導体売上を 6,276 億ドル（前年比 +19.1%）と公表。</td>
+            <td>結果章で産業成長の母集団指標として使用。</td>
+          </tr>
+          <tr>
+            <td>宇宙市場規模</td>
+            <td>Space Foundation は 2024 年の世界宇宙経済を 6,130 億ドルと報告。</td>
+            <td>背景章と結果章で対象市場の規模感として使用。</td>
+          </tr>
+          <tr>
+            <td>衛星関連市場</td>
+            <td>同レポートで衛星産業収益は 2,930 億ドル、前年比 +3% とされる。</td>
+            <td>結果章でサブセグメント分析の基準に使用。</td>
+          </tr>
+          <tr>
+            <td>打上げ活動</td>
+            <td>FAA は FY2024 に 148 件の商業宇宙輸送ライセンス業務を実施。</td>
+            <td>需要側の活動量指標として結果章に使用。</td>
+          </tr>
+          <tr>
+            <td>軌道投入トレンド</td>
+            <td>UNOOSA 年次報告では 2024 年に 250 超の成功打上げと 2,434 機の登録報告。</td>
+            <td>背景章で市場拡大の外形事実として使用。</td>
+          </tr>
+          <tr>
+            <td>規制リスク</td>
+            <td>BIS は 2024-12-02 に先端計算向け半導体等の対中輸出管理更新を公表。</td>
+            <td>分析章の供給制約・調達リスク項目に使用。</td>
+          </tr>
+          <tr>
+            <td>技術評価枠組み</td>
+            <td>NASA TRL（1-9）と ISO 31000 のリスク管理原則を参照可能。</td>
+            <td>分析章の評価手法とリスク章の標準化に使用。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="guide-section">
+      <h3>7. 参考リンク（一次情報中心）</h3>
+      <ol class="source-list">
+        <li><a href="https://www.worldbank.org/en/news/press-release/2025/06/10/global-economy-set-for-weakest-run-since-2008-outside-of-outright-global-recessions" target="_blank" rel="noopener noreferrer">World Bank: Global economy set for weakest run since 2008</a></li>
+        <li><a href="https://www.semiconductors.org/global-semiconductor-sales-increase-19-1-year-to-year-in-2024/" target="_blank" rel="noopener noreferrer">SIA: Global semiconductor sales increase 19.1% in 2024</a></li>
+        <li><a href="https://www.spacefoundation.org/2024/07/18/global-space-economy-reaches-613-billion-in-2024-while-continuing-to-show-signs-of-future-growth/" target="_blank" rel="noopener noreferrer">Space Foundation: Global space economy reaches $613B in 2024</a></li>
+        <li><a href="https://www.faa.gov/space/data_statistics" target="_blank" rel="noopener noreferrer">FAA Office of Commercial Space Transportation: Data &amp; Statistics</a></li>
+        <li><a href="https://www.unoosa.org/oosa/en/publications/annualreport/2024/index.html" target="_blank" rel="noopener noreferrer">UNOOSA Annual Report 2024</a></li>
+        <li><a href="https://www.bis.gov/press-release/department-commerce-announces-updated-export-controls-advanced-computing" target="_blank" rel="noopener noreferrer">BIS: Updated export controls on advanced computing</a></li>
+        <li><a href="https://www.nasa.gov/directorates/somd/space-communications-navigation-program/technology-readiness-levels/" target="_blank" rel="noopener noreferrer">NASA: Technology Readiness Levels (TRLs)</a></li>
+        <li><a href="https://www.iso.org/iso-31000-risk-management.html" target="_blank" rel="noopener noreferrer">ISO 31000: Risk management</a></li>
+      </ol>
+    </section>
+  </main>
+</body>
+</html>
