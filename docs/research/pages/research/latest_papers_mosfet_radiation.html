@@ -21,325 +21,297 @@
     }
 
     .section-card p {
-      margin: 0 0 10px;
-      color: #234b68;
-      line-height: 1.78;
-    }
-
-    .section-list {
-      margin: 8px 0 0;
-      padding-left: 20px;
+      margin: 0 0 8px;
       color: #234b68;
       line-height: 1.75;
     }
 
-    .facts-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-      font-size: 0.94rem;
-      background: rgba(255, 255, 255, 0.96);
-    }
-
-    .facts-table th,
-    .facts-table td {
-      border: 1px solid #d5e1ed;
-      padding: 8px 10px;
-      text-align: left;
-      vertical-align: top;
-      line-height: 1.65;
-      color: #234b68;
-    }
-
-    .facts-table th {
-      background: #edf5fb;
-      color: #143f5b;
-    }
-
-    .link-list {
+    .paper-list {
       margin: 8px 0 0;
       padding-left: 20px;
-      line-height: 1.75;
+      color: #234b68;
+      line-height: 1.8;
     }
 
-    .link-list a {
+    .paper-list li {
+      margin-bottom: 8px;
+    }
+
+    .paper-title {
+      font-weight: 700;
+      color: #103f5d;
+    }
+
+    .paper-meta {
+      color: #335d79;
+    }
+
+    .paper-link a {
       color: #195d86;
       text-decoration: none;
       border-bottom: 1px solid rgba(25, 93, 134, 0.25);
     }
 
-    .link-list a:hover {
+    .paper-link a:hover {
       border-bottom-color: rgba(25, 93, 134, 0.7);
-    }
-
-    .formula {
-      font-family: "SFMono-Regular", Menlo, Consolas, monospace;
-      background: #eef6fd;
-      color: #1b4866;
-      border: 1px solid #d2e3f2;
-      border-radius: 8px;
-      padding: 8px 10px;
-      display: inline-block;
-      margin: 4px 0 10px;
     }
   </style>
 </head>
 <body class="content-page">
   <main class="page-body">
-    <h2>最新論文調査結果: 放射線環境下におけるMOSFETの信頼性と物理的劣化</h2>
-    <p>更新日: 2026-02-24。ユーザー提供の包括的調査文をベースに、内容を削らずに章立て再編したページです。対象は宇宙開発、高エネルギー物理、原子力廃炉、防衛システムにおける放射線環境下MOSFET。</p>
+    <h2>最新論文調査: 放射線環境下におけるMOSFETおよび関連デバイス</h2>
+    <p>更新日: 2026-02-25。提供いただいた論文リンクリストに基づき、分野別に整理した調査ページです。</p>
 
     <section class="section-card">
-      <h3>1. 研究の背景と位置づけ</h3>
-      <p>放射線環境下でのMOSFET研究は、単なる部品評価ではなく、極限環境でのエレクトロニクス信頼性基盤そのものを構築する研究領域である。放射線照射により、電離損傷（Ionizing Damage）と弾き出し損傷（Displacement Damage）が発生し、電気特性の累積変化または突発故障を引き起こす。</p>
-      <p>近年はナノメートル世代のFinFET/GAA導入、さらにSiC・GaNなどワイドバンドギャップ（WBG）半導体の実装が進み、従来Siベース理論のみでは記述しきれない新しい劣化モードと設計課題が顕在化している。</p>
-    </section>
-
-    <section class="section-card">
-      <h3>2. 放射線相互作用と劣化の物理基礎</h3>
-      <p>MOSFETの主要放射線効果は、エネルギー付与形態と時間スケールで整理できる。損傷はゲート酸化膜、素子分離膜、半導体結晶格子に生じ、最終的に閾値電圧ドリフト、リーク増大、破壊故障に至る。</p>
-      <h3>2.1 TID（全電離線量）効果</h3>
-      <p>TIDはガンマ線、X線、荷電粒子が酸化膜（主にSiO2）通過時に電子・正孔対を生成することで進行する。電子は高速で排出される一方、正孔は欠陥に捕獲され酸化膜トラップ電荷（N<sub>ot</sub>）となる。さらに界面準位（N<sub>it</sub>）生成が進み、閾値電圧変動が発生する。</p>
-      <div class="formula">nMOS: 正孔トラップ優勢 → Vth負シフト → リーク増加</div>
-      <div class="formula">pMOS: 界面準位寄与増大 → 駆動能力低下</div>
-
-      <h3>2.2 DD（変位損傷）</h3>
-      <p>中性子・陽子・重イオンが格子原子を弾き出し、空孔・格子間原子・欠陥クラスターを形成する。これらは再結合中心・散乱中心として作用し、移動度低下、キャリア濃度減少、少数キャリア寿命短縮を招く。パワーMOSFETではドリフト層抵抗増加を介してオン抵抗（R<sub>on</sub>）上昇に直結する。</p>
-
-      <h3>2.3 SEE（単一事象効果）</h3>
-      <p>SEEは単一粒子の通過で局所的に大量電荷が生成される確率的事象で、ソフトエラーとハードエラーに大別される。</p>
-      <ul class="section-list">
-        <li><strong>SET/SEU:</strong> 一時パルスがラッチへ伝搬し誤記録。</li>
-        <li><strong>SEB:</strong> 寄生バイポーラ動作を介した過電流で熱破壊。</li>
-        <li><strong>SEGR:</strong> 強電界下ゲート酸化膜の絶縁破壊で恒久故障。</li>
-      </ul>
-
-      <table class="facts-table">
-        <thead>
-          <tr>
-            <th>放射線効果</th>
-            <th>原因粒子</th>
-            <th>主な物理変化</th>
-            <th>デバイス特性への影響</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>TID</td>
-            <td>ガンマ線、X線、電子</td>
-            <td>酸化膜の正孔トラップ、界面準位生成</td>
-            <td>Vthシフト、リーク増大、gm低下</td>
-          </tr>
-          <tr>
-            <td>DD</td>
-            <td>中性子、陽子、重イオン</td>
-            <td>格子欠陥・クラスター形成</td>
-            <td>移動度低下、R<sub>on</sub>上昇、暗電流増加</td>
-          </tr>
-          <tr>
-            <td>SEE</td>
-            <td>重イオン、高エネルギー陽子/中性子</td>
-            <td>局所電荷生成</td>
-            <td>SEU/SET、SEB、SEGR、ラッチアップ</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section class="section-card">
-      <h3>3. 先端シリコンCMOS技術での進展</h3>
-      <p>スケーリングでゲート酸化膜は薄膜化し、ゲート起因TID感度は低下した一方、課題はSTIやBOXなど周辺絶縁に移った。28nmでは1 Grad級で機能維持例があるが、STI由来の寄生側壁トランジスタでサブスレッショルドリークが増える。</p>
-      <p>FinFETは3Dゲート制御でポテンシャル変動抑制に有利だが、側壁界面準位・スペーサー電荷でSS劣化やRTN増加が観測される。GAAはさらに高い静電制御が期待される一方、積層チャネル間絶縁膜のトラップによるVthばらつき懸念がある。感度体積の縮小によりSEE耐性向上の可能性も示されている。</p>
-
-      <table class="facts-table">
-        <thead>
-          <tr>
-            <th>テクノロジーノード</th>
-            <th>構造</th>
-            <th>TID主脆弱性</th>
-            <th>SEE特性</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>130-65nm</td>
-            <td>Bulk Planar</td>
-            <td>ゲート酸化膜Vthシフト、STIリーク</td>
-            <td>電荷収集体積が比較的大</td>
-          </tr>
-          <tr>
-            <td>28nm</td>
-            <td>Bulk Planar</td>
-            <td>ゲート由来シフトは小、STI側壁リークが卓越</td>
-            <td>Qcrit低下で感度上昇</td>
-          </tr>
-          <tr>
-            <td>16/14nm</td>
-            <td>FinFET</td>
-            <td>スペーサー/BOX電荷蓄積</td>
-            <td>静電制御向上でSET抑制傾向</td>
-          </tr>
-          <tr>
-            <td>5/3nm</td>
-            <td>GAA/Nanosheet</td>
-            <td>積層チャネル間トラップ</td>
-            <td>極小感度体積で高耐性期待</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section class="section-card">
-      <h3>4. WBG半導体（SiC/GaN）パワーデバイス</h3>
-      <p>SiC/GaNは高絶縁破壊電界と高熱伝導率を活かし高効率電力変換に有望だが、MOS構造ではゲート絶縁膜・終端構造が放射線感受点となる。</p>
-
-      <h3>4.1 SiC MOSFET</h3>
-      <ul class="section-list">
-        <li>Trench型は10 krad級の比較的低線量でもVth負シフトが顕著化しやすい。</li>
-        <li>終端部への電荷蓄積で空乏層形状が変わり、破壊電圧（BV）低下が起こる。</li>
-        <li>3 MeV陽子照射では高線量域でgm低下が顕著、格子欠陥由来の移動度劣化が支配的。</li>
-      </ul>
-
-      <h3>4.2 GaNデバイス</h3>
-      <ul class="section-list">
-        <li>GaN HEMTはゲート酸化膜を持たない構造で高TID耐性を示しやすい。</li>
-        <li>カスケードGaNでは弱点がSi MOSFET側に現れ、モジュール特性が変動し得る。</li>
-        <li>MIS-HEMT/p-GaNは500 krad超でも安定報告がある一方、トラップ管理は必須。</li>
-        <li>TIDとDD同時印加で、欠陥生成がリーク増加を相殺する逆説的相乗効果の報告もある。</li>
-      </ul>
-
-      <table class="facts-table">
-        <thead>
-          <tr>
-            <th>材料</th>
-            <th>形式</th>
-            <th>主劣化要因</th>
-            <th>耐性評価</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>SiC</td>
-            <td>Trench MOSFET</td>
-            <td>正孔トラップ、終端電荷蓄積</td>
-            <td>低線量からVth変動、BV低下課題</td>
-          </tr>
-          <tr>
-            <td>SiC</td>
-            <td>Planar MOSFET</td>
-            <td>界面準位、R<sub>on</sub>劣化</td>
-            <td>TrenchよりTIDに強い傾向</td>
-          </tr>
-          <tr>
-            <td>GaN</td>
-            <td>p-GaN HEMT</td>
-            <td>バッファリーク、格子損傷</td>
-            <td>高TID耐性、高SEB耐性報告</td>
-          </tr>
-          <tr>
-            <td>GaN</td>
-            <td>MIS-HEMT</td>
-            <td>絶縁膜トラップ、電荷ポンピング</td>
-            <td>ゲートリーク増加、アニーリング回復例</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section class="section-card">
-      <h3>5. 適用分野別の保証技術（Hardness Assurance）</h3>
-      <h3>5.1 宇宙（JAXA/NASA）</h3>
-      <p>バンアレン帯、SPE、GCRを考慮したミッション評価が必要。JAXAでは第2世代宇宙用MOSFETで電気特性とTID/SEB耐性の両立が進んでいる。NASAでは環境モデルとロットばらつきを組み合わせる統計的HAが重視される。</p>
-
-      <h3>5.2 加速器（CERN HL-LHC）</h3>
-      <p>1 Grad超の混合場で、ゲート酸化膜よりSTI寄生リークやパッケージ由来課題が支配的。ELT（Enclosed Gate Transistor）等のレイアウト技術と混合場SYNERGY試験が重要。</p>
-
-      <h3>5.3 原子力廃炉（福島第一）</h3>
-      <p>高線量エリア向けロボットではCOTS部品の選別・定量評価が実務上重要。SBC、メモリ、CMOSセンサの劣化モニタリングと冗長設計が運用設計に直結する。</p>
-
-      <table class="facts-table">
-        <thead>
-          <tr>
-            <th>アプリケーション</th>
-            <th>ターゲット環境</th>
-            <th>重点評価</th>
-            <th>推奨対策</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>宇宙（静止軌道等）</td>
-            <td>100 krad級、SPE/GCR</td>
-            <td>SEB/SEGR、低線量率TID</td>
-            <td>ディレーティング、RHBD、厚エピ層</td>
-          </tr>
-          <tr>
-            <td>加速器（HL-LHC）</td>
-            <td>1 Grad超、混合放射線</td>
-            <td>STI寄生リーク、界面劣化</td>
-            <td>ELT、28nm運用最適化、混合場試験</td>
-          </tr>
-          <tr>
-            <td>原子力廃炉</td>
-            <td>kGy級、Cs-137ガンマ線</td>
-            <td>マイコン誤動作、メモリ耐性</td>
-            <td>COTS選別、遮蔽、遠隔処理、pSLC活用</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section class="section-card">
-      <h3>6. シミュレーションと故障予測モデル</h3>
-      <ul class="section-list">
-        <li><strong>TCAD:</strong> ポアソン方程式/連続方程式に基づき、TID反応拡散や終端電界分布を解析。</li>
-        <li><strong>SEE混合モード:</strong> 電荷円柱モデルとSPICE結合でSET/誤動作を再現。</li>
-        <li><strong>回路モデル改良:</strong> 二重指数電流源だけでは不足し、プラトー領域を含む改良モデルが必要。</li>
-        <li><strong>信頼性統合:</strong> 放射線劣化とTDDB/HCI等を統合した寿命予測が有効。</li>
+      <h3>1. 炭化ケイ素（SiC）パワーMOSFET</h3>
+      <p>SiC MOSFETは宇宙・加速器用途で期待が高く、TIDとSEBの両面で最新研究が進展しています。</p>
+      <ul class="paper-list">
+        <li>
+          <div class="paper-title">TID and Displacement Damage Effects in Trench SiC Power MOSFETs</div>
+          <div class="paper-meta">著者: S. Bonaldo, et al. / 年: 2024-2025</div>
+          <div>内容: トレンチSiC MOSFETのTIDとDD影響を分析。10 krad(SiO2)という低線量からの閾値電圧シフトを報告。</div>
+          <div class="paper-link">リンク: <a href="https://ieeexplore.ieee.org/document/10770279" target="_blank" rel="noopener noreferrer">IEEE Xplore 10770279</a></div>
+        </li>
+        <li>
+          <div class="paper-title">Radiation-induced degradation of silicon carbide MOSFETs - A review</div>
+          <div class="paper-meta">著者: Tamana Baba, et al. / 年: 2024</div>
+          <div>内容: ガンマ線、重イオン、陽子、中性子など多様な放射線がSiC MOSFETパラメータへ与える影響を総括。</div>
+          <div class="paper-link">リンク: <a href="https://scispace.com/papers/radiation-induced-degradation-of-silicon-carbide-mosfets-a-1lrz6x7v96" target="_blank" rel="noopener noreferrer">SciSpace</a></div>
+        </li>
+        <li>
+          <div class="paper-title">Influence of Accumulated Radiation Effects on Single-event Burnout in SiC MOSFETs</div>
+          <div class="paper-meta">著者: IEEE Transactions on Nuclear Science 掲載 / 年: 2024</div>
+          <div>内容: 事前照射（ガンマ線等）が、その後のSEB耐性に与える相乗効果を調査。</div>
+          <div class="paper-link">リンク: <a href="https://www.researchgate.net/publication/382315924" target="_blank" rel="noopener noreferrer">ResearchGate</a></div>
+        </li>
+        <li>
+          <div class="paper-title">Single Event Effects of SiC Power MOSFETs: From Neutron to Heavy Ion</div>
+          <div class="paper-meta">著者: Rosine Coq Germanicus, et al. / 年: 2025</div>
+          <div>内容: 中性子から重イオンまでのSEEをシミュレーションと実験で比較評価。</div>
+          <div class="paper-link">リンク: <a href="https://www.semanticscholar.org/paper/82acfc67bb73e7fb475a04afba3e51783ad62052" target="_blank" rel="noopener noreferrer">Semantic Scholar</a></div>
+        </li>
+        <li>
+          <div class="paper-title">Impact of Bias Condition on Electron Radiation Response of SiC MOSFETs</div>
+          <div class="paper-meta">著者: IEEE TNS 掲載 / 年: 2025</div>
+          <div>内容: 電子線照射下でのゲート/ドレインバイアス条件が欠陥生成へ与える影響をDLTS法等で評価。</div>
+          <div class="paper-link">リンク: <a href="https://ieeexplore.ieee.org/document/10835236" target="_blank" rel="noopener noreferrer">IEEE Xplore 10835236</a></div>
+        </li>
       </ul>
     </section>
 
     <section class="section-card">
-      <h3>7. 次世代材料への展望</h3>
-      <ul class="section-list">
-        <li><strong>MoS2 FET:</strong> 原子層チャネルによりDD断面積が小さく、高耐放射線性が期待。</li>
-        <li><strong>Ga2O3 MOSFET:</strong> DD耐性は高い一方でTID由来Vth変動が課題。</li>
-        <li><strong>CNTFET:</strong> 構造特性からSEE耐性の高い次世代候補。</li>
+      <h3>2. 窒化ガリウム（GaN）およびWBGデバイス</h3>
+      <p>GaNではMIS構造やカスケード構造（内部Si MOSFET含む）の脆弱点把握が主要テーマです。</p>
+      <ul class="paper-list">
+        <li>
+          <div class="paper-title">Low frequency noise investigation of GaN/AlGaN MOS-HEMT with different gate length and orientation</div>
+          <div class="paper-meta">著者: K. Takakura, et al. / 年: 2020</div>
+          <div>内容: 低周波ノイズ測定を通じ、GaN/AlGaN MOS-HEMTのゲート界面特性を評価。</div>
+          <div class="paper-link">リンク: <a href="https://doi.org/10.1109/ted.2020.3002732" target="_blank" rel="noopener noreferrer">DOI: 10.1109/TED.2020.3002732</a></div>
+        </li>
+        <li>
+          <div class="paper-title">Research on total ionizing dose and annealing effects on E-mode GaN Cascode devices</div>
+          <div class="paper-meta">著者: MDPI Electronics 掲載 / 年: 2023</div>
+          <div>内容: E-mode GaN Cascode（Si MOSFET + D-mode GaN HEMT）のTID耐性を比較検討。</div>
+          <div class="paper-link">リンク: <a href="https://www.mdpi.com/2072-666X/14/10/1832" target="_blank" rel="noopener noreferrer">MDPI</a></div>
+        </li>
+        <li>
+          <div class="paper-title">Radiation Response of Ga2O3 MOSFETs Probed via Focused Particle Beams</div>
+          <div class="paper-meta">著者: Advanced Materials Technologies 掲載 / 年: 2024</div>
+          <div>内容: 超WBG材料Ga2O3 MOSFETのTID/DD応答をFIB-SEMで解析。</div>
+          <div class="paper-link">リンク: <a href="https://www.researchgate.net/publication/393586169" target="_blank" rel="noopener noreferrer">ResearchGate</a></div>
+        </li>
       </ul>
     </section>
 
     <section class="section-card">
-      <h3>8. 問題事例（放射線とMOSFETの関係）</h3>
-      <ul class="section-list">
-        <li>重イオン照射下での電源コンバータMOSFET恒久損傷の報告。</li>
-        <li>低線量域でもDC-DC停止が発生した実装系評価報告。</li>
-        <li>SiC MOSFETで定格耐圧の十分低い運用点でもSEBが発生し得る報告。</li>
-        <li>SEGRが宇宙用パワーMOSFETの継続的主要リスクであることを示す蓄積知見。</li>
+      <h3>3. 微細CMOS（FinFET / GAA / SGT）技術</h3>
+      <p>ナノスケール3D構造MOSFETの放射線耐性に関する研究成果を整理。</p>
+      <ul class="paper-list">
+        <li>
+          <div class="paper-title">Total Ionizing Dose in Nano-Scaled CMOS Technologies (Review)</div>
+          <div class="paper-meta">著者: IEEE TNS 掲載 / 年: 2025（予定）</div>
+          <div>内容: 1.6 umから16 nm FinFETまでの30年間のTID研究を総括する包括レビュー。</div>
+          <div class="paper-link">リンク: <a href="https://ieeexplore.ieee.org/search/searchresult.jsp?queryText=Total%20Ionizing%20Dose%20in%20Nano-Scaled%20CMOS%20Technologies" target="_blank" rel="noopener noreferrer">IEEE Xplore 検索</a></div>
+        </li>
+        <li>
+          <div class="paper-title">Impact of GigaRad Ionizing Dose on 28-nm Bulk MOSFETs for Future HL-LHC</div>
+          <div class="paper-meta">著者: CERN関連研究 / 年: 2016</div>
+          <div>内容: HL-LHC用途で28 nm Bulk CMOSの1 Grad級耐性を実証。</div>
+          <div class="paper-link">リンク: <a href="https://www.researchgate.net/publication/313369489" target="_blank" rel="noopener noreferrer">ResearchGate</a></div>
+        </li>
+        <li>
+          <div class="paper-title">SOI FinFET Design Optimization for Radiation Hardening and Performance Enhancement</div>
+          <div class="paper-meta">著者: IEEE関連 / 年: 2023</div>
+          <div>内容: 14 nm SOI FinFETのスペーサー長・基板バイアス最適化によるTID耐性向上をシミュレーション。</div>
+          <div class="paper-link">リンク: <a href="https://www.researchgate.net/publication/371748892" target="_blank" rel="noopener noreferrer">ResearchGate</a></div>
+        </li>
+        <li>
+          <div class="paper-title">A Comparative Study of Total Ionizing Dose and Heavy-Ion Irradiation Effects on n-Channel and p-Channel SGT MOSFETs</div>
+          <div class="paper-meta">著者: Yuan Wang, et al. / 年: 2024</div>
+          <div>内容: SGT構造MOSFETのTID/SEE耐性をnチャネル・pチャネルで比較。</div>
+          <div class="paper-link">リンク: <a href="https://jglobal.jst.go.jp/en/public/202502220464406246" target="_blank" rel="noopener noreferrer">J-GLOBAL 書誌情報</a></div>
+        </li>
       </ul>
     </section>
 
     <section class="section-card">
-      <h3>9. 参照リンク（論文探索・公式資料）</h3>
-      <ul class="link-list">
-        <li><a href="https://ieeexplore.ieee.org/" target="_blank" rel="noopener noreferrer">IEEE Xplore</a></li>
-        <li><a href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
-        <li><a href="https://arxiv.org/" target="_blank" rel="noopener noreferrer">arXiv</a></li>
-        <li><a href="https://www.sciencedirect.com/" target="_blank" rel="noopener noreferrer">ScienceDirect</a></li>
-        <li><a href="https://www.researchgate.net/" target="_blank" rel="noopener noreferrer">ResearchGate</a></li>
-        <li><a href="https://attend.ieee.org/nsrec/" target="_blank" rel="noopener noreferrer">NSREC</a></li>
-        <li><a href="https://www.radecs.org/" target="_blank" rel="noopener noreferrer">RADECS</a></li>
-        <li><a href="https://ntrs.nasa.gov/" target="_blank" rel="noopener noreferrer">NASA NTRS</a></li>
-        <li><a href="https://cds.cern.ch/" target="_blank" rel="noopener noreferrer">CERN Document Server</a></li>
-        <li><a href="https://jaxa.repo.nii.ac.jp/" target="_blank" rel="noopener noreferrer">JAXA研究開発資料</a></li>
-        <li><a href="https://escies.org/" target="_blank" rel="noopener noreferrer">ESA/ESCC (ESCIES)</a></li>
+      <h3>4. 福島第一原発廃炉・ロボティクス向け研究</h3>
+      <p>高線量ガンマ線環境でのCOTS部品活用に関する日本発の重要研究。</p>
+      <ul class="paper-list">
+        <li>
+          <div class="paper-title">Assessment of Radiation Tolerance of Flash Memory by gamma-Ray Irradiation</div>
+          <div class="paper-meta">著者: 高倉 健一郎, et al. / 年: 2024</div>
+          <div>内容: 廃炉ロボット用途を想定し、フラッシュメモリ（特にpSLC）の高耐性を検証。</div>
+          <div class="paper-link">リンク: <a href="https://doi.org/10.20965/jrm.2024.p0088" target="_blank" rel="noopener noreferrer">DOI: 10.20965/jrm.2024.p0088</a></div>
+        </li>
+        <li>
+          <div class="paper-title">A Comprehensive Program for Investigation of Radiation Effects in Robots Used in Mitigation of Nuclear Disasters</div>
+          <div class="paper-meta">著者: A. Witulski, et al. / 年: 2014</div>
+          <div>内容: 福島事故後のロボット向けに、センサ・電子回路の劣化メカニズムを体系評価。</div>
+          <div class="paper-link">リンク: <a href="https://engineering.vanderbilt.edu/2014/08/27/after-fukushima-vanderbilt-researchers-study-radiations-effects-on-robots/" target="_blank" rel="noopener noreferrer">Vanderbilt紹介ページ</a></div>
+        </li>
       </ul>
-      <p>推奨アラート語: <code>radiation hardened MOSFET</code>, <code>TID MOSFET</code>, <code>SEE MOSFET</code>, <code>SEB SEGR power MOSFET</code></p>
     </section>
 
     <section class="section-card">
-      <h3>10. 結論</h3>
-      <p>放射線環境下MOSFET研究は、微細化CMOS、WBGパワーデバイス、次世代材料まで連続した技術体系として発展している。構造進化はTID耐性向上をもたらす一方、STI/BOXや終端構造など新しい感受点を生む。実務では、素子単体性能より「環境モデル」「実装条件」「統計的ばらつき」を統合したHardness Assuranceの成熟度が成否を分ける。</p>
-      <p>本ページは、提供文章の情報密度を保ちつつ研究計画に接続できる形で再整理した。今後は章ごとに論文ID（DOI/NTRS番号等）を付与し、トレーサブルな調査台帳として継続更新する。</p>
+      <h3>5. その他の回路・材料研究</h3>
+      <ul class="paper-list">
+        <li>
+          <div class="paper-title">Charge Trapping Effects on n-MOSFET Current Mirrors Under TID Radiation</div>
+          <div class="paper-meta">著者: Electronics 掲載 / 年: 2025</div>
+          <div>内容: カレントミラー回路でのTIDによるVthシフトと出力精度劣化を定量化。</div>
+          <div class="paper-link">リンク: <a href="https://doi.org/10.3390/mi16091064" target="_blank" rel="noopener noreferrer">DOI: 10.3390/mi16091064</a></div>
+        </li>
+        <li>
+          <div class="paper-title">Displacement damage effects in MoS2-based electronics</div>
+          <div class="paper-meta">著者: Kaiyue He, et al. / 年: 2024</div>
+          <div>内容: MoS2 FETが従来Si-ICを2桁上回るDD耐性を持つことを示した研究。</div>
+          <div class="paper-link">リンク: <a href="https://doi.org/10.1088/1674-4926/24090027" target="_blank" rel="noopener noreferrer">DOI: 10.1088/1674-4926/24090027</a></div>
+        </li>
+        <li>
+          <div class="paper-title">Correlating the radiation response of MOS capacitors and transistors (Classic Paper)</div>
+          <div class="paper-meta">著者: P. S. Winokur, et al. / 年: 1984</div>
+          <div>内容: MOSトランジスタのVthシフトを酸化膜電荷と界面準位へ分離する解析手法を確立した古典論文。</div>
+          <div class="paper-link">リンク: <a href="https://doi.org/10.1109/TNS.1984.4333529" target="_blank" rel="noopener noreferrer">DOI: 10.1109/TNS.1984.4333529</a></div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section-card">
+      <h3>活用メモ</h3>
+      <ul class="paper-list">
+        <li>最新動向は IEEE TNS / NSREC / RADECS の3系統を定点観測。</li>
+        <li>SiCは「TID + SEB相乗効果」、GaNは「カスケード構成時のSi MOSFET脆弱性」を重点確認。</li>
+        <li>検索アラート推奨語: <code>radiation hardened MOSFET</code>, <code>TID SiC MOSFET</code>, <code>SEB SiC</code>, <code>GaN cascode TID</code>, <code>FinFET radiation</code></li>
+      </ul>
+    </section>
+
+    <section class="section-card">
+      <h3>6. COTS（民生品）コンポーネントの放射線耐性と評価手法</h3>
+      <p>以下は、COTS部品の宇宙・廃炉・加速器用途での適用可否を判断するための主要論文を分野別に整理した追加リストです。</p>
+    </section>
+
+    <section class="section-card">
+      <h3>6.1 宇宙機・小型衛星（CubeSat）向けCOTS評価</h3>
+      <ul class="paper-list">
+        <li>
+          <div class="paper-title">Risk Assessment for the Use of COTS Devices in Space Systems under Consideration of Radiation Effects</div>
+          <div class="paper-meta">著者: - / 年: 2021</div>
+          <div>内容: NewSpaceにおけるCOTS活用ガイドラインとTID/SEEリスク評価手法を提案。</div>
+          <div class="paper-link">リンク: <a href="https://doi.org/10.3390/electronics10091008" target="_blank" rel="noopener noreferrer">DOI: 10.3390/electronics10091008</a></div>
+        </li>
+        <li>
+          <div class="paper-title">NASA Goddard Space Flight Center's Current Radiation Effects Test Results (Compendium)</div>
+          <div class="paper-meta">著者: NASA GSFC REAG / 年: 2023-2024</div>
+          <div>内容: Google CoralやIntel Neural等を含む最新COTS部品の重イオン/プロトン試験結果を集約。</div>
+          <div class="paper-link">リンク: <a href="https://radhome.gsfc.nasa.gov/" target="_blank" rel="noopener noreferrer">NASA GSFC Radiation Effects</a></div>
+        </li>
+        <li>
+          <div class="paper-title">Evaluation of the feasibility of using a COTS-embedded computer as an on-board computer (OBC) for nanosatellites</div>
+          <div class="paper-meta">著者: NASA関連研究</div>
+          <div>内容: BeagleBone BlackベースCOTS SBCのLEO運用可能性とSDRAM故障率（FIT）を評価。</div>
+          <div class="paper-link">リンク: <a href="https://www.researchgate.net/publication/374467363" target="_blank" rel="noopener noreferrer">ResearchGate</a></div>
+        </li>
+        <li>
+          <div class="paper-title">A review of COTS components and systems: from diodes to FPGAs (2015-2023)</div>
+          <div class="paper-meta">著者: - / 年: 2024</div>
+          <div>内容: 2015年以降にアップスクリーニング対象となったダイオード/BJT/FET/OPAMP/メモリ/FPGAを包括レビュー。</div>
+          <div class="paper-link">リンク: <a href="https://ieeexplore.ieee.org/document/10538311" target="_blank" rel="noopener noreferrer">IEEE Xplore 10538311</a></div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section-card">
+      <h3>6.2 福島第一原発廃炉・原子力ロボティクス向け</h3>
+      <ul class="paper-list">
+        <li>
+          <div class="paper-title">Assessment of Radiation Tolerance of Flash Memory by gamma-Ray Irradiation</div>
+          <div class="paper-meta">著者: Kenichiro Takakura, et al. / 年: 2024</div>
+          <div>内容: 廃炉ロボット用途で、pSLC型フラッシュメモリの優れた放射線耐性を実証。</div>
+          <div class="paper-link">リンク: <a href="https://doi.org/10.20965/jrm.2024.p0088" target="_blank" rel="noopener noreferrer">DOI: 10.20965/jrm.2024.p0088</a></div>
+        </li>
+        <li>
+          <div class="paper-title">Radiation tolerance of a small COTS single board computer for mobile robots</div>
+          <div class="paper-meta">著者: Andrew West, et al. (University of Manchester) / 年: 2021以前</div>
+          <div>内容: UP Core等の小型COTS SBCがROS稼働時に約111 Gyまで耐えることを評価。</div>
+          <div class="paper-link">リンク: <a href="https://research.manchester.ac.uk/en/publications/radiation-tolerance-of-a-small-cots-single-board-computer-for-mob" target="_blank" rel="noopener noreferrer">University of Manchester</a></div>
+        </li>
+        <li>
+          <div class="paper-title">The Radiation Tolerance and Development of Robotic Platforms for Nuclear Decommissioning</div>
+          <div class="paper-meta">著者: M. Nancekievill / 年: 2017</div>
+          <div>内容: 電圧レギュレータ等を含む複数COTS部品について、5 kGyまでの耐性を調査。</div>
+          <div class="paper-link">リンク: <a href="https://research.manchester.ac.uk/en/studentTheses/the-radiation-tolerance-and-development-of-robotic-platforms-for-" target="_blank" rel="noopener noreferrer">University of Manchester Thesis</a></div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section-card">
+      <h3>6.3 高エネルギー加速器・産業用評価</h3>
+      <ul class="paper-list">
+        <li>
+          <div class="paper-title">Radiation Hardness Assurance Methodology of Radiation Tolerant Power Converter Controls for Large Hadron Collider</div>
+          <div class="paper-meta">著者: S. Uznanski, et al. (CERN) / 年: 2014</div>
+          <div>内容: LHC混合放射線場でCOTSベース電源制御を成立させるRHA手法を提示。</div>
+          <div class="paper-link">リンク: <a href="https://doi.org/10.1109/TNS.2014.2368149" target="_blank" rel="noopener noreferrer">DOI: 10.1109/TNS.2014.2368149</a></div>
+        </li>
+        <li>
+          <div class="paper-title">Radiation Effects on COTS Microcontrollers: Test Methodology, Qualification Results, and Mitigation Strategies</div>
+          <div class="paper-meta">著者: CERN関連研究 / 年: 2025（発表予定/資料）</div>
+          <div>内容: SAMD21、ESP32、SAME54等のプロトン照射結果とウォッチドッグ活用対策を整理。</div>
+          <div class="paper-link">リンク: <a href="https://indico.cern.ch/event/1542968/contributions/6504888/" target="_blank" rel="noopener noreferrer">CERN Indico</a></div>
+        </li>
+        <li>
+          <div class="paper-title">Ionizing radiation effects on a COTS low-cost RISC microcontroller</div>
+          <div class="paper-meta">著者: -</div>
+          <div>内容: AT89C51RD2（8-bit Flash MCU）が0.6 kGyまで正常動作することを確認。</div>
+          <div class="paper-link">リンク: <a href="https://www.researchgate.net/publication/321230606" target="_blank" rel="noopener noreferrer">ResearchGate</a></div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section-card">
+      <h3>6.4 特定技術・メモリデバイス</h3>
+      <ul class="paper-list">
+        <li>
+          <div class="paper-title">Soft Error Evaluation of 12nm FinFET Technology Based on COTS GPU Neutron Testing</div>
+          <div class="paper-meta">著者: L. Artola, et al. / 年: 2025（発表予定）</div>
+          <div>内容: 12nm FinFET採用COTS GPUの中性子照射によるソフトエラーとSEFIを評価。</div>
+          <div class="paper-link">リンク: <a href="https://www.nsrec.com/technical-program-2025-thursday/" target="_blank" rel="noopener noreferrer">NSREC 2025 Program</a></div>
+        </li>
+        <li>
+          <div class="paper-title">Development of a radiation evaluation method for COTS parts at JAXA -SSD radiation testing method-</div>
+          <div class="paper-meta">著者: JAXA</div>
+          <div>内容: 民生SSD（M.2）の重イオン試験法と、コントローラ故障（SEFI）解析を提示。</div>
+          <div class="paper-link">リンク: <a href="https://escies.org/download/webDocumentFile?id=71080" target="_blank" rel="noopener noreferrer">ESCIES Document</a></div>
+        </li>
+        <li>
+          <div class="paper-title">COTS BJT Radiation Qualification Methodology for Highly Distributed Systems in Mixed-Field Environments</div>
+          <div class="paper-meta">著者: G. Andreetta, et al. / 年: 2020/2025</div>
+          <div>内容: 加速器の混合場でCOTS BJTのTID/DD相乗効果を評価する認定手法。</div>
+          <div class="paper-link">リンク: <a href="https://doi.org/10.1109/TNS.2025.3539768" target="_blank" rel="noopener noreferrer">DOI: 10.1109/TNS.2025.3539768</a></div>
+        </li>
+      </ul>
     </section>
   </main>
 </body>
