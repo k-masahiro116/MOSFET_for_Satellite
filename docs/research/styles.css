@@ -55,7 +55,7 @@ body {
   display: flex;
   min-height: 100vh;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .layout::after {
@@ -79,10 +79,14 @@ body {
 .sidebar {
   width: var(--sidebar-width);
   flex-shrink: 0;
+  max-height: 100vh;
   padding: 22px 14px 16px;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-gutter: stable;
   color: var(--text-on-panel);
   background:
     linear-gradient(160deg, rgba(10, 40, 59, 0.92), rgba(6, 28, 46, 0.9)),
@@ -255,6 +259,8 @@ body {
   .sidebar,
   .layout.sidebar-collapsed .sidebar {
     width: 100%;
+    max-height: none;
+    overflow: visible;
   }
 
   .layout.sidebar-collapsed .sidebar .sidebar-title,
