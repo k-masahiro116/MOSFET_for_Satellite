@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="620">
+<rect width="100%" height="100%" fill="#f7fbff"/>
+<text x="90" y="30" font-size="20" font-family="Arial" fill="#17324a">Space Market by Year (5-layer stacked)</text>
+<line x1="90" y1="535.00" x2="780" y2="535.00" stroke="#d7e4f1" stroke-width="1"/>
+<text x="20" y="540.00" font-size="12" font-family="Arial" fill="#49667f">0</text>
+<line x1="90" y1="438.00" x2="780" y2="438.00" stroke="#d7e4f1" stroke-width="1"/>
+<text x="20" y="443.00" font-size="12" font-family="Arial" fill="#49667f">143</text>
+<line x1="90" y1="341.00" x2="780" y2="341.00" stroke="#d7e4f1" stroke-width="1"/>
+<text x="20" y="346.00" font-size="12" font-family="Arial" fill="#49667f">286</text>
+<line x1="90" y1="244.00" x2="780" y2="244.00" stroke="#d7e4f1" stroke-width="1"/>
+<text x="20" y="249.00" font-size="12" font-family="Arial" fill="#49667f">429</text>
+<line x1="90" y1="147.00" x2="780" y2="147.00" stroke="#d7e4f1" stroke-width="1"/>
+<text x="20" y="152.00" font-size="12" font-family="Arial" fill="#49667f">572</text>
+<line x1="90" y1="50.00" x2="780" y2="50.00" stroke="#d7e4f1" stroke-width="1"/>
+<text x="20" y="55.00" font-size="12" font-family="Arial" fill="#49667f">715</text>
+<rect x="172" y="505.37" width="81" height="29.63" fill="#2f6d9b"/>
+<rect x="172" y="420.19" width="81" height="85.18" fill="#4fa3d1"/>
+<rect x="172" y="212.78" width="81" height="207.40" fill="#7bc96f"/>
+<rect x="172" y="197.97" width="81" height="14.81" fill="#f2c14e"/>
+<rect x="172" y="164.64" width="81" height="33.33" fill="#f28e2b"/>
+<text x="212.50" y="555" text-anchor="middle" font-size="12" font-family="Arial" fill="#37556f">2022</text>
+<text x="212.50" y="158.64" text-anchor="middle" font-size="11" font-family="Arial" fill="#17324a">546.0</text>
+<rect x="310" y="503.30" width="81" height="31.70" fill="#2f6d9b"/>
+<rect x="310" y="415.53" width="81" height="87.77" fill="#4fa3d1"/>
+<rect x="310" y="200.17" width="81" height="215.36" fill="#7bc96f"/>
+<rect x="310" y="183.15" width="81" height="17.01" fill="#f2c14e"/>
+<rect x="310" y="148.36" width="81" height="34.80" fill="#f28e2b"/>
+<text x="350.50" y="555" text-anchor="middle" font-size="12" font-family="Arial" fill="#37556f">2023</text>
+<text x="350.50" y="142.36" text-anchor="middle" font-size="11" font-family="Arial" fill="#17324a">570.0</text>
+<rect x="448" y="499.66" width="81" height="35.34" fill="#2f6d9b"/>
+<rect x="448" y="406.10" width="81" height="93.56" fill="#4fa3d1"/>
+<rect x="448" y="177.40" width="81" height="228.70" fill="#7bc96f"/>
+<rect x="448" y="156.61" width="81" height="20.79" fill="#f2c14e"/>
+<rect x="448" y="119.19" width="81" height="37.42" fill="#f28e2b"/>
+<text x="488.50" y="555" text-anchor="middle" font-size="12" font-family="Arial" fill="#37556f">2024</text>
+<text x="488.50" y="113.19" text-anchor="middle" font-size="11" font-family="Arial" fill="#17324a">613.0</text>
+<rect x="586" y="495.48" width="81" height="39.52" fill="#2f6d9b"/>
+<rect x="586" y="396.69" width="81" height="98.79" fill="#4fa3d1"/>
+<rect x="586" y="151.96" width="81" height="244.73" fill="#7bc96f"/>
+<rect x="586" y="126.37" width="81" height="25.60" fill="#f2c14e"/>
+<rect x="586" y="85.95" width="81" height="40.41" fill="#f28e2b"/>
+<text x="626.50" y="555" text-anchor="middle" font-size="12" font-family="Arial" fill="#37556f">2025</text>
+<text x="626.50" y="79.95" text-anchor="middle" font-size="11" font-family="Arial" fill="#17324a">662.0</text>
+<rect x="724" y="491.35" width="81" height="43.65" fill="#2f6d9b"/>
+<rect x="724" y="387.08" width="81" height="104.27" fill="#4fa3d1"/>
+<rect x="724" y="125.18" width="81" height="261.90" fill="#7bc96f"/>
+<rect x="724" y="93.65" width="81" height="31.52" fill="#f2c14e"/>
+<rect x="724" y="50.00" width="81" height="43.65" fill="#f28e2b"/>
+<text x="764.50" y="555" text-anchor="middle" font-size="12" font-family="Arial" fill="#37556f">2026</text>
+<text x="764.50" y="44.00" text-anchor="middle" font-size="11" font-family="Arial" fill="#17324a">715.0</text>
+<rect x="805" y="90" width="16" height="16" fill="#2f6d9b"/>
+<text x="829" y="103" font-size="12" font-family="Arial" fill="#17324a">Transport/Launch</text>
+<rect x="805" y="118" width="16" height="16" fill="#4fa3d1"/>
+<text x="829" y="131" font-size="12" font-family="Arial" fill="#17324a">Satellite Infrastructure</text>
+<rect x="805" y="146" width="16" height="16" fill="#7bc96f"/>
+<text x="829" y="159" font-size="12" font-family="Arial" fill="#17324a">Downstream Data Services</text>
+<rect x="805" y="174" width="16" height="16" fill="#f2c14e"/>
+<text x="829" y="187" font-size="12" font-family="Arial" fill="#17324a">In-Orbit Services</text>
+<rect x="805" y="202" width="16" height="16" fill="#f28e2b"/>
+<text x="829" y="215" font-size="12" font-family="Arial" fill="#17324a">Deep Space/Lunar</text>
+<text x="20" y="45" font-size="12" font-family="Arial" fill="#49667f">USD (billion)</text>
+</svg>

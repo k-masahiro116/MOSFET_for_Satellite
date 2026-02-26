@@ -1,0 +1,30 @@
+metric_id,layer,year,value,unit,currency,is_forecast,source_id,source_url,ref_id,line_no,source_tier,notes
+M001,total_space_economy,2024,415.0,billion,USD,false,SRC001,https://brycetech.com/reports/report-documents/global_satellite_industry_revenues_2024/,turn0view0,133,primary_official,Global space economy reached 415B USD in 2024
+M002,downstream_data_services,2024,108.3,billion,USD,false,SRC001,https://brycetech.com/reports/report-documents/global_satellite_industry_revenues_2024/,turn0view0,138,primary_official,Satellite services revenue in 2024
+M003,downstream_data_services,2024,155.3,billion,USD,false,SRC001,https://brycetech.com/reports/report-documents/global_satellite_industry_revenues_2024/,turn0view0,145,primary_official,Ground equipment revenue in 2024
+M004,satellite_infrastructure,2024,20.0,billion,USD,false,SRC001,https://brycetech.com/reports/report-documents/global_satellite_industry_revenues_2024/,turn0view0,151,primary_official,Satellite manufacturing revenue in 2024
+M005,transport_launch,2024,9.3,billion,USD,false,SRC001,https://brycetech.com/reports/report-documents/global_satellite_industry_revenues_2024/,turn0view0,159,primary_official,Launch industry revenue in 2024
+M006,transport_launch,2023,6.1,billion,USD,false,SRC002,https://www.sphericalinsights.com/press-release/space-launch-services-market,turn3view0,115,industry_report,Launch market size in 2023
+M007,transport_launch,2033,11.2,billion,USD,true,SRC002,https://www.sphericalinsights.com/press-release/space-launch-services-market,turn3view0,115,industry_report,Launch market forecast for 2033
+M008,transport_launch,2023,6.26,percent_cagr,NA,true,SRC002,https://www.sphericalinsights.com/press-release/space-launch-services-market,turn3view0,115,industry_report,Launch market CAGR 2023-2033
+M009,in_orbit_services,2023,13.7,billion,USD,false,SRC003,https://www.sphericalinsights.com/press-release/orbital-spaceflight-market,turn4view0,95,industry_report,Orbital spaceflight market size in 2023
+M010,in_orbit_services,2033,35.9,billion,USD,true,SRC003,https://www.sphericalinsights.com/press-release/orbital-spaceflight-market,turn4view0,95,industry_report,Orbital spaceflight market forecast for 2033
+M011,in_orbit_services,2023,10.11,percent_cagr,NA,true,SRC003,https://www.sphericalinsights.com/press-release/orbital-spaceflight-market,turn4view0,95,industry_report,Orbital spaceflight CAGR 2023-2033
+M012,total_space_economy,2023,630.0,billion,USD,false,SRC004,https://sorabatake.jp/216/,turn2view0,776,news_article,WEF cited global space economy in 2023
+M013,total_space_economy,2030,1800.0,billion,USD,true,SRC004,https://sorabatake.jp/216/,turn2view0,776,news_article,WEF cited global space economy outlook for 2030
+M014,total_space_economy,2035,1800.0,billion,USD,true,SRC004,https://sorabatake.jp/216/,turn2view0,776,news_article,McKinsey cited global space economy outlook for 2035
+M015,deep_space_lunar,2025,199.5,million,USD,false,SRC005,https://spaceflightnow.com/2025/10/28/astrobotic-delays-griffin-1-moon-mission-to-net-july-2026/,turn5view0,670,news_article,Initial CLPS contract value
+M016,deep_space_lunar,2025,226.5,million,USD,false,SRC005,https://spaceflightnow.com/2025/10/28/astrobotic-delays-griffin-1-moon-mission-to-net-july-2026/,turn5view0,670,news_article,Revised CLPS contract value
+M017,deep_space_lunar,2025,320.4,million,USD,false,SRC005,https://spaceflightnow.com/2025/10/28/astrobotic-delays-griffin-1-moon-mission-to-net-july-2026/,turn5view0,670,news_article,Current CLPS contract value reported
+M018,total_space_economy,2024,613.0,billion,USD,false,SRC006,https://www.spacefoundation.org/2025/07/22/the-space-report-2025-q2/,turn0view0,91,primary_official,Global space economy size in 2024 reported by Space Foundation
+M019,total_space_economy,2024,7.8,percent_growth,NA,false,SRC006,https://www.spacefoundation.org/2025/07/22/the-space-report-2025-q2/,turn0view0,91,primary_official,Year-over-year growth rate in 2024
+M020,commercial_activity_ratio,2024,78.0,percent,NA,false,SRC006,https://www.spacefoundation.org/2025/07/22/the-space-report-2025-q2/,turn0view0,93,primary_official,Commercial sector share of global space activity
+M021,government_spending,2024,132.0,billion,USD,false,SRC006,https://www.spacefoundation.org/2025/07/22/the-space-report-2025-q2/,turn0view0,94,primary_official,Global government spending on space programs
+M022,launch_count,2025,149,count,NA,false,SRC006,https://www.spacefoundation.org/2025/07/22/the-space-report-2025-q2/,turn0view0,95,primary_official,Launches completed in first half of 2025
+M023,total_space_economy,2023,570.0,billion,USD,false,SRC007,https://www.spacefoundation.org/2024/07/18/the-space-report-2024-q2/,turn0search1,1,primary_official,Global space economy size in 2023
+M024,total_space_economy,2022,531.0,billion,USD,false,SRC007,https://www.spacefoundation.org/2024/07/18/the-space-report-2024-q2/,turn0search1,1,primary_official,Revised estimate for 2022 in 2024 release
+M025,total_space_economy,2022,546.0,billion,USD,false,SRC008,https://www.spacefoundation.org/2023/07/25/the-space-report-2023-q2/,turn2search1,1,primary_official,Global space economy size in 2022
+M026,total_space_economy,2021,505.0,billion,USD,false,SRC008,https://www.spacefoundation.org/2023/07/25/the-space-report-2023-q2/,turn2search1,1,primary_official,Revised estimate for 2021 in 2023 release
+M027,total_space_economy,2021,469.0,billion,USD,false,SRC009,https://www.spacefoundation.org/2022/07/27/the-space-report-2022-q2/,turn2search3,1,primary_official,Global space economy size in 2021
+M028,total_space_economy,2020,447.0,billion,USD,false,SRC010,https://www.spacefoundation.org/2021/07/15/global-space-economy-rose-to-447b-in-2020-continuing-five-year-growth/,turn3search0,1,primary_official,Global space economy size in 2020
+M029,total_space_economy,2019,428.0,billion,USD,false,SRC010,https://www.spacefoundation.org/2021/07/15/global-space-economy-rose-to-447b-in-2020-continuing-five-year-growth/,turn3search0,1,primary_official,Revised estimate for 2019 in 2021 release

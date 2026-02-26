@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WEF Space 2024 Page Digest | MOSFET for Satellite</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <style>
+    .hero {
+      margin-bottom: 14px;
+    }
+    .source {
+      color: #26495f;
+      font-size: 0.94rem;
+    }
+    .source a {
+      color: #11557e;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(17, 85, 126, 0.35);
+    }
+    .toc {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid #d7e2ee;
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin-bottom: 14px;
+    }
+    .toc ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 8px 0 0;
+      padding: 0;
+    }
+    .toc a {
+      display: inline-block;
+      text-decoration: none;
+      color: #0f4a68;
+      background: #edf5fb;
+      border: 1px solid #d2e3f2;
+      border-radius: 999px;
+      padding: 3px 10px;
+      font-size: 0.86rem;
+    }
+    .page-grid {
+      display: grid;
+      gap: 12px;
+    }
+    .page-card {
+      background: rgba(255, 255, 255, 0.93);
+      border: 1px solid #d7e2ee;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(10, 38, 58, 0.08);
+      padding: 14px 16px;
+    }
+    .page-card h3 {
+      margin: 0 0 8px;
+      color: #0f3a56;
+      font-size: 1rem;
+    }
+    .meta {
+      margin: 0 0 8px;
+      color: #4d6a7f;
+      font-size: 0.85rem;
+    }
+    .page-card p {
+      margin: 0 0 8px;
+      color: #27485e;
+      line-height: 1.7;
+    }
+    details {
+      margin-top: 8px;
+    }
+    summary {
+      cursor: pointer;
+      color: #145b82;
+      font-weight: 600;
+    }
+    pre {
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+      font-size: 0.79rem;
+      color: #1f3f55;
+      background: #f5f9fc;
+      border: 1px solid #dce7f2;
+      border-radius: 10px;
+      padding: 10px;
+      margin-top: 8px;
+      max-height: 320px;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body class="content-page">
+  <main class="page-body">
+    <section class="hero">
+      <h2>WEF Space 2024 - ページ別ダイジェスト</h2>
+      <p class="source">
+        出典:
+        <a href="https://www3.weforum.org/docs/WEF_Space_2024.pdf" target="_blank" rel="noopener noreferrer">Space: The $1.8 Trillion Opportunity for Global Economic Growth (World Economic Forum, April 2024)</a>
+      </p>
+      <p>Python（pypdf）でPDFをページごとに読み取り、各ページの要約・抜粋・文字量を整理しています。</p>
+    </section>
+
+    <section class="toc" aria-label="ページ索引">
+      <strong>ページ索引（全52ページ）</strong>
+      <ul>
+        <li><a href="#p1">P1</a></li>
+<li><a href="#p2">P2</a></li>
+<li><a href="#p3">P3</a></li>
+<li><a href="#p4">P4</a></li>
+<li><a href="#p5">P5</a></li>
+<li><a href="#p6">P6</a></li>
+<li><a href="#p7">P7</a></li>
+<li><a href="#p8">P8</a></li>
+<li><a href="#p9">P9</a></li>
+<li><a href="#p10">P10</a></li>
+<li><a href="#p11">P11</a></li>
+<li><a href="#p12">P12</a></li>
+<li><a href="#p13">P13</a></li>
+<li><a href="#p14">P14</a></li>
+<li><a href="#p15">P15</a></li>
+<li><a href="#p16">P16</a></li>
+<li><a href="#p17">P17</a></li>
+<li><a href="#p18">P18</a></li>
+<li><a href="#p19">P19</a></li>
+<li><a href="#p20">P20</a></li>
+<li><a href="#p21">P21</a></li>
+<li><a href="#p22">P22</a></li>
+<li><a href="#p23">P23</a></li>
+<li><a href="#p24">P24</a></li>
+<li><a href="#p25">P25</a></li>
+<li><a href="#p26">P26</a></li>
+<li><a href="#p27">P27</a></li>
+<li><a href="#p28">P28</a></li>
+<li><a href="#p29">P29</a></li>
+<li><a href="#p30">P30</a></li>
+<li><a href="#p31">P31</a></li>
+<li><a href="#p32">P32</a></li>
+<li><a href="#p33">P33</a></li>
+<li><a href="#p34">P34</a></li>
+<li><a href="#p35">P35</a></li>
+<li><a href="#p36">P36</a></li>
+<li><a href="#p37">P37</a></li>
+<li><a href="#p38">P38</a></li>
+<li><a href="#p39">P39</a></li>
+<li><a href="#p40">P40</a></li>
+<li><a href="#p41">P41</a></li>
+<li><a href="#p42">P42</a></li>
+<li><a href="#p43">P43</a></li>
+<li><a href="#p44">P44</a></li>
+<li><a href="#p45">P45</a></li>
+<li><a href="#p46">P46</a></li>
+<li><a href="#p47">P47</a></li>
+<li><a href="#p48">P48</a></li>
+<li><a href="#p49">P49</a></li>
+<li><a href="#p50">P50</a></li>
+<li><a href="#p51">P51</a></li>
+<li><a href="#p52">P52</a></li>
+      </ul>
+    </section>
+
+    <section class="page-grid">
+      
+    <article class="page-card" id="p1">
+      <h3>Page 1: Space: The $1.8 Trillion Opportunity for Global Economic Growth INSIGHT REPORT APRIL 2024 In knowledge partnership...</h3>
+      <p class="meta">Words: 20 | Characters: 138</p>
+      <p><strong>要約:</strong> 『宇宙：世界経済成長に向けた1.8兆ドルの機会』。2024年4月のインサイトレポートで、McKinsey &amp; Companyとの知見連携により作成。</p>
+      <details>
+        <summary>抽出抜粋（和訳）</summary>
+        <pre>宇宙：世界経済成長に向けた1.8兆ドルの機会
+インサイトレポート（2024年4月）
+McKinsey &amp; Companyとの知見連携により作成</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p2">
+      <h3>Page 2: Contents Images: 1-Pact Edition, Getty Images © 2024 World Economic Forum. All rights reserved. No part...</h3>
+      <p class="meta">Words: 174 | Characters: 1098</p>
+      <p><strong>要約:</strong> 目次・著作権・免責事項を掲載。本書はWEFのプロジェクト知見として公表され、記載見解は必ずしもWEF全体の公式見解を代表しない。</p>
+      <details>
+        <summary>抽出抜粋（原文）</summary>
+        <pre>目次・画像クレジット・著作権表示・免責事項。
+本書は世界経済フォーラム（WEF）がプロジェクト知見として公表したものであり、
+記載された知見・解釈・結論は、WEFが促進した共同プロセスの成果である一方、
+必ずしもWEF全体や全メンバー／パートナー／関係者の見解を代表するものではない。
+
+構成：
+序文、要旨、導入、第1章〜第3章、結論、付録、貢献者、注記。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p3">
+      <h3>Page 3: Foreword The space industry is approaching the next frontier, with each week bringing news of a...</h3>
+      <p class="meta">Words: 349 | Characters: 2250</p>
+      <p><strong>要約:</strong> 序文。新型ロケット試験、衛星打上げ、月以遠への探査が相次ぎ、宇宙活動は前例のない速度で次のフロンティアへ向かっている。</p>
+      <details>
+        <summary>抽出抜粋（原文）</summary>
+        <pre>序文：
+宇宙産業は次のフロンティアへ近づいている。毎週のように世界各地から重要な宇宙開発ニュースが届き、
+新型ロケット試験、先進的な衛星打上げ、月以遠へのロボティクス探査など、
+人類の宇宙活動は前例のない速度で加速している。
+
+2035年には世界の宇宙経済は1.8兆ドル（2023年は6300億ドル）に達すると推計される。
+注目を集める大型打上げの裏には、数十年にわたる地道な技術革新があり、
+その成果は多様な産業に広く波及している。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p4">
+      <h3>Page 4: Executive summary The space economy is forecast to soar to $1.8 trillion by 2035 in an...</h3>
+      <p class="meta">Words: 601 | Characters: 3939</p>
+      <p><strong>要約:</strong> エグゼクティブサマリー。宇宙経済は2035年に1.8兆ドルへ拡大し、地上のほぼ全産業に価値を生み、世界的課題の解決にも寄与する。</p>
+      <details>
+        <summary>抽出抜粋（原文）</summary>
+        <pre>エグゼクティブサマリー：
+宇宙経済は2035年までに1.8兆ドルへ拡大し、接続性とモビリティが高まる世界の中で、
+地上のほぼすべての産業に価値を生み、主要課題の解決に資する。
+
+宇宙はロケット開発にとどまらず、天気予報、配送、スマートウォッチ通話など日常に深く関与する。
+WEFとMcKinseyは、15超の産業・世界各地域から60名超の有識者と議論し、
+市場予測と官民データを基に、宇宙経済の構成要素をボトムアップで試算した。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p5">
+      <h3>Page 5: The four main drivers for space’s increasing prevalence in day-to-day life are: Decrease in launch costs...</h3>
+      <p class="meta">Words: 434 | Characters: 2792</p>
+      <p><strong>要約:</strong> 宇宙の生活浸透を後押しする主因は、打上げコスト低下、商業イノベーション、投資・用途の多様化など。低コスト化が打上げ増を生む。</p>
+      <details>
+        <summary>抽出抜粋（原文）</summary>
+        <pre>宇宙が日常に浸透する主因は4つ：
+1) 打上げコスト低下（過去20年で約10分の1）により打上げ回数が増加。
+2) 商業イノベーション（部品・ソフト）により小型衛星でも高度な運用が可能化。
+3) 投資主体と用途の多様化（民間投資は2021〜2022年に高水準）。
+4) 接続需要増に伴うデータ価格低下見通し。
+
+例として地球観測では、より高解像度で低コストな画像利用が進んでいる。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p6">
+      <h3>Page 6: Introduction: Moving towards space ubiquity Like the internet in its early days, the space industry is...</h3>
+      <p class="meta">Words: 250 | Characters: 1400</p>
+      <p><strong>要約:</strong> 導入。宇宙産業はインターネット黎明期のような転換点にあり、景気変動下でも普及可能性を広げる局面に入っている。</p>
+      <details>
+        <summary>抽出抜粋（和訳）</summary>
+        <pre>導入：宇宙のユビキタス化へ
+宇宙産業はいま、インターネット黎明期に似た転換点にある。
+本文では1930年のラジオ、1980年代のPC普及を対比として示し、
+景気低迷期でも新技術が市場適合を得ることで社会が大きく変わることを説明する。
+
+同様に宇宙技術も、今後の普及曲線に入る可能性が高いことを示唆している。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p7">
+      <h3>Page 7: As it turns out, the radio and the personal computer would go on to change the...</h3>
+      <p class="meta">Words: 555 | Characters: 3565</p>
+      <p><strong>要約:</strong> ラジオやPC、携帯電話、インターネット同様、宇宙技術もニッチから急速に普及し、産業構造と生活を変える可能性が高い。</p>
+      <details>
+        <summary>Extracted excerpt</summary>
+        <pre>ラジオやPC、携帯電話、インターネットは、ニッチな技術から急速に社会基盤へと普及した。
+同様に宇宙技術も、衛星ネットワーク接続、宇宙輸送、宇宙データ活用を通じて
+産業全体を変革する可能性がある。
+
+実現時期には不確実性があるものの、今後10年の見通しは有望であり、
+政府主導中心だった宇宙活動は商業機会の拡大で構造変化が進んでいる。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p8">
+      <h3>Page 8: The space “backbone” and its “reach” across the world 1 The global space economy will grow...</h3>
+      <p class="meta">Words: 43 | Characters: 260</p>
+      <p><strong>要約:</strong> 第1章。宇宙経済は2023年の6300億ドルから2035年に1.8兆ドルへ成長し、より接続性・モビリティの高い世界を支える。</p>
+      <details>
+        <summary>Extracted excerpt</summary>
+        <pre>第1章：宇宙の「バックボーン」と世界への「リーチ」
+世界の宇宙経済は2023年の6300億ドルから2035年に1.8兆ドルへ成長し、
+より接続性・モビリティが高い社会を支える見通し。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p9">
+      <h3>Page 9: What is the space economy? If you’re picturing satellites, launchers and services like broadcast television (TV)...</h3>
+      <p class="meta">Words: 538 | Characters: 3312</p>
+      <p><strong>要約:</strong> 宇宙経済は「バックボーン（宇宙ハード・サービス本体）」だけでなく、「リーチ（他産業の収益化を可能にする波及領域）」を含む。</p>
+      <details>
+        <summary>Extracted excerpt</summary>
+        <pre>宇宙経済とは何か：
+衛星や打上げ機、放送、GPSだけを想像すると半分しか見えていない。
+宇宙ハード・サービス提供者に直接収益が積み上がる「バックボーン」は、
+2023年に約3300億ドルで全体の半分強を占める。
+
+一方で、宇宙技術が他産業の収益創出を可能にする「リーチ」も約3000億ドル規模。
+天気、物流追跡、配車など日常の多くのサービスは宇宙技術なしでは成立しにくい。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p10">
+      <h3>Page 10: By 2035, reach will grow 1.5x faster than backbone (11% p.a.), becoming the main driver of...</h3>
+      <p class="meta">Words: 273 | Characters: 1528</p>
+      <p><strong>要約:</strong> 2035年までにリーチ領域はバックボーンより約1.5倍速く成長し、宇宙経済の主たる牽引役となる見通し。</p>
+      <details>
+        <summary>Extracted excerpt</summary>
+        <pre>2035年までに「リーチ」は年率11%で成長し、年率7%の「バックボーン」より約1.5倍速い。
+その結果、2035年の宇宙経済に占めるリーチ比率は約6割となる見通し。
+
+バックボーンは基盤インフラと商業用途を継続的に支える。
+図表では、通信・PNT・地球観測が主要な成長源であることが示されている。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p11">
+      <h3>Page 11: State-sponsored: Civil and defence State-sponsored investments will remain the cornerstone of the space backbone, with continued...</h3>
+      <p class="meta">Words: 401 | Characters: 2722</p>
+      <p><strong>要約:</strong> 政府主導（民生・防衛）投資は引き続き宇宙バックボーンの中核で、既存宇宙国と新興国の双方が拡大を後押しする。</p>
+      <details>
+        <summary>Extracted excerpt</summary>
+        <pre>政府主導（民生・防衛）：
+政府投資は今後も宇宙バックボーンの中核であり、既存宇宙国と新興参入国の双方が成長を促す。
+今後10年では、国家安全保障・自律性への投資増、民生機関による研究・災害対応活用の拡大、
+そして宇宙機関を持つ国の増加が主要な推進要因となる。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p12">
+      <h3>Page 12: Revenue growth from commercial communications ($ billion)FIGURE 5 However, this expansion will be partially offset by...</h3>
+      <p class="meta">Words: 416 | Characters: 2537</p>
+      <p><strong>要約:</strong> 商業通信は拡大する一方、衛星TVの利用減少が一部を相殺。今後は衛星ブロードバンドが主要成長ドライバーとなる。</p>
+      <details>
+        <summary>Extracted excerpt</summary>
+        <pre>商業通信の収益成長：
+衛星TVは加入者減少で縮小する一方、衛星ブロードバンドが成長の中心となる。
+地域により置き換え速度は異なり、地上ネットワークが発達した地域ほど衛星TV減少が大きい。
+他方で、大規模コンステレーションやマルチオービット展開が低遅延・広域接続を実現し、
+通信需要を押し上げる見通し。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p13">
+      <h3>Page 13: To sustain all these applications, receivers and chips must become increasingly ubiquitous, from being included in...</h3>
+      <p class="meta">Words: 739 | Characters: 4934</p>
+      <p><strong>要約:</strong> 各用途の拡大には受信機・チップの普及が不可欠で、スマートフォンから航空機・船舶端末まで広範囲で搭載が進む。</p>
+      <details>
+        <summary>Extracted excerpt</summary>
+        <pre>これら用途を支えるには、受信機・チップのさらなる普及が必要。
+スマホ向けD2D衛星通信チップの採用拡大が、当該セグメント成長の主因となる見込み。
+D2D通信量自体は限定的でも、遠隔地での部分接続ニーズにより高価格帯スマホへの搭載は進む。
+またPNT用途は、地図・追跡サービスの基盤として引き続き重要性を増す。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p14">
+      <h3>Page 14: Finally, deploying more space infrastructure will enable more data flows. Thus, ground operations will become ever...</h3>
+      <p class="meta">Words: 312 | Characters: 2121</p>
+      <p><strong>要約:</strong> 宇宙インフラの増強でデータ流通量が増え、地上運用の重要性が上昇。2035年に向け関連収益は大きく拡大する見込み。</p>
+      <details>
+        <summary>Extracted excerpt</summary>
+        <pre>宇宙インフラ増加でデータ流通量が拡大し、地上運用の重要性はさらに高まる。
+同分野収益は2023〜2035年で大きく増加し、サイバーセキュリティ要件も強化される。
+さらに軌道上サービス（点検・機能向上・寿命延長）が実用化し、
+混雑する軌道環境ではデオービット等の新たな需要が生まれる。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p15">
+      <h3>Page 15: These are attracting a lot of ventures and attention from public and private investors. Nevertheless, until...</h3>
+      <p class="meta">Words: 412 | Characters: 2827</p>
+      <p><strong>要約:</strong> 新規宇宙事業への関心は高いが、2035年までは政府支援が主要ドライバー。商業本格化には制度・輸送・連携条件の整備が必要。</p>
+      <details>
+        <summary>Extracted excerpt</summary>
+        <pre>新規宇宙事業には官民の関心が集まるが、2035年までは政府機関の関与が依然として重要。
+商業宇宙ステーションや月・シスルナー用途も、政府契約が主要な牽引要因になる見通し。
+2035年以降の本格商業化には、安全・持続可能性を担保する制度、
+低軌道往復の信頼性ある低コスト輸送、国際・業界横断連携が必要。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p16">
+      <h3>Page 16: Revenue growth in space-based Earth observation ($ billion)FIGURE 6 Source: Future of Space Economy research +...</h3>
+      <p class="meta">Words: 372 | Characters: 2266</p>
+      <p><strong>要約:</strong> 地球観測（EO）はクラウド・データ・AIの進展で用途が拡大し、複数業界で継続的な成長が見込まれる。</p>
+      <details>
+        <summary>Extracted excerpt</summary>
+        <pre>地球観測（EO）収益は継続成長が見込まれ、IT、金融、保険、建設、農業、エネルギー、気候分野など
+多産業で用途が広がる。
+EOは従来ニッチな活用に留まっていたが、クラウド・データ・AIの進展で
+日常的意思決定に組み込まれる段階へ移行している。
+また観光や製造といった新規商業用途も2035年に向け拡大可能性がある。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p17">
+      <h3>Page 17: Space-based research and development (R&amp;D) has already shown great potential aboard the International Space Station, from...</h3>
+      <p class="meta">Words: 274 | Characters: 1671</p>
+      <p><strong>要約:</strong> 宇宙R&amp;Dは材料・創薬などで高い可能性を示す一方、普及拡大にはより柔軟で低コスト・短納期な運用が求められる。</p>
+      <details>
+        <summary>Extracted excerpt</summary>
+        <pre>宇宙R&amp;Dは、先端材料の性能向上や創薬などで高い可能性を示してきた。
+ただし企業側の採用を加速するには、乗員・貨物運用の柔軟性向上、短納期化、低コスト化が必要。
+本レポートのベースケースでは、2035年時点で軌道上製造は年10〜20億ドル規模に達し、
+その先は医療・製造・食品分野でさらなる拡大余地がある。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p18">
+      <h3>Page 18: Commercial: PNT applications Innovations in the space economy will enable revenue generation across multiple industries and...</h3>
+      <p class="meta">Words: 731 | Characters: 4698</p>
+      <p><strong>要約:</strong> PNT（測位・航法・時刻）を活用する商業サービスは多産業で収益を生み、モビリティや配送などで特に大きく伸びる。</p>
+      <details>
+        <summary>Extracted excerpt</summary>
+        <pre>商業用途：PNT（測位・航法・時刻）
+宇宙経済の革新は、価値連鎖の複数層で新たな収益機会を生む。
+特に無償PNT信号を活用した位置情報サービスは主要成長ドライバー。
+モビリティサービス拡大に伴い、配車、車両シェア、ラストマイル配送などで
+企業・生活者の双方に不可欠な基盤機能となっている。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p19">
+      <h3>Page 19: Commercial: Communications applications As more consumers are connected by satellite to the internet economy, sales of...</h3>
+      <p class="meta">Words: 689 | Characters: 4653</p>
+      <p><strong>要約:</strong> 通信分野では衛星TV関連収益は縮小傾向だが、衛星インターネット接続拡大によりデジタル経済への参加と関連収益は増加する。</p>
+      <details>
+        <summary>Extracted excerpt</summary>
+        <pre>商業用途：通信
+衛星接続でインターネット経済に参加する利用者が増えるにつれ、
+通信由来の宇宙関連市場はバックボーンに近い動きを示す。
+衛星TV離れにより広告・受信設備などTV関連収益は減少する一方、
+衛星インターネットの普及でオンラインサービス利用、SNS利用、デジタル決済が増え、
+成長するデジタル経済への参加が拡大する。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p20">
+      <h3>Page 20: These will follow a growth trajectory akin to the backbone, as non-space-focused public institutions increasingly invest...</h3>
+      <p class="meta">Words: 405 | Characters: 2712</p>
+      <p><strong>要約:</strong> 非宇宙分野の公的機関でも宇宙活用投資が拡大。宇宙機関の特許ライセンス収益や官民連携による知見移転も進展する。</p>
+      <details>
+        <summary>Extracted excerpt</summary>
+        <pre>非宇宙分野の公的機関でも宇宙活用投資が拡大し、成長軌道はバックボーンに類似する見込み。
+宇宙機関は研究成果の特許ライセンスを通じて副次収益を拡大。
+また官民連携の増加により、公的研究で得た知見を民間市場向け製品へ移転する流れが強まる。
+産業別規模の詳細は図表・付録で示される。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p21">
+      <h3>Page 21: In addition, several other industries, from agriculture and information technology to insurance and construction, will benefit...</h3>
+      <p class="meta">Words: 139 | Characters: 1026</p>
+      <p><strong>要約:</strong> 農業、IT、保険、建設など幅広い産業が、宇宙技術による収益拡大・効率化・環境面の便益を享受すると見込まれる。</p>
+      <details>
+        <summary>抽出抜粋（和訳）</summary>
+        <pre>農業、IT、保険、建設など多様な産業が、宇宙技術によって
+数十億ドル規模の収益機会、コスト効率、環境便益を得る見込み。
+宇宙経済の加速は既存企業と新規参入の双方に機会をもたらす。
+経済・地政学・気候面の影響を踏まえると、宇宙は接続性向上や意思決定高度化の鍵であり、
+宇宙産業と非宇宙産業の継続的対話が技術進歩と新事業創出に不可欠。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p22">
+      <h3>Page 22: How key factors determine the trajectory of the space economy 2 Beyond the base case, technological...</h3>
+      <p class="meta">Words: 37 | Characters: 248</p>
+      <p><strong>要約:</strong> 第2章。ベースケースに加え、技術進化と金融面の競争力が2035年の宇宙経済の軌道を大きく左右する。</p>
+      <details>
+        <summary>抽出抜粋（和訳）</summary>
+        <pre>第2章：宇宙経済の軌道を決める主要因。
+ベースケースに加え、技術進化と金融競争力の違いが
+2035年時点の宇宙経済規模と構造を再形成し得る。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p23">
+      <h3>Page 23: Over the past few decades, space has been described as a cyclical industry, tightly linked to...</h3>
+      <p class="meta">Words: 524 | Characters: 3320</p>
+      <p><strong>要約:</strong> 宇宙産業は政策連動の循環型産業から、商業化と下流サービス拡大により構造転換点へ移行しつつある。</p>
+      <details>
+        <summary>抽出抜粋（和訳）</summary>
+        <pre>宇宙産業は長らく政策連動の循環産業と見なされてきたが、
+商業化と下流サービス拡大により構造転換点にある。
+ただし、商業技術の採用度や官主導システムとの比率見通しには関係者間で差がある。
+本研究は、技術進化と金融競争力を主要因とし、
+2035年の宇宙経済に上振れ・下振れのレンジが存在することを示す。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p24">
+      <h3>Page 24: On the upside range, growth slows post-2030 as most identified use cases reach maturity. However, actual...</h3>
+      <p class="meta">Words: 683 | Characters: 4661</p>
+      <p><strong>要約:</strong> 2030年以降は既存用途の成熟で伸び鈍化も想定されるが、新規用途次第で成長持続も可能。データ活用しやすさが鍵となる。</p>
+      <details>
+        <summary>抽出抜粋（和訳）</summary>
+        <pre>上振れシナリオでは、既存用途の成熟により2030年以降に成長鈍化が起き得る一方、
+未想定の新用途が生まれれば高成長が継続する可能性もある。
+衛星データ供給増に加えて、
+1) データアクセス性向上（複数ソース統合・使いやすいツール化）
+2) データ利用性向上（標準化・ユーザー志向設計）
+が進むと、非宇宙分野での採用が加速する。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p25">
+      <h3>Page 25: In the base case, the accessibility of space is expected to continue improving with new launch...</h3>
+      <p class="meta">Words: 719 | Characters: 4969</p>
+      <p><strong>要約:</strong> 宇宙アクセス性は改善見込みだが、競争不足やデブリ、規制、地上技術の進化次第では需要が抑制される下振れリスクがある。</p>
+      <details>
+        <summary>抽出抜粋（和訳）</summary>
+        <pre>ベースケースでは、打上げ・部材能力の向上とコスト低下で宇宙アクセスは改善する。
+ただし、金融競争力低下や地上技術の進化が逆風となる可能性がある。
+競争不足による高コスト、デブリリスク、厳格規制は需要を抑制し、
+バックボーン／リーチ双方の民間投資を弱める。
+その結果、2035年規模が下振れするシナリオも排除できない。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p26">
+      <h3>Page 26: How space can change the world 3 Not only will space generate revenues across multiple industries...</h3>
+      <p class="meta">Words: 46 | Characters: 290</p>
+      <p><strong>要約:</strong> 第3章。宇宙は多産業の収益創出だけでなく、経済・非経済の社会課題解決にも大きく貢献しうる。</p>
+      <details>
+        <summary>抽出抜粋（和訳）</summary>
+        <pre>第3章：宇宙が世界をどう変えるか。
+宇宙は多産業の収益を生むだけでなく、日常生活に影響し、
+経済・非経済の広範な社会課題の解決にも寄与し得る。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p27">
+      <h3>Page 27: How space will help tackle some of the world’s greatest challenges FIGURE 10 Source: Future of...</h3>
+      <p class="meta">Words: 544 | Characters: 3770</p>
+      <p><strong>要約:</strong> 地球観測と継続監視、エッジ分析の組み合わせにより、インフラ評価、気候監視、自然災害予測と被害軽減が可能になる。</p>
+      <details>
+        <summary>抽出抜粋（和訳）</summary>
+        <pre>宇宙は世界的課題の解決に貢献できる。
+地球観測＋継続監視＋エッジ分析により、
+インフラ評価、気候変動監視、自然災害予測の精度が向上。
+PNTは危機時の人流把握に、地球観測は人身取引や越境犯罪の追跡に活用可能。
+D2D通信は教育・経済活動へのアクセス拡大にも寄与する。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p28">
+      <h3>Page 28: Humanitarian response Governments and organizations will increasingly leverage space-based capabilities to respond to humanitarian crises an</h3>
+      <p class="meta">Words: 395 | Characters: 2940</p>
+      <p><strong>要約:</strong> 人道対応では、宇宙技術活用により危機対応の迅速化・高精度化が進み、犯罪抑止や資源配分最適化にも寄与する。</p>
+      <details>
+        <summary>抽出抜粋（和訳）</summary>
+        <pre>人道対応では、政府・国際機関が宇宙能力を活用することで対応の迅速化と精度向上が可能。
+データ統合と分析により、重要インフラのリスク監視、犯罪・人身取引対策、
+移民・難民対応の資源配分最適化が進む。
+また宇宙技術は教育・経済機会・資源アクセスを広げ、格差是正にも貢献する。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p29">
+      <h3>Page 29: Recent space-related developments around the world FIGURE 11 Source: Future of Space Economy research Established space...</h3>
+      <p class="meta">Words: 514 | Characters: 3440</p>
+      <p><strong>要約:</strong> 世界の宇宙動向として、既存宇宙国・新興国・地政学文脈での活用が進展。各国が経済多角化や安全保障強化に宇宙を位置づける。</p>
+      <details>
+        <summary>抽出抜粋（和訳）</summary>
+        <pre>世界各地の宇宙関連動向：
+既存宇宙国、新興宇宙国、国家間対立の各文脈で宇宙活用が進展。
+サウジは経済多角化のため宇宙投資を拡大し、インドは月南極近傍着陸を達成。
+日本は国際・異業種連携を通じ技術強化、ペルーは衛星接続で地方の教育・通信格差是正を推進。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p30">
+      <h3>Page 30: evident in 2023 when the first Saudi astronauts visited the International Space Station. - The Saudi...</h3>
+      <p class="meta">Words: 392 | Characters: 2728</p>
+      <p><strong>要約:</strong> サウジ、タイ、ペルーなどの事例を通じ、宇宙投資が産業育成、研究促進、国家安全保障、デジタル格差是正に活用されている。</p>
+      <details>
+        <summary>抽出抜粋（和訳）</summary>
+        <pre>具体事例：
+サウジはVision 2030のもとで今後10年に20億ドル規模の宇宙投資を計画し、
+経済多角化・研究促進・安全保障強化を狙う。
+タイは地球観測衛星を起点に5か年計画で国内宇宙技術基盤を整備し、
+アジア需要を見据えた国内打上げ拠点整備も進める。
+ペルーは衛星接続と官民連携により、地域のデジタル格差縮小と教育機会拡大を進めている。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p31">
+      <h3>Page 31: Conclusion: Progressing to the North Star As the analysis in this report shows, the space economy...</h3>
+      <p class="meta">Words: 311 | Characters: 2039</p>
+      <p><strong>要約:</strong> 結論。宇宙経済は急成長し、2035年には半導体産業級の規模に到達。宇宙技術は日常のあらゆる領域へ浸透する。</p>
+      <details>
+        <summary>抽出抜粋（和訳）</summary>
+        <pre>結論：North Star（目指す姿）へ。
+宇宙経済は急成長し、2035年には兆ドル級産業として半導体産業規模に並ぶ見通し。
+宇宙技術は半導体同様、日常生活の広範囲に浸透する。
+企業は宇宙データ・サービス・アクセスを使って収益化と効率化を加速し、
+政府は商業活用を取り込みつつ民生・防衛投資を継続する。
+持続的成長には産官学の横断連携が不可欠。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p32">
+      <h3>Page 32: RecommendationsTABLE 1 Stakeholders Key takeaways Non-space industry leaders Get involved in discussions with the space community...</h3>
+      <p class="meta">Words: 435 | Characters: 3126</p>
+      <p><strong>要約:</strong> 提言。非宇宙企業、宇宙企業、政策当局が連携し、需要創出・実装促進・制度設計を並行して進める必要がある。</p>
+      <details>
+        <summary>抽出抜粋（和訳）</summary>
+        <pre>提言（ステークホルダー別）：
+非宇宙産業のリーダーは、宇宙コミュニティとの対話を通じて需要シグナルを示し、
+業界用途へのデータ活用可能性を具体化すべき。
+宇宙産業側は「space for non-space」を強化し、営業・実証・共同開発を通じて
+非宇宙分野での導入障壁を下げる必要がある。
+政策側は制度整備と官民連携で市場拡大を後押しする。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p33">
+      <h3>Page 33: Appendix This appendix provides deep-dives into the space industry’s impact on a wide range of “non-space”...</h3>
+      <p class="meta">Words: 228 | Characters: 1642</p>
+      <p><strong>要約:</strong> 付録では、非宇宙産業に対する影響を産業別に深掘りし、バックボーン／リーチ別の収益源・用途・成長率を示す。</p>
+      <details>
+        <summary>抽出抜粋（和訳）</summary>
+        <pre>付録の概要：
+宇宙産業が非宇宙産業へ与える影響を、産業別に深掘り。
+各産業について、バックボーン収益とリーチ収益、主要ユースケース、成長率を整理する。
+対象にはサプライチェーン、食品、防衛、小売・消費財、メディア、民生公共などが含まれる。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p34">
+      <h3>Page 34: Supply chain and transportationFIGURE 12 Key themes Enhancing mobility services: PNT can impr ove tracking and...</h3>
+      <p class="meta">Words: 349 | Characters: 2309</p>
+      <p><strong>要約:</strong> サプライチェーン・輸送では、PNT/EO/IoTにより追跡精度、運行管理、リスク対応が向上し、高成長が見込まれる。</p>
+      <details>
+        <summary>抽出抜粋（和訳）</summary>
+        <pre>サプライチェーン・輸送（図12）：
+PNTで車両追跡・運行管理を高度化し、コスト削減と効率向上を実現。
+IoTと地球観測の統合で情報フローが刷新され、ルート最適化と納期精度が向上。
+気象サービス活用により輸送リスクを事前把握し、遅延・事故を抑制。
+2035年には同分野への宇宙技術寄与が大きな収益規模に達する見込み。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p35">
+      <h3>Page 35: Source: Future of Space Economy research In 2035 and beyond, the space sector will participate in...</h3>
+      <p class="meta">Words: 375 | Characters: 2197</p>
+      <p><strong>要約:</strong> 2035年以降は、低遅延・低コスト衛星接続とAI活用により、自律配送や予測最適化型サプライチェーンの実現が進む。</p>
+      <details>
+        <summary>抽出抜粋（和訳）</summary>
+        <pre>2035年以降の展望：
+高速・低遅延・低コストな衛星接続が、可視外運航（ドローン・海運等）を可能にし、
+長距離およびラストマイルの自律配送を後押しする。
+リアルタイムPNT/EOデータをAIで活用することで、
+意思決定の質、生産性、供給網全体の効率が向上する。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p36">
+      <h3>Page 36: Food and beverageFIGURE 13 Leaders should keep an eye on… SERVIR (a p r ogramme power...</h3>
+      <p class="meta">Words: 369 | Characters: 2183</p>
+      <p><strong>要約:</strong> 食品・飲料分野では、衛星由来の地理空間データにより需給・調達・物流判断の高度化が進み、供給網の強靭化に寄与する。</p>
+      <details>
+        <summary>抽出抜粋（和訳）</summary>
+        <pre>食品・飲料（図13）：
+NASA/USAIDのSERVIRのような衛星地理空間データ活用は、
+作物条件（例：水不足）把握を通じて食料不足対応を支援する。
+企業は調達・物流・配送判断を高度化できる。
+配送アプリ収益成長は都市部中心の普及で継続し、
+将来の自律システム普及は追加的上振れ要因となり得る。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p37">
+      <h3>Page 37: State-sponsored defenceFIGURE 14 IoT data for defence logistics and operations Space domain awa r eness and...</h3>
+      <p class="meta">Words: 381 | Characters: 2595</p>
+      <p><strong>要約:</strong> 政府防衛では、C3、ISR、IoT、PNTなどの宇宙活用が拡大し、作戦遂行能力と即応性の強化が進む。</p>
+      <details>
+        <summary>抽出抜粋（和訳）</summary>
+        <pre>政府防衛（図14）：
+防衛物流IoT、宇宙状況把握、PNT、打上げ運用、C3、宇宙センシングなどが主要領域。
+海・空・陸の装備における航法・通信モジュールの宇宙依存が拡大し、
+バックボーン／リーチ双方で成長が見込まれる。
+各国の宇宙計画進展に伴い、ASATを含む脅威対策の重要性も高まる。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p38">
+      <h3>Page 38: Source: Future of Space Economy research In 2035 and beyond, the space sector will participate in...</h3>
+      <p class="meta">Words: 368 | Characters: 2209</p>
+      <p><strong>要約:</strong> 将来は衛星画像とAI分析により、国境監視や地政学動向把握のリアルタイム化が進展し、防衛判断を高度化する。</p>
+      <details>
+        <summary>抽出抜粋（和訳）</summary>
+        <pre>2035年以降、防衛領域では衛星支援システムにより
+国境画定の高精度化とリアルタイム監視が進む。
+衛星画像とAI分析を組み合わせたプラットフォームは、
+部隊移動・艦艇集結・建設活動を追跡し、
+地政学リスクの予兆把握と意思決定を支援する。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p39">
+      <h3>Page 39: Retail, consumer goods/electronics and lifestyleFIGURE 15 + 7 % + 11% Personal tracking devicesSatellite radio r...</h3>
+      <p class="meta">Words: 369 | Characters: 2244</p>
+      <p><strong>要約:</strong> 小売・消費財・ライフスタイルでは、衛星通信/PNTの普及で端末、ウェアラブル、EC関連サービスの成長が見込まれる。</p>
+      <details>
+        <summary>抽出抜粋（和訳）</summary>
+        <pre>小売・消費財/電子機器・ライフスタイル（図15）：
+PNT搭載スマホ・タブレット・ウェアラブル、衛星接続端末、ECサービスなどで市場が拡大。
+衛星通信・PNT・EOの統合が新たな消費者体験を生み、
+遠隔地のデジタル格差是正にも寄与する。
+Project Kuiperのような衛星インターネット投資が注目される。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p40">
+      <h3>Page 40: Source: Future of Space Economy research 1 % 13% 11% 8 % 8 % 1 %...</h3>
+      <p class="meta">Words: 332 | Characters: 1793</p>
+      <p><strong>要約:</strong> 用途別の規模見通しを提示。今後は防災警報などを担う高機能ウェアラブルの普及が新たな成長余地となる。</p>
+      <details>
+        <summary>抽出抜粋（和訳）</summary>
+        <pre>用途別内訳（図）では、バックボーンとリーチ双方の構成と成長率を提示。
+2035年以降は、災害警報や緊急位置通知を担う高機能ウェアラブルの普及が進み、
+民生安全分野で新しい需要が生まれる可能性がある。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p41">
+      <h3>Page 41: Media, entertainment and sports FIGURE 16 + 1 % Consumer satellite radio subscription Consumer satellite TV...</h3>
+      <p class="meta">Words: 373 | Characters: 2310</p>
+      <p><strong>要約:</strong> メディア・娯楽・スポーツでは、従来放送は伸び悩む一方、位置情報や気象データ連携など新しい体験価値が拡大する。</p>
+      <details>
+        <summary>抽出抜粋（和訳）</summary>
+        <pre>メディア・娯楽・スポーツ（図16）：
+衛星TV/ラジオは成熟し成長は限定的だが、
+気象情報、位置情報スポーツアプリ、オンライン配信連携で新価値が生まれる。
+衛星画像・測位を活用したVR/ARが普及すれば、
+宇宙データ活用の新市場が拡大する可能性がある。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p42">
+      <h3>Page 42: Source: Future of Space Economy research 10% 17% - 2 % 13% 1 % 1 %...</h3>
+      <p class="meta">Words: 317 | Characters: 1717</p>
+      <p><strong>要約:</strong> メディア用途の内訳では衛星TVの縮小傾向が示される一方、将来の宇宙発コンテンツ等に新市場の可能性がある。</p>
+      <details>
+        <summary>抽出抜粋（和訳）</summary>
+        <pre>詳細内訳では、衛星TV関連の縮小と、PNT活用アプリやオンライン娯楽連携の伸びを比較。
+将来的には宇宙を舞台にしたメディア制作など、
+宇宙発エンタメの新カテゴリが市場を補完する可能性が示唆される。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p43">
+      <h3>Page 43: State-sponsored civil FIGURE 17 + 8 % + 5 % IoT data for animal migration EO...</h3>
+      <p class="meta">Words: 377 | Characters: 2414</p>
+      <p><strong>要約:</strong> 政府民生分野では、防災、地球観測、基礎科学、通信、打上げ運用などで宇宙活用が広がり、公共価値を高める。</p>
+      <details>
+        <summary>抽出抜粋（和訳）</summary>
+        <pre>政府民生（図17）：
+地球観測、通信、打上げ運用、基礎科学、宇宙探査などが主要領域。
+動物移動監視IoTや防災EO活用、宇宙機関の特許活用などを通じ、
+バックボーンとリーチの双方で公共価値が拡大する。
+深宇宙研究、防災予測、高度な居住性研究が今後の注目点。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p44">
+      <h3>Page 44: Source: Future of Space Economy research 5 % 9 % 16% 6 % 5 % 5...</h3>
+      <p class="meta">Words: 345 | Characters: 1916</p>
+      <p><strong>要約:</strong> 民生用途の詳細では、衛星データ解析による自然災害の予兆把握・予測・被害軽減の高度化が重要テーマとなる。</p>
+      <details>
+        <summary>抽出抜粋（和訳）</summary>
+        <pre>民生用途の詳細図では、各ユースケースの規模・成長率を提示。
+2035年以降は、衛星データと軌道上解析を組み合わせたプラットフォームが
+自然災害の早期把握・予測・被害軽減に大きく寄与する可能性がある。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p45">
+      <h3>Page 45: Digital communicationsFIGURE 18 + 7 % + 12% Satellite b r oadband r eceivers Dir ect-to-device...</h3>
+      <p class="meta">Words: 357 | Characters: 2212</p>
+      <p><strong>要約:</strong> デジタル通信では、衛星ブロードバンド、D2D通信、セルラーバックホールが成長を牽引し、接続圏を拡張する。</p>
+      <details>
+        <summary>抽出抜粋（和訳）</summary>
+        <pre>デジタル通信（図18）：
+衛星ブロードバンド受信機、D2D通信、Satcomチップ、セルラーバックホールが主要要素。
+低軌道コンステレーションと衛星間リンクの進展で
+未接続地域への高速通信提供が拡大している。
+通信事業者や端末メーカーの参入も進み、成長率は高い。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p46">
+      <h3>Page 46: Source: Future of Space Economy research 7 % 13% 13% 16% 6 % 6 % N...</h3>
+      <p class="meta">Words: 429 | Characters: 2387</p>
+      <p><strong>要約:</strong> 宇宙ネットワークと地上ネットワークの統合により、2035年以降は高信頼・高速度のユビキタス接続が実現に近づく。</p>
+      <details>
+        <summary>抽出抜粋（和訳）</summary>
+        <pre>用途別内訳では、通信バックボーンとリーチの成長構造を提示。
+2035年以降は宇宙ネットワークと地上ネットワークの統合が進み、
+企業間・個人向けの双方で、信頼性の高い高速ユビキタス接続が実現へ近づく。
+遠隔地・農村部は特に大きな成長機会となる。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p47">
+      <h3>Page 47: Detailed sizing by industry ($ billion) FIGURE 19 Space r elevance by 2035 2023 2035 42%...</h3>
+      <p class="meta">Words: 595 | Characters: 2152</p>
+      <p><strong>要約:</strong> 産業別の詳細試算として、2035年時点の宇宙関連度、バックボーン／リーチの寄与、成長率を包括的に示している。</p>
+      <details>
+        <summary>抽出抜粋（和訳）</summary>
+        <pre>産業別詳細試算（図19）：
+2035年時点の宇宙関連度、各産業におけるバックボーン／リーチ寄与、
+通信・PNT・EOなど機能別の成長率を一覧化。
+どの産業で宇宙価値が大きくなるかを比較可能にしている。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p48">
+      <h3>Page 48: Global space economy size ($ billion) FIGURE 20 ¹ E.g. space tourism (aside f r om...</h3>
+      <p class="meta">Words: 242 | Characters: 1444</p>
+      <p><strong>要約:</strong> 世界宇宙経済の全体規模とセグメント別内訳（2023年→2035年）を図示し、成長源の構造を整理している。</p>
+      <details>
+        <summary>抽出抜粋（和訳）</summary>
+        <pre>世界宇宙経済規模（図20）：
+2023年と2035年の市場規模を、リーチ／バックボーン、商業／政府主導、
+通信・PNT・EO・インフラ・民生・防衛などの区分で分解。
+成長の主要ドライバーと寄与構造を定量的に示している。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p49">
+      <h3>Page 49: Contributors Acknowledgements World Economic Forum Alizée Acket-Goemaere Project Fellow; Associate, McKinsey &amp; Company Richard F. Ambrose...</h3>
+      <p class="meta">Words: 165 | Characters: 1227</p>
+      <p><strong>要約:</strong> 貢献者・謝辞。WEF、McKinsey、民間宇宙企業など、レポート作成に関与した関係者を掲載。</p>
+      <details>
+        <summary>抽出抜粋（和訳）</summary>
+        <pre>貢献者・謝辞：
+WEF、McKinsey、宇宙・非宇宙の民間企業関係者を含む
+本レポート作成への貢献者一覧を掲載。
+ワークショップやヒアリングに参加した有識者への謝意が示されている。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p50">
+      <h3>Page 50: Mitsubishi Corporation OC Oerlikon SAP Space Hero Yara Investors DCVC Management Co Deutsche Bank Neventa Capital...</h3>
+      <p class="meta">Words: 254 | Characters: 1893</p>
+      <p><strong>要約:</strong> 政府機関、学術・非営利組織、投資家、企業、ならびにWEF/McKinseyの支援メンバーへの追加謝辞を記載。</p>
+      <details>
+        <summary>抽出抜粋（和訳）</summary>
+        <pre>追加謝辞：
+政府機関（ESA、JAXA、NASA等）、学術・非営利組織、投資家、企業の協力者を列挙。
+あわせて、Future of Space Economyチームを支援した
+WEFおよびMcKinseyの関係者への謝辞を記載している。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p51">
+      <h3>Page 51: Endnotes 1. McKinsey &amp; Company, Space launch: Are we heading for oversupply or a shortfall?, 2023...</h3>
+      <p class="meta">Words: 264 | Characters: 2296</p>
+      <p><strong>要約:</strong> 参考文献・注記一覧。McKinsey、Space Capital、NASA、WEF等の出典を列挙している。</p>
+      <details>
+        <summary>抽出抜粋（和訳）</summary>
+        <pre>注記（Endnotes）：
+McKinsey、Space Capital、NASA、WEFなどの出典資料を番号付きで列挙。
+本文の推計・主張を裏づける参考情報の索引として機能する。</pre>
+      </details>
+    </article>
+
+    <article class="page-card" id="p52">
+      <h3>Page 52: World Economic Forum 91-93 route de la Capite CH-1223 Cologny/Geneva Switzerland Tel.: +41 (0) 22 869...</h3>
+      <p class="meta">Words: 63 | Characters: 434</p>
+      <p><strong>要約:</strong> 世界経済フォーラム（WEF）の連絡先情報と、官民協力を通じて世界の状態改善を目指す組織ミッションを記載。</p>
+      <details>
+        <summary>抽出抜粋（和訳）</summary>
+        <!--
+        <pre>World Economic Forum 91-93 route de la Capite CH-1223 Cologny/Geneva Switzerland Tel.: +41 (0) 22 869 1212 Fax: +41 (0) 22 786 2744 contact@weforum.org www.weforum.org The World Economic Forum, committed to improving the state of the world, is the International Organization for Public-Private Cooperation. The Forum engages the foremost political, business and other leaders of society to shape global, regional and industry agendas.</pre>
+        -->
+        <pre>世界経済フォーラム（WEF）
+住所：91-93 route de la Capite, CH-1223 Cologny/Geneva, Switzerland
+電話：+41 (0) 22 869 1212 / FAX：+41 (0) 22 786 2744
+メール：contact@weforum.org
+Web：www.weforum.org
+
+WEFは「世界の状態を改善する」ことにコミットする、官民協力のための国際機関。
+政治・ビジネス・社会の主要リーダーを結集し、世界・地域・産業のアジェンダ形成に取り組む。</pre>
+      </details>
+    </article>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,6 @@
+layer,layer_ja,definition,keywords
+transport_launch,輸送（ロケット）,Launch services and orbital transport,"launch,rocket,reusable,rideshare"
+satellite_infrastructure,衛星インフラ,Satellite manufacturing buses payload and operations,"satellite,bus,payload,manufacturing,operations"
+downstream_data_services,ダウンストリーム（データ活用）,Earth observation communication and analytics services,"downstream,data,analytics,SAR,EO,application"
+in_orbit_services,軌道上サービス,Debris removal refueling servicing and in-orbit logistics,"debris,servicing,refuel,maintenance,in-orbit"
+deep_space_lunar,深宇宙・月面開発,Lunar and deep-space exploration and infrastructure,"lunar,moon,deep space,CLPS,Artemis"

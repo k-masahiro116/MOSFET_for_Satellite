@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TAM/SAM/SOM分析 | MOSFET for Satellite</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <style>
+    .section-card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid #d7e2ee;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(10, 38, 58, 0.08);
+      padding: 18px 20px;
+      margin-bottom: 14px;
+    }
+
+    .section-card h3 {
+      margin: 0 0 8px;
+      color: #0f3a56;
+    }
+
+    .section-card p,
+    .section-card li {
+      color: #234b68;
+      line-height: 1.7;
+    }
+
+    .section-list {
+      margin: 8px 0 0;
+      padding-left: 20px;
+    }
+
+    .facts-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 0.94rem;
+      background: rgba(255, 255, 255, 0.96);
+    }
+
+    .facts-table th,
+    .facts-table td {
+      border: 1px solid #d5e1ed;
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+
+    .facts-table th {
+      background: #edf5fb;
+      color: #143f5b;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(180px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .metric {
+      background: #f3f9ff;
+      border: 1px solid #d3e4f3;
+      border-radius: 12px;
+      padding: 12px;
+    }
+
+    .metric h4 {
+      margin: 0 0 6px;
+      font-size: 0.88rem;
+      color: #1f4f70;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .metric p {
+      margin: 0;
+      color: #123f5d;
+      font-weight: 700;
+      font-size: 1.08rem;
+    }
+
+    .note {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid #d6e6f4;
+      background: #f5faff;
+      color: #2b5876;
+      font-size: 0.92rem;
+    }
+
+    .hero-diagram {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid #d7e2ee;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(10, 38, 58, 0.08);
+      padding: 14px;
+      margin: 14px 0;
+    }
+
+    .hero-diagram svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .table-scroll {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    @media (max-width: 760px) {
+      .metric-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="content-page">
+  <main class="page-body">
+    <h2>市場規模分析: TAM / SAM / SOM（精度向上版）</h2>
+    <p>更新日: 2026-02-26。`space_research_report`で整理した宇宙産業の5対象セグメント構造を母集団に取り込み、TAM/SAM/SOMを再計算。</p>
+    <p>算定基準日: 2026-02-26。基準年度: 2026年度（FY2026, 2026-04-01〜2027-03-31）。本ページのTAM/SAMはFY2026の年間値、SOMはFY2026〜FY2028の推計値。</p>
+    <div class="hero-diagram" aria-label="TAM SAM SOM 図解">
+      <svg viewBox="0 0 1200 640" role="img" aria-labelledby="tamSamSomTitle">
+        <title id="tamSamSomTitle">TAM SAM SOM Diagram</title>
+        <rect x="0" y="0" width="1200" height="640" fill="#f7f9fc"/>
+        <circle cx="265" cy="320" r="235" fill="#7b73a6"/>
+        <circle cx="265" cy="370" r="165" fill="#ef7b91"/>
+        <circle cx="265" cy="370" r="165" fill="none" stroke="#ffffff" stroke-width="4"/>
+        <circle cx="265" cy="420" r="102" fill="#de6273"/>
+        <circle cx="265" cy="420" r="102" fill="none" stroke="#ffffff" stroke-width="4"/>
+        <text x="265" y="165" text-anchor="middle" font-size="66" font-weight="700" fill="#ffffff">TAM</text>
+        <text x="265" y="280" text-anchor="middle" font-size="66" font-weight="700" fill="#ffffff">SAM</text>
+        <text x="265" y="410" text-anchor="middle" font-size="66" font-weight="700" fill="#ffffff">SOM</text>
+
+        <circle cx="400" cy="175" r="10" fill="#30343c"/>
+        <path d="M 400 175 H 610 Q 650 175 650 205 Q 660 235 705 235 H 1125" fill="none" stroke="#30343c" stroke-width="6"/>
+        <circle cx="1138" cy="235" r="9" fill="#30343c"/>
+        <text x="680" y="160" font-size="45" font-weight="700" fill="#7b73a6">TAM</text>
+        <text x="680" y="190" font-size="24" font-weight="700" fill="#1f2b44">(Total Addressable Market)</text>
+        <text x="680" y="220" font-size="23" font-weight="700" fill="#d65a6a">業界全体の最大市場規模</text>
+
+        <circle cx="380" cy="315" r="10" fill="#30343c"/>
+        <path d="M 380 315 H 610 Q 650 315 650 345 Q 660 375 705 375 H 1125" fill="none" stroke="#30343c" stroke-width="6"/>
+        <circle cx="1138" cy="375" r="9" fill="#30343c"/>
+        <text x="680" y="296" font-size="45" font-weight="700" fill="#ef7b91">SAM</text>
+        <text x="680" y="326" font-size="24" font-weight="700" fill="#1f2b44">(Serviceable Available Market)</text>
+        <text x="680" y="358" font-size="23" font-weight="700" fill="#d65a6a">提供可能かつ顧客へアプローチ可能な市場</text>
+        
+        <circle cx="330" cy="455" r="10" fill="#30343c"/>
+        <path d="M 330 455 H 610 Q 650 455 650 485 Q 660 515 705 515 H 1125" fill="none" stroke="#30343c" stroke-width="6"/>
+        <circle cx="1138" cy="515" r="9" fill="#30343c"/>
+        <text x="680" y="440" font-size="45" font-weight="700" fill="#de6273">SOM</text>
+        <text x="680" y="470" font-size="24" font-weight="700" fill="#1f2b44">(Serviceable Obtainable Market)</text>
+        <text x="680" y="502" font-size="23" font-weight="700" fill="#d65a6a">実際に獲得可能な市場（売上目標）</text>
+      </svg>
+    </div>
+
+    <section class="section-card">
+      <h3>はじめての方向け: TAM / SAM / SOMの見方</h3>
+      <ul class="section-list">
+        <li><strong>TAM</strong>: 「理論上の最大市場」。この市場にいる全顧客が買った場合の規模。</li>
+        <li><strong>SAM</strong>: 「自社が提供・営業できる市場」。地域、用途、規格条件で絞り込んだ規模。</li>
+        <li><strong>SOM</strong>: 「実際に取りにいく市場」。営業力・供給力・競合状況を踏まえた現実的な獲得規模。</li>
+      </ul>
+      <table class="facts-table">
+        <thead>
+          <tr>
+            <th>指標</th>
+            <th>このページでの計算イメージ</th>
+            <th>意味</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>TAM</td>
+            <td>市場全体の顧客数 × 客単価 × 年間購入回数</td>
+            <td>市場の上限規模</td>
+          </tr>
+          <tr>
+            <td>SAM</td>
+            <td>自社にアプローチ可能な顧客数 × 顧客あたり年間支払見込み額</td>
+            <td>狙える市場規模</td>
+          </tr>
+          <tr>
+            <td>SOM</td>
+            <td>既存/獲得見込み顧客数 × 顧客あたり年間売上見込み額</td>
+            <td>売上目標にできる規模</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="note">ポイント: TAMが大きくても、SAMやSOMが小さい場合は「提供条件」「営業到達性」「供給体制」に課題があります。意思決定はSOMを中心に行い、改善施策はSAM拡張を狙うのが基本です。なお実務では、TAMはトップダウン、SAM/SOMはボトムアップで検証するのが再現性の高い進め方です。</div>
+    </section>
+
+    <section class="section-card">
+      <h3>計算方法（トップダウン / ボトムアップ）</h3>
+      <table class="facts-table">
+        <thead>
+          <tr>
+            <th>方法</th>
+            <th>向いている指標</th>
+            <th>使い方</th>
+            <th>注意点</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>トップダウン</td>
+            <td>TAM</td>
+            <td>統計・業界レポートなどの全体値から、市場を段階的に絞って算出する。</td>
+            <td>古い統計や定義不一致のデータを混ぜると過大/過小推計になりやすい。</td>
+          </tr>
+          <tr>
+            <td>ボトムアップ</td>
+            <td>SAM / SOM</td>
+            <td>案件数、顧客単価、受注率、供給能力など現場データを積み上げて算出する。</td>
+            <td>前提（受注率・単価・リードタイム）を明示しないと再現性が下がる。</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>本ページでは、TAMにトップダウン（宇宙5レイヤー分解）を使い、SAM/SOMにボトムアップ（顧客数・支払意向・獲得顧客データ）を併用しています。</p>
+      <div class="note">参照した計算の考え方: TAM = 市場全体の顧客数 × 客単価 × 年間購入回数、SAM = 自社に興味を持つ顧客数 × 支払検討金額、SOM = 獲得見込み顧客数 × 支払予定金額。</div>
+    </section>
+
+    <section class="section-card">
+      <h3>1. 分析フレーム（更新点）</h3>
+      <ul class="section-list">
+        <li>従来は用途単位で推計していたが、今回は「輸送・衛星インフラ・ダウンストリーム・軌道上サービス・月面/深宇宙」の5レイヤー別に需要を分解。</li>
+        <li>各レイヤーで「放射線対応MOSFETが必要な電源系比率」を設定し、過大推計を抑制。</li>
+        <li>単位: 年間売上規模（円）。用途は宇宙中心だが、加速器・原子力用途も補完市場として反映。</li>
+        <li>換算レート: 1 USD = 150 円（2026-02-26の分析用固定レート）。</li>
+      </ul>
+    </section>
+
+    <section class="section-card">
+      <h3>1.1 自社技術アセットの反映（ODU/IDU電源設計）</h3>
+      <ul class="section-list">
+        <li>自社技術: 無線基地局の <strong>ODU/IDU 電源設計技術</strong>（電源変換、保護設計、熱設計、信頼性設計）。</li>
+        <li>分析上の扱い: 放射線耐性そのものではなく、<strong>電源系の実装品質と設計品質を高める強み</strong>としてSAM/SOMに反映。</li>
+        <li>SAMへの影響: 「高信頼宇宙ミッション」「軌道上サービス/探査サブシステム」での提供可能性を押し上げる前提。</li>
+        <li>SOMへの影響: 初期3年の獲得率を、デバイス単体提案ではなく「部品 + 電源設計知見」の提案力で設定。</li>
+      </ul>
+      <div class="note">実務上は、ODU/IDU由来の電源設計ノウハウを「評価計画の妥当性」「回路保護設計」「熱・効率最適化」の差別化要素として顧客提案に組み込みます。</div>
+    </section>
+
+    <section class="section-card">
+      <h3>1.2 計算パラメータ（参照式に合わせた再定義）</h3>
+      <table class="facts-table">
+        <thead>
+          <tr>
+            <th>指標</th>
+            <th>使用パラメータ</th>
+            <th>売上推計の値</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>TAM</td>
+            <td>市場全体の顧客数 × 客単価 × 年間購入回数</td>
+            <td>550顧客 × 0.8億円 × 3回/年 = 1,320億円</td>
+          </tr>
+          <tr>
+            <td>SAM</td>
+            <td>自社に興味を持つ顧客数 × 支払検討金額（年額）</td>
+            <td>180顧客 × 3.0億円/年 = 540億円</td>
+          </tr>
+          <tr>
+            <td>SOM（FY2028）</td>
+            <td>獲得見込み顧客数 × 支払予定金額（年額）</td>
+            <td>6顧客 × 0.75億円/年 = 4.5億円</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>顧客数は「宇宙（輸送・衛星・軌道上・月面）+ 非宇宙（加速器・廃炉）」の対象組織数を統合した推計値。単価は電源系採用時の年間売上換算。</p>
+    </section>
+
+    <section class="section-card">
+      <h3>2. TAM（Total Addressable Market）推計</h3>
+      <p>space researchの市場構造に合わせ、宇宙レイヤー別に推計した後、非宇宙放射線市場（加速器/廃炉）を加算。</p>
+      <p><strong>注記:</strong> 本章の数値は案件単位ではなく、FY2026の年間市場規模です。</p>
+      
+      <table class="facts-table">
+        <thead>
+          <tr>
+            <th>宇宙5レイヤー</th>
+            <th>需要ドライバー（space research反映）</th>
+            <th>売上推計</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>輸送（ロケット/打上げ）</td>
+            <td>再使用化・高頻度打上げ・即応打上げ需要</td>
+            <td>約 210億円</td>
+          </tr>
+          <tr>
+            <td>衛星インフラ</td>
+            <td>コンステレーション拡大・電源系高信頼化</td>
+            <td>約 450億円</td>
+          </tr>
+          <tr>
+            <td>ダウンストリーム支援</td>
+            <td>SAR/光学衛星拡大に伴う搭載機器需要</td>
+            <td>約 120億円</td>
+          </tr>
+          <tr>
+            <td>軌道上サービス</td>
+            <td>デブリ除去・衛星延命・軌道上保全</td>
+            <td>約 105億円</td>
+          </tr>
+          <tr>
+            <td>月面/深宇宙</td>
+            <td>CLPS・月面物流・探査機電源</td>
+            <td>約 180億円</td>
+          </tr>
+          <tr>
+            <td>(追加)非宇宙（加速器/廃炉）</td>
+            <td>高線量環境の電源更新需要</td>
+            <td>約 255億円</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="facts-table">
+        <thead>
+          <tr>
+            <th>シナリオ</th>
+            <th>TAM合計</th>
+            <th>前提</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>弱気</td>
+            <td>約 1,080億円</td>
+            <td>月面/軌道上サービスの商用化が後ろ倒し</td>
+          </tr>
+          <tr>
+            <td>基準</td>
+            <td><strong>約 1,320億円</strong></td>
+            <td>現行計画どおりの打上げ・衛星更新ペース</td>
+          </tr>
+          <tr>
+            <td>強気</td>
+            <td>約 1,575億円</td>
+            <td>コンステレーション増強と月面案件が前倒し</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section-card">
+      <h3>3. SAM（Serviceable Available Market）推計</h3>
+      <p>SAMは「自社が3年以内に供給可能な領域」に限定。規格適合、試験証跡、商流到達性をゲート条件として設定。</p>
+      <p><strong>注記:</strong> 本章の数値は案件単位ではなく、FY2026の年間市場規模です。</p>
+      <div class="note">具体式: <strong>SAM = 自社にアプローチ可能な顧客数 × 顧客あたり年間支払見込み額</strong></div>
+      
+      <table class="facts-table">
+        <thead>
+          <tr>
+            <th>対象セグメント</th>
+            <th>採用条件</th>
+            <th>売上推計</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>LEO短中期（Rad-tolerant）</td>
+            <td>価格競争力 + 量産供給 + 基本放射線試験データ</td>
+            <td>約 232.5億円</td>
+          </tr>
+          <tr>
+            <td>高信頼宇宙ミッション（一部）</td>
+            <td>ECSS/MIL運用に耐える証跡ライン</td>
+            <td>約 157.5億円</td>
+          </tr>
+          <tr>
+            <td>軌道上サービス/探査サブシステム</td>
+            <td>電源モジュールでの実装実績</td>
+            <td>約 63億円</td>
+          </tr>
+          <tr>
+            <td>加速器・廃炉用途</td>
+            <td>照射条件限定での採用</td>
+            <td>約 87億円</td>
+          </tr>
+          <tr>
+            <td>合計 SAM</td>
+            <td>上記合算</td>
+            <td><strong>約 540億円</strong></td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="facts-table">
+        <thead>
+          <tr>
+            <th>SAM入力値</th>
+            <th>根拠</th>
+            <th>データソース</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>アプローチ可能顧客数</td>
+            <td>TAM母数のうち、規格/商流/技術適合で到達可能と判定した母集団</td>
+            <td>内部: mosfet_radiation_market_research整理値 + 自社商流前提</td>
+
+          </tr>
+          <tr>
+            <td>顧客あたり年間支払見込み額</td>
+            <td>対象セグメント（LEO/高信頼/探査/非宇宙）の加重平均</td>
+            <td>内部: セグメント別単価仮定（分析前提）</td>
+
+          </tr>
+        </tbody>
+      </table>
+      <table class="facts-table">
+        <thead>
+          <tr>
+            <th>シナリオ</th>
+            <th>SAM</th>
+            <th>前提（アプローチ可能顧客数 × 年間支払見込み額）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>弱気</td>
+            <td>420億円</td>
+            <td>140顧客 × 3.0億円（規格適合・商流到達が想定より遅延）</td>
+          </tr>
+          <tr>
+            <td>基準</td>
+            <td><strong>540億円</strong></td>
+            <td>180顧客 × 3.0億円（現行前提）</td>
+          </tr>
+          <tr>
+            <td>強気</td>
+            <td>675億円</td>
+            <td>225顧客 × 3.0億円（ODU/IDU提案力により到達顧客拡大）</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section-card">
+      <h3>4. SOM（Serviceable Obtainable Market）推計</h3>
+      <p>新規参入前提として、受注化可能性を「獲得見込み顧客数 × 顧客あたり年間売上見込み額」で推計。</p>
+      <p><strong>注記:</strong> 現時点で宇宙向け既存顧客は0社。本章は新規獲得計画に基づく推計です。</p>
+      <div class="note">具体式: <strong>SOM = 獲得見込み顧客数 × 顧客あたり年間売上見込み額</strong></div>
+      <table class="facts-table">
+        <thead>
+          <tr>
+            <th>SOM入力値</th>
+            <th>根拠</th>
+            <th>データソース</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>獲得見込み顧客数</td>
+            <td>新規参入として、初期3年でPoCから初期量産へ進む顧客数を保守的に設定</td>
+            <td>内部: 営業仮説（獲得計画）</td>
+
+          </tr>
+          <tr>
+            <td>顧客あたり年間売上見込み額</td>
+            <td>新規参入初期の小ロット比率を反映した該当年度の平均売上単価</td>
+            <td>内部: 提案単価と採用構成の仮定</td>
+
+          </tr>
+        </tbody>
+      </table>
+      <table class="facts-table">
+        <thead>
+          <tr>
+            <th>年度</th>
+            <th>獲得見込み顧客数</th>
+            <th>支払予定金額（年額）</th>
+            <th>実効獲得率(SOM/SAM)</th>
+            <th>SOM（基準）</th>
+            <th>主ドライバー</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>FY2027</td>
+            <td>1顧客</td>
+            <td>0.25億円/顧客</td>
+            <td>0.05%</td>
+            <td>約 0.25億円</td>
+            <td>PoC/試作案件の立上げ</td>
+          </tr>
+          <tr>
+            <td>FY2028</td>
+            <td>3顧客</td>
+            <td>0.45億円/顧客</td>
+            <td>0.25%</td>
+            <td>約 1.35億円</td>
+            <td>評価採用案件の複数化</td>
+          </tr>
+          <tr>
+            <td>FY2029</td>
+            <td>6顧客</td>
+            <td>0.75億円/顧客</td>
+            <td>0.83%</td>
+            <td>約 4.5億円</td>
+            <td>初期量産案件の獲得</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="facts-table">
+        <thead>
+          <tr>
+            <th>FY2029シナリオ</th>
+            <th>SOM</th>
+            <th>条件</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>弱気</td>
+            <td>約 3.0億円</td>
+            <td>評価遅延で獲得顧客が4社に留まる</td>
+          </tr>
+          <tr>
+            <td>基準</td>
+            <td><strong>約 4.5億円</strong></td>
+            <td>想定どおりPoCから初期量産へ移行</td>
+          </tr>
+          <tr>
+            <td>強気</td>
+            <td>約 6.0億円</td>
+            <td>早期採用が進み獲得顧客が8社まで拡大</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="metric-grid">
+        <div class="metric">
+          <h4>TAM (Base)</h4>
+          <p>1,320億円</p>
+        </div>
+        <div class="metric">
+          <h4>SAM (Base)</h4>
+          <p>540億円</p>
+        </div>
+        <div class="metric">
+          <h4>SOM Y3 (Base)</h4>
+          <p>4.5億円</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <h3>5. 案件換算の目安と原価率（試算前提）</h3>
+      <p>案件単位で見る場合は、以下のように「年間売上 ÷ 年間案件数」で平均案件売上を置き、原価率を掛けて粗利を試算します（新規参入の初期量産前提）。</p>
+      <table class="facts-table">
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>計算式</th>
+            <th>売上推計（FY2029）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>平均案件売上</td>
+            <td>年度SOM売上 ÷ 年間案件数</td>
+            <td>4.5億円 ÷ 6件 = 0.75億円/件</td>
+          </tr>
+          <tr>
+            <td>案件原価</td>
+            <td>平均案件売上 × 原価率</td>
+            <td>0.75億円 × 74% = 0.555億円/件</td>
+          </tr>
+          <tr>
+            <td>案件粗利</td>
+            <td>平均案件売上 - 案件原価</td>
+            <td>0.195億円/件（粗利率26%）</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="facts-table">
+        <thead>
+          <tr>
+            <th>区分</th>
+            <th>想定原価率</th>
+            <th>原価に含む主な項目</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Rad-tolerant（量産寄り）</td>
+            <td>68%</td>
+            <td>部材費、実装費、評価試験費、製造間接費</td>
+          </tr>
+          <tr>
+            <td>高信頼ミッション</td>
+            <td>78%</td>
+            <td>追加認証、追加試験、品質保証、トレーサビリティ費</td>
+          </tr>
+          <tr>
+            <td>加速器/廃炉</td>
+            <td>76%</td>
+            <td>照射条件別評価、小ロット対応、個別設計調整</td>
+          </tr>
+          <tr>
+            <td>全体加重平均（本試算）</td>
+            <td><strong>74%</strong></td>
+            <td>上記ミックスを反映</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section-card">
+      <h3>6. 指標別データソース（TAM / SAM / SOM）</h3>
+      <div class="table-scroll">
+      <table class="facts-table">
+        <thead>
+          <tr>
+            <th>指標</th>
+            <th>使用データ</th>
+            <th>データソース</th>
+            <th>備考</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>TAM</td>
+            <td>市場全体の顧客母数、宇宙5レイヤーの需要成長、非宇宙（加速器/廃炉）需要</td>
+            <td>
+              外部: Space Foundation系市場情報、宙畑（宇宙産業動向）、JAXA J-SPARC、CLPS関連公開情報。<br>
+              内部: <a href="/Users/masahiro/develop/MOSFET_for_Satellite/docs/research/pages/research/space_research_report.html">space_research_report.html</a> の整理値。
+            </td>
+            <td>トップダウン推計。顧客数・単価・購入回数は分析用の基準仮定を設定。</td>
+          </tr>
+          <tr>
+            <td>SAM</td>
+            <td>提供可能範囲（規格/技術/商流）、到達可能顧客数、支払検討金額</td>
+            <td>
+              外部: ECSS/MIL等の規格要件、主要ベンダ公開情報（Microchip/Infineon等）。<br>
+              内部: <a href="/Users/masahiro/develop/MOSFET_for_Satellite/docs/research/pages/research/mosfet_radiation_market_research.html">mosfet_radiation_market_research.html</a>、ODU/IDU電源設計の自社技術前提。
+            </td>
+            <td>ボトムアップ推計。技術適合と営業到達性でTAMから絞り込み。</td>
+          </tr>
+          <tr>
+            <td>SOM</td>
+            <td>既存/獲得見込み顧客数、年度売上単価、獲得率</td>
+            <td>
+              外部: 市場の採用速度参考（宇宙案件公開情報、競合展開情報）。<br>
+              内部: 営業仮説（初期3年の顧客獲得計画）、供給実行前提、原価率前提。
+            </td>
+            <td>ボトムアップ推計。実効獲得率は結果値（SOM÷SAM）として算出。</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="note">重要: TAM/SAM/SOMの絶対値は、外部統計だけでは確定しません。最終的な精度は「顧客母数」「単価」「購入回数」「獲得顧客数」の実績更新頻度で決まります。</div>
+    </section>
+
+  </main>
+</body>
+</html>

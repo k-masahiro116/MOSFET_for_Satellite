@@ -1,0 +1,26 @@
+year,layer,share_ratio,source_name,source_url,source_date,method_note,confidence,source_type
+2022,transport_launch,0.080,Initial layer split hypothesis,docs/research/pages/research/space_research_report.html,2026-02-26,Assumed share for launch services in baseline year,0.30,assumption
+2022,satellite_infrastructure,0.230,Initial layer split hypothesis,docs/research/pages/research/space_research_report.html,2026-02-26,Assumed share for satellite manufacturing and operations,0.30,assumption
+2022,downstream_data_services,0.560,Initial layer split hypothesis,docs/research/pages/research/space_research_report.html,2026-02-26,Assumed share for downstream applications and services,0.30,assumption
+2022,in_orbit_services,0.040,Initial layer split hypothesis,docs/research/pages/research/space_research_report.html,2026-02-26,Assumed share for debris removal and in-orbit servicing,0.25,assumption
+2022,deep_space_lunar,0.090,Initial layer split hypothesis,docs/research/pages/research/space_research_report.html,2026-02-26,Assumed share for lunar and deep space development,0.25,assumption
+2023,transport_launch,0.082,Initial layer split hypothesis,docs/research/pages/research/space_research_report.html,2026-02-26,Assumed gradual rise in launch demand,0.30,assumption
+2023,satellite_infrastructure,0.227,Initial layer split hypothesis,docs/research/pages/research/space_research_report.html,2026-02-26,Assumed slight efficiency gain in satellite hardware share,0.30,assumption
+2023,downstream_data_services,0.557,Initial layer split hypothesis,docs/research/pages/research/space_research_report.html,2026-02-26,Assumed high contribution of downstream market,0.30,assumption
+2023,in_orbit_services,0.044,Initial layer split hypothesis,docs/research/pages/research/space_research_report.html,2026-02-26,Assumed early commercialization expansion,0.25,assumption
+2023,deep_space_lunar,0.090,Initial layer split hypothesis,docs/research/pages/research/space_research_report.html,2026-02-26,Assumed stable investment phase,0.25,assumption
+2024,transport_launch,0.085,Initial layer split hypothesis,docs/research/pages/research/space_research_report.html,2026-02-26,Assumed launch market acceleration,0.35,assumption
+2024,satellite_infrastructure,0.225,Initial layer split hypothesis,docs/research/pages/research/space_research_report.html,2026-02-26,Assumed large installed base and constellation investment,0.35,assumption
+2024,downstream_data_services,0.550,Initial layer split hypothesis,docs/research/pages/research/space_research_report.html,2026-02-26,Assumed dominant downstream share,0.35,assumption
+2024,in_orbit_services,0.050,Initial layer split hypothesis,docs/research/pages/research/space_research_report.html,2026-02-26,Assumed measurable but still emerging market,0.30,assumption
+2024,deep_space_lunar,0.090,Initial layer split hypothesis,docs/research/pages/research/space_research_report.html,2026-02-26,Assumed development spending stage,0.30,assumption
+2025,transport_launch,0.088,Initial layer split hypothesis,docs/research/pages/research/space_research_report.html,2026-02-26,Assumed continued launch cadence growth,0.30,assumption
+2025,satellite_infrastructure,0.220,Initial layer split hypothesis,docs/research/pages/research/space_research_report.html,2026-02-26,Assumed modularization reduces relative hardware share,0.30,assumption
+2025,downstream_data_services,0.545,Initial layer split hypothesis,docs/research/pages/research/space_research_report.html,2026-02-26,Assumed strongest demand pull from terrestrial use cases,0.30,assumption
+2025,in_orbit_services,0.057,Initial layer split hypothesis,docs/research/pages/research/space_research_report.html,2026-02-26,Assumed faster commercialization in debris and life-extension services,0.30,assumption
+2025,deep_space_lunar,0.090,Initial layer split hypothesis,docs/research/pages/research/space_research_report.html,2026-02-26,Assumed stable programmatic commitments,0.28,assumption
+2026,transport_launch,0.090,Initial layer split hypothesis,docs/research/pages/research/space_research_report.html,2026-02-26,Assumed reusable launch penetration increase,0.28,assumption
+2026,satellite_infrastructure,0.215,Initial layer split hypothesis,docs/research/pages/research/space_research_report.html,2026-02-26,Assumed lower relative capex share,0.28,assumption
+2026,downstream_data_services,0.540,Initial layer split hypothesis,docs/research/pages/research/space_research_report.html,2026-02-26,Assumed continued application-layer expansion,0.28,assumption
+2026,in_orbit_services,0.065,Initial layer split hypothesis,docs/research/pages/research/space_research_report.html,2026-02-26,Assumed service layer expansion from demonstrations to operations,0.28,assumption
+2026,deep_space_lunar,0.090,Initial layer split hypothesis,docs/research/pages/research/space_research_report.html,2026-02-26,Assumed sustained long-cycle investment,0.26,assumption

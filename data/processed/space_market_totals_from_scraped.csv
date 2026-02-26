@@ -1,0 +1,7 @@
+year,total_market_usd_billion,source_id,source_name,source_url,source_tier,release_year,selection_rule
+2019,428.0,SRC010,Space Foundation Q2 2021 Release,https://www.spacefoundation.org/2021/07/15/global-space-economy-rose-to-447b-in-2020-continuing-five-year-growth/,primary_official,2021,prefer primary_official; then newer release year
+2020,447.0,SRC010,Space Foundation Q2 2021 Release,https://www.spacefoundation.org/2021/07/15/global-space-economy-rose-to-447b-in-2020-continuing-five-year-growth/,primary_official,2021,prefer primary_official; then newer release year
+2021,505.0,SRC008,Space Foundation Q2 2023 Release,https://www.spacefoundation.org/2023/07/25/the-space-report-2023-q2/,primary_official,2023,prefer primary_official; then newer release year
+2022,531.0,SRC007,Space Foundation Q2 2024 Economy Release,https://www.spacefoundation.org/2024/07/18/the-space-report-2024-q2/,primary_official,2024,prefer primary_official; then newer release year
+2023,570.0,SRC007,Space Foundation Q2 2024 Economy Release,https://www.spacefoundation.org/2024/07/18/the-space-report-2024-q2/,primary_official,2024,prefer primary_official; then newer release year
+2024,613.0,SRC006,Space Foundation Q2 2025 Release,https://www.spacefoundation.org/2025/07/22/the-space-report-2025-q2/,primary_official,2025,prefer primary_official; then newer release year

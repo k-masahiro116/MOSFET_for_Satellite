@@ -1,0 +1,6 @@
+year,total_market_usd_billion,source_name,source_url,source_date,method_note,confidence,source_type
+2022,546.0,Space Foundation The Space Report,https://www.spacefoundation.org/2024/07/18/space-foundation-releases-key-findings-from-the-space-report-2024-q2/,2024-07-18,Historical value captured from Space Foundation release summary,0.70,primary_official
+2023,570.0,Space Foundation The Space Report,https://www.spacefoundation.org/2024/07/18/space-foundation-releases-key-findings-from-the-space-report-2024-q2/,2024-07-18,Historical value captured from Space Foundation release summary,0.70,primary_official
+2024,613.0,Space Foundation The Space Report,https://www.spacefoundation.org/2025/07/15/space-foundation-releases-the-space-report-q2-2025/,2025-07-15,Published global space economy size,0.90,primary_official
+2025,662.0,Internal estimate from 2024 anchor,docs/research/pages/research/space_research_report.html,2026-02-26,Estimated with +8.0% YoY from 2024 to build initial annual scenario,0.40,internal_estimate
+2026,715.0,Internal estimate from 2024 anchor,docs/research/pages/research/space_research_report.html,2026-02-26,Estimated with +8.0% YoY from 2025 to build initial annual scenario,0.35,internal_estimate

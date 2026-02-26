@@ -1,0 +1,11 @@
+source_id,source_name,source_url,accessed_date,ref_id,status,notes
+SRC001,BryceTech 2024 Global Satellite Industry Revenues,https://brycetech.com/reports/report-documents/global_satellite_industry_revenues_2024/,2026-02-26,turn0view0,ok,Primary source for 2024 satellite industry segment values and global total
+SRC002,Spherical Insights Space Launch Services Market,https://www.sphericalinsights.com/press-release/space-launch-services-market,2026-02-26,turn3view0,ok,Secondary source for launch market time-series anchor (2023 and 2033)
+SRC003,Spherical Insights Orbital Spaceflight Market,https://www.sphericalinsights.com/press-release/orbital-spaceflight-market,2026-02-26,turn4view0,ok,Secondary source for in-orbit and orbital service proxy values
+SRC004,Sorabatake Space Business Overview,https://sorabatake.jp/216/,2026-02-26,turn2view0,ok,Secondary source citing WEF market scale and growth outlook
+SRC005,Spaceflight Now Astrobotic Griffin-1,https://spaceflightnow.com/2025/10/28/astrobotic-delays-griffin-1-moon-mission-to-net-july-2026/,2026-02-26,turn5view0,ok,News source for CLPS lunar mission contract value changes
+SRC006,Space Foundation Q2 2025 Release,https://www.spacefoundation.org/2025/07/22/the-space-report-2025-q2/,2026-02-26,turn0view0,ok,Primary source for 2024 global space economy 613B and growth indicators
+SRC007,Space Foundation Q2 2024 Economy Release,https://www.spacefoundation.org/2024/07/18/the-space-report-2024-q2/,2026-02-26,turn0search1,ok,Primary source for 2023 global space economy 570B and revised 2022 value
+SRC008,Space Foundation Q2 2023 Release,https://www.spacefoundation.org/2023/07/25/the-space-report-2023-q2/,2026-02-26,turn2search1,ok,Primary source for 2022 global space economy 546B and revised 2021 value
+SRC009,Space Foundation Q2 2022 Release,https://www.spacefoundation.org/2022/07/27/the-space-report-2022-q2/,2026-02-26,turn2search3,ok,Primary source for 2021 global space economy 469B
+SRC010,Space Foundation Q2 2021 Release,https://www.spacefoundation.org/2021/07/15/global-space-economy-rose-to-447b-in-2020-continuing-five-year-growth/,2026-02-26,turn3search0,ok,Primary source for 2020 global space economy 447B and revised 2019 value

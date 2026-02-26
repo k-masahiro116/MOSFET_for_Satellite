@@ -1,0 +1,6 @@
+source_type,priority_rank,description
+primary_official,1,Government or official statistical publication
+industry_report,2,Major industry report with transparent methodology
+news_article,3,News or media summary
+internal_estimate,4,Internal extrapolation or model output
+assumption,5,Hypothesis used to initialize missing splits

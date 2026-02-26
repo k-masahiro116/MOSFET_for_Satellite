@@ -1,0 +1,10 @@
+[project]
+name = "mosfet-for-satellite"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "matplotlib>=3.10.8",
+    "pypdf>=6.7.3",
+]
